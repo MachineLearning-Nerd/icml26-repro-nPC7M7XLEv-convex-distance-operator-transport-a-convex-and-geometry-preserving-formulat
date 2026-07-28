@@ -1,0 +1,39 @@
+{
+  "claim": 6,
+  "status": "VERIFIED",
+  "scope": {
+    "population_result": "supported by an independently reconstructed proof-obligation certificate under Assumptions 5.2--5.5",
+    "finite_diagnostics": 2,
+    "finite_checks_do_not_replace_population_proof": true,
+    "consistency_rate_rows_are_formula_diagnostics_not_empirical_proof": true
+  },
+  "seeds": [
+    56001,
+    56002
+  ],
+  "summary": {
+    "maximum_final_fw_duality_gap": 9.900242946852059e-06,
+    "minimum_final_theorem_bound": 0.04680643588493418,
+    "maximum_marginal_error": 1.8041124150158794e-16,
+    "smallest_valid_n_over_T": 0.001953125,
+    "invalid_control_limit_indicator": 15.953261927945473
+  },
+  "negative_control": {
+    "mutation": "replace a valid T_n=n^2 schedule by T_n=n",
+    "reason_for_rejection": "n_min/T_n remains one",
+    "last_optimization_term": 15.953261927945473,
+    "passed": true
+  },
+  "gates": {
+    "exact_algorithm_1_schedule_executed": true,
+    "two_predeclared_seed_support_panels": true,
+    "transport_marginals_preserved": true,
+    "finite_fw_gap_below_theorem_bound": true,
+    "noncircular_consistency_schedule_has_n_over_T_to_zero": true,
+    "invalid_linear_schedule_control_rejected": true,
+    "population_proof_certificate_present": true
+  },
+  "all_gates_pass": true,
+  "formal_run_id": "67a73cba-65ff-4541-b1c1-2cd438b71670",
+  "git_sha": "2bc46c7b1b1127385fdc3481d802be3a3efbed0f"
+}

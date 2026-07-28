@@ -17,6 +17,8 @@ from .claim1 import run as run_claim_1
 from .claim1_checker import check as check_claim_1
 from .claim2 import run as run_claim_2
 from .claim2_checker import check as check_claim_2
+from .claim4 import run as run_claim_4
+from .claim4_checker import check as check_claim_4
 from .claim6 import run as run_claim_6
 from .claim6_checker import check as check_claim_6
 
@@ -63,6 +65,14 @@ def main() -> None:
             primary = run_claim_6(claim_dir)
             independent = check_claim_6(claim_dir)
             results["claim_6"] = {
+                "primary": primary,
+                "independent_checker": independent,
+            }
+        if 4 in config["active_claims"]:
+            claim_dir = runtime_dir / "claim_4"
+            primary = run_claim_4(claim_dir)
+            independent = check_claim_4(claim_dir)
+            results["claim_4"] = {
                 "primary": primary,
                 "independent_checker": independent,
             }

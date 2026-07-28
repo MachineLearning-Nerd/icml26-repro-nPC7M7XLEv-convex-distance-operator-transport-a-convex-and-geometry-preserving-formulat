@@ -1,0 +1,38 @@
+{
+  "claim": 2,
+  "status": "VERIFIED",
+  "scope": {
+    "population_result": "supported by independently reconstructed proof obligations",
+    "dispersion_witnesses": 32,
+    "complete_declared_two_point_domain_cells": 320,
+    "finite_checks_do_not_replace_population_proof": true
+  },
+  "seed": 37005,
+  "summary": {
+    "maximum_dispersion_identity_error": 2.498001805406602e-16,
+    "minimum_positive_dispersion": 0.03838081237012167,
+    "identity_failures": 0,
+    "symmetry_failures": 0,
+    "triangle_failures": 0,
+    "maximum_triangle_excess": 5.551115123125783e-17
+  },
+  "negative_control": {
+    "mutation": "square the valid discrepancy before applying triangle inequality",
+    "triangle_excess": 0.08120000000000005,
+    "expected": "strictly positive violation",
+    "passed": true
+  },
+  "gates": {
+    "dispersion_identity_32_diffuse_couplings": true,
+    "dispersion_strictly_positive": true,
+    "complete_registered_finite_domain_enumerated": true,
+    "identity_passes": true,
+    "symmetry_passes": true,
+    "triangle_passes": true,
+    "squared_distance_control_rejected": true,
+    "population_proof_certificate_present": true
+  },
+  "all_gates_pass": true,
+  "formal_run_id": "318c9d3c-fc01-4fd5-9cb0-e64031bb4d82",
+  "git_sha": "b24b5f079f8bb06970e808f51589830765004577"
+}

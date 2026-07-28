@@ -1,0 +1,16 @@
+{
+  "checker": "raw witness four-index enumeration and table recheck",
+  "maximum_independent_dispersion_error": 1.942890293094024e-16,
+  "maximum_witness_marginal_error": 1.1102230246251565e-16,
+  "triangle_failures": 0,
+  "symmetry_failures": 0,
+  "gates": {
+    "all_32_raw_witnesses_recomputed": true,
+    "independent_four_index_identity_agrees": true,
+    "witness_marginals_exact": true,
+    "all_320_triangle_rows_rechecked": true,
+    "recorded_symmetry_rechecked": true
+  },
+  "all_gates_pass": true,
+  "formal_run_id": "318c9d3c-fc01-4fd5-9cb0-e64031bb4d82"
+}

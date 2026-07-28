@@ -1,0 +1,18 @@
+{
+  "checker": "independent matrix-gradient, assignment, and schedule audit",
+  "maximum_fw_gap_disagreement": 0.0,
+  "maximum_witness_marginal_error": 1.8041124150158794e-16,
+  "bound_formula_failures": 0,
+  "valid_schedule_monotonic_failures": 0,
+  "control_ratio_failures": 0,
+  "gates": {
+    "all_raw_witnesses_recomputed": true,
+    "independent_fw_gap_agrees": true,
+    "witness_marginals_exact": true,
+    "theorem_bound_formula_recomputed": true,
+    "valid_schedule_ratio_strictly_decreases": true,
+    "invalid_control_ratio_stays_one": true
+  },
+  "all_gates_pass": true,
+  "formal_run_id": "67a73cba-65ff-4541-b1c1-2cd438b71670"
+}
