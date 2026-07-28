@@ -50,19 +50,22 @@ def check(runtime_dir: Path) -> dict[str, object]:
         for (alpha, x, z), distance in grouped.items()
     )
     gates = {
-        "all_32_raw_witnesses_recomputed": len(witnesses) == len(rows) == 32,
-        "independent_four_index_identity_agrees": maximum_error < 1e-10,
-        "witness_marginals_exact": marginal_error < 1e-10,
-        "all_320_triangle_rows_rechecked": len(pseudo) == 320
-        and triangle_failures == 0,
-        "recorded_symmetry_rechecked": symmetry_failures == 0,
+        "all_32_raw_witnesses_recomputed": bool(
+            len(witnesses) == len(rows) == 32
+        ),
+        "independent_four_index_identity_agrees": bool(maximum_error < 1e-10),
+        "witness_marginals_exact": bool(marginal_error < 1e-10),
+        "all_320_triangle_rows_rechecked": bool(
+            len(pseudo) == 320 and triangle_failures == 0
+        ),
+        "recorded_symmetry_rechecked": bool(symmetry_failures == 0),
     }
     result = {
         "checker": "raw witness four-index enumeration and table recheck",
-        "maximum_independent_dispersion_error": maximum_error,
-        "maximum_witness_marginal_error": marginal_error,
-        "triangle_failures": triangle_failures,
-        "symmetry_failures": symmetry_failures,
+        "maximum_independent_dispersion_error": float(maximum_error),
+        "maximum_witness_marginal_error": float(marginal_error),
+        "triangle_failures": int(triangle_failures),
+        "symmetry_failures": int(symmetry_failures),
         "gates": gates,
         "all_gates_pass": all(gates.values()),
     }
@@ -72,4 +75,3 @@ def check(runtime_dir: Path) -> dict[str, object]:
     if not result["all_gates_pass"]:
         raise RuntimeError("Independent Claim 2 checker failed")
     return result
-
