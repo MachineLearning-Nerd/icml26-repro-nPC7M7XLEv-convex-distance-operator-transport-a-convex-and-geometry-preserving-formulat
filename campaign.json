@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "active_claims": [1],
+  "output_directory": ".openresearch/runtime",
+  "paper": {
+    "arxiv_id": "2606.02047v1",
+    "html_url": "https://ar5iv.labs.arxiv.org/html/2606.02047",
+    "html_sha256": "602040fe82ec6bd4c0422ee488315d8e09f86bef50c6f06d4be61f942094d43f",
+    "pdf_url": "https://arxiv.org/pdf/2606.02047",
+    "pdf_sha256": "fe1dda5d0e3f2aea86b9b3b5ebf79b79cbc7d06e3fcbe4b20b6f097cc556375d",
+    "retrieved_utc": "2026-07-28T12:12:31Z"
+  },
+  "compute_contract": {
+    "estimated_cores": 1,
+    "selected_backend": "hf",
+    "selected_flavor": "cpu-upgrade",
+    "runtime_class": "claim check is short; clean locked-environment setup has uncertain runtime",
+    "thread_limit": 1
+  }
+}

@@ -1,0 +1,37 @@
+[project]
+name = "cdot-reproduction"
+version = "0.1.0"
+description = "Claim-by-claim CPU reproduction of Convex Distance Operator Transport"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "huggingface-hub==0.34.3",
+  "marimo==0.14.17",
+  "matplotlib==3.10.3",
+  "networkx==3.4.2",
+  "numpy==2.2.4",
+  "pandas==2.3.1",
+  "pot==0.9.6.post1",
+  "scikit-learn==1.7.1",
+  "scipy==1.16.1",
+  "sympy==1.13.1",
+  "threadpoolctl==3.6.0",
+  "torch==2.6.0",
+]
+
+[project.scripts]
+cdot-reproduce = "cdot_repro.run:main"
+
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cdot_repro"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
