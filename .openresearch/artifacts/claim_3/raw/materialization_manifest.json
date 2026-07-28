@@ -1,0 +1,30 @@
+{
+  "formal_run_id": "8a1fe020-2a83-4a6a-bbc6-910568b8b5c1",
+  "selector": "/claim_3/",
+  "files": [
+    {
+      "source": ".openresearch/runtime/claim_3/claim_3_independent_checker.json",
+      "path": "claim_3_independent_checker.json",
+      "bytes": 956,
+      "sha256": "e87232601a2ae0ea859b8d0a61a721e849f7bf700e44ee9dee4a4c53b898d9c4"
+    },
+    {
+      "source": ".openresearch/runtime/claim_3/claim_3_negative_controls.json",
+      "path": "claim_3_negative_controls.json",
+      "bytes": 468,
+      "sha256": "08d5db4b6e681eac49297969bd13848f7228a4f5ba28acfdd324e778da1814e1"
+    },
+    {
+      "source": ".openresearch/runtime/claim_3/claim_3_result.json",
+      "path": "claim_3_result.json",
+      "bytes": 4064,
+      "sha256": "73b76bdc9e664563fbec563fca5685970000e9f34b45615159c29817aa257b7b"
+    },
+    {
+      "source": ".openresearch/runtime/claim_3/claim_3_trials.json",
+      "path": "claim_3_trials.json",
+      "bytes": 93614,
+      "sha256": "32bfadfe06e6fbb77f6c8fa01046c093ff03cbb443c08a8d280f369ff60881be"
+    }
+  ]
+}

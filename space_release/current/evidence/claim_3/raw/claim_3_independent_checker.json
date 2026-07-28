@@ -1,0 +1,29 @@
+{
+  "checker": "independent inventory, raw mean, paired interval, verdict, and tamper audit",
+  "maximum_summary_error": 1.2000036381243362e-13,
+  "paired_cdot_minus_baseline": {
+    "FGW": {
+      "mean": -0.0018203744230400004,
+      "ci95_low": -0.0018545974479945773,
+      "ci95_high": -0.0017861513980854235
+    },
+    "IsoRank": {
+      "mean": -0.0016842115778199999,
+      "ci95_low": -0.0017185319561547209,
+      "ci95_high": -0.0016498911994852789
+    }
+  },
+  "independently_derived_status": "VERIFIED",
+  "gates": {
+    "exact_300_row_inventory": true,
+    "exact_trial_seed_inventory": true,
+    "exact_method_inventory": true,
+    "raw_means_match_primary": true,
+    "paired_intervals_match_primary": true,
+    "primary_status_matches_independent_rule": true,
+    "independent_rule_resolves_a_nonblocked_verdict": true,
+    "parity_and_label_controls_pass": true,
+    "missing_row_tamper_is_rejected": true
+  },
+  "all_gates_pass": true
+}

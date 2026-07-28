@@ -1,0 +1,15 @@
+{
+  "lazy_standard_objective_abs_error": 0.0,
+  "lazy_standard_mse_abs_error": 0.0,
+  "low_rank_dense_isorank_max_abs_error": 0.0,
+  "normal_feature_mse": 0.044837658951,
+  "wrong_feature_mse": 1.713243344798,
+  "gates": {
+    "lazy_standard_objective_match": true,
+    "lazy_standard_mse_match": true,
+    "low_rank_dense_isorank_match": true,
+    "wrong_feature_control_degrades_mse": true,
+    "low_rank_residual_bound_finite": true
+  },
+  "all_gates_pass": true
+}

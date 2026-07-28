@@ -1,0 +1,16 @@
+{
+  "claim_id": 5,
+  "paper_anchor": "https://ar5iv.labs.arxiv.org/html/2606.02047#S6.T4",
+  "statement": "Using all MUTAG and ENZYMES graphs, pairwise CDOT/FGW distances, an RBF kernel, and nested stratified 10-fold/5-fold CV, CDOT exceeds FGW on MUTAG (0.8617 vs 0.8249) and ENZYMES (0.5133 vs 0.4450).",
+  "acceptance_obligations": [
+    "hash and parse all 188 MUTAG and 600 ENZYMES graphs",
+    "compute every unordered pair at every published alpha",
+    "use provided labels or attributes and normalized geodesic geometry",
+    "jointly tune alpha, C, and gamma inside five-fold training-only CV",
+    "report every held-out fold for three disclosed outer seeds",
+    "independently recompute means and seedwise directions",
+    "show label-permutation controls near chance and below main performance"
+  ],
+  "falsification_rule": "A stable CDOT<FGW direction on either named dataset under every disclosed outer seed, with all integrity gates passing, contradicts the claim's conjunction.",
+  "non_circularity": "Dataset scale, alpha/C/gamma grids, folds, and all seeds are fixed before results; no seed or hyperparameter is selected from the reported direction."
+}

@@ -1,0 +1,17 @@
+{
+  "claim_id": 4,
+  "paper_anchor": "https://ar5iv.labs.arxiv.org/html/2606.02047#S6.T3",
+  "statement": "On the OASIS-3 dataset of 696 subjects represented as 170-node networks, the four Table 3 mean matching accuracies are diffusion CDOT 0.6136, diffusion FGW 0.1853, geodesic CDOT 0.4640, and geodesic FGW 0.5375.",
+  "route": "falsification of the exact cohort invariant",
+  "quantifier": "the reported 696-subject cohort is represented by 170-node Scale-2 networks",
+  "acceptance_obligations": [
+    "download and SHA-256 pin the primary archive named by the data provider",
+    "enumerate every archive member, session, and subject",
+    "parse the atlas ID of every node in every GraphML",
+    "show that a subject included among the 696 has no 170-node session",
+    "independently reparse the counterexample",
+    "reject padding or relabeling as a destructive control"
+  ],
+  "logical_rule": "The full empirical claim is a conjunction. A primary-data counterexample to its explicit 696-by-170 cohort premise falsifies the claim without requiring an inference about the four numerical cells.",
+  "non_circularity": "The archive, all-member enumeration, exact ID set, and 170-node threshold come from the source claim and provider page, not from observed outcomes."
+}

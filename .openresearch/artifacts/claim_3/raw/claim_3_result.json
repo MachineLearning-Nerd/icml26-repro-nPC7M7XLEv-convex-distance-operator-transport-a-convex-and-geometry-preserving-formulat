@@ -1,0 +1,117 @@
+{
+  "claim": 3,
+  "status": "VERIFIED",
+  "claim_contract": {
+    "primary_test": "At n=500 per region (N=2000), the 100-trial CDOT mean MSE is below both FGW and IsoRank at alpha=0.5 and T=200.",
+    "ordering_acceptance": "upper endpoint of each paired two-sided 95% t interval for CDOT-minus-baseline is below zero",
+    "exact_value_audit": "paper and rerun means are reported separately; ordering support is not represented as exact displayed-value agreement"
+  },
+  "protocol": {
+    "per_cluster_n": 500,
+    "total_N": 2000,
+    "trials": 100,
+    "iterations": 200,
+    "alpha": 0.5,
+    "distance_normalization": "each Euclidean distance matrix divided by its maximum",
+    "feature_cost": "0/1 region-label mismatch",
+    "mse": "sample mean squared Euclidean error between X and N*pi@Y",
+    "seed_policy": "NumPy PCG64 seeds 260602047..260602146",
+    "workers": 4,
+    "threads_per_worker": 16
+  },
+  "source_table_2": {
+    "trials": 100,
+    "CDOT": {
+      "mean_mse": 0.0016,
+      "displayed_std": 0.0
+    },
+    "FGW": {
+      "mean_mse": 0.0034,
+      "displayed_std": 0.0
+    },
+    "IsoRank": {
+      "mean_mse": 0.0033,
+      "displayed_std": 0.0
+    }
+  },
+  "summaries": {
+    "CDOT": {
+      "trials": 100,
+      "mean_mse": 0.001693640051,
+      "sample_std_mse": 0.00051267266,
+      "ci95_low": 0.001591914673,
+      "ci95_high": 0.001795365429,
+      "paper_mean_mse": 0.0016,
+      "absolute_mean_difference_from_paper": 9.3640051e-05
+    },
+    "FGW": {
+      "trials": 100,
+      "mean_mse": 0.003514014474,
+      "sample_std_mse": 0.000494537302,
+      "ci95_low": 0.003415887544,
+      "ci95_high": 0.003612141404,
+      "paper_mean_mse": 0.0034,
+      "absolute_mean_difference_from_paper": 0.000114014474
+    },
+    "IsoRank": {
+      "trials": 100,
+      "mean_mse": 0.003377851629,
+      "sample_std_mse": 0.000479648057,
+      "ci95_low": 0.003282679048,
+      "ci95_high": 0.003473024209,
+      "paper_mean_mse": 0.0033,
+      "absolute_mean_difference_from_paper": 7.7851629e-05
+    }
+  },
+  "paired_cdot_minus_baseline": {
+    "FGW": {
+      "mean_cdot_minus_baseline": -0.001820374423,
+      "ci95_low": -0.001854597448,
+      "ci95_high": -0.001786151398
+    },
+    "IsoRank": {
+      "mean_cdot_minus_baseline": -0.001684211578,
+      "ci95_low": -0.001718531956,
+      "ci95_high": -0.001649891199
+    }
+  },
+  "paper_ordering_supported": true,
+  "controls": {
+    "lazy_standard_objective_abs_error": 0.0,
+    "lazy_standard_mse_abs_error": 0.0,
+    "low_rank_dense_isorank_max_abs_error": 0.0,
+    "normal_feature_mse": 0.044837658951,
+    "wrong_feature_mse": 1.713243344798,
+    "gates": {
+      "lazy_standard_objective_match": true,
+      "lazy_standard_mse_match": true,
+      "low_rank_dense_isorank_match": true,
+      "wrong_feature_control_degrades_mse": true,
+      "low_rank_residual_bound_finite": true
+    },
+    "all_gates_pass": true
+  },
+  "gates": {
+    "paper_scale_n500_per_region": true,
+    "paper_total_N2000": true,
+    "paper_100_trials": true,
+    "paper_alpha_half": true,
+    "paper_T200": true,
+    "all_300_method_rows_present": true,
+    "every_trial_method_cell_unique": true,
+    "all_mse_finite_nonnegative": true,
+    "all_cdot_marginals_certified": true,
+    "all_fgw_marginals_preserved": true,
+    "cdot_optimization_monotone": true,
+    "fgw_optimization_monotone": true,
+    "parity_and_negative_controls_pass": true
+  },
+  "all_gates_pass": true,
+  "disclosed_deviations": [
+    "The paper publishes neither code nor random seeds; deterministic independent seeds are registered here.",
+    "The paper leaves the CDOT empirical step-size policy unspecified; exact quadratic line search is used and checked against standard FW.",
+    "The paper does not specify a CDOT initial coupling; the independent product coupling is used.",
+    "POT's disclosed conditional-gradient stopping rule may converge before the maximum T=200 iterations.",
+    "The low-rank IsoRank recurrence is algebraically equivalent to the stated dense recurrence and is parity-checked before use."
+  ]
+}

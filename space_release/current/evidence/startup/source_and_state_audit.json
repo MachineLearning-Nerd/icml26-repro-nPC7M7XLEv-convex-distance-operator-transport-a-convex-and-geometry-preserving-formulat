@@ -1,0 +1,36 @@
+{
+  "audit_utc": "2026-07-28T12:12:31Z",
+  "project_id": "d5ca09f7-ab42-422b-a22d-fecb754d875d",
+  "baseline_branch": "main",
+  "expected_starting_sha": "2f7db9df3db9f009c5f65f038ff8f1c2a2cb481c",
+  "observed_starting_sha": "2f7db9df3db9f009c5f65f038ff8f1c2a2cb481c",
+  "starting_sha_matches": true,
+  "initial_experiment_count": 0,
+  "initial_run_count": 0,
+  "initial_run_command": null,
+  "free_disk_at_audit": "6.2 GiB",
+  "paper": {
+    "html_url": "https://ar5iv.labs.arxiv.org/html/2606.02047",
+    "html_sha256": "602040fe82ec6bd4c0422ee488315d8e09f86bef50c6f06d4be61f942094d43f",
+    "pdf_url": "https://arxiv.org/pdf/2606.02047",
+    "pdf_sha256": "fe1dda5d0e3f2aea86b9b3b5ebf79b79cbc7d06e3fcbe4b20b6f097cc556375d",
+    "user_agent": "OpenResearch-Reproduction/1.0 (claim audit; contact via repository)"
+  },
+  "verdict_dataset": {
+    "repo": "ICML-2026-agent-repro/verdicts",
+    "url": "https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts/resolve/main/verdicts.json",
+    "sha256": "fdfa8e14157edbcdfda90d2ac3f4ba572955911be948d67ce33faad9482e1b25",
+    "selection": "space_id == DineshAI/nPC7M7XLEv",
+    "matching_rows": 1,
+    "judged_space_sha": "1f2e1bcdc00bd792921b6b010c90fe8120f78405",
+    "judged_at": "2026-07-28T07:42:29+00:00",
+    "score": "4/12"
+  },
+  "reference_logbook": {
+    "space_id": "ProCreations/repro-convex-distance-operator-transport-a-convex-and-geometry-preserving-formulation",
+    "retrieved_head": "893c45fe7edb0158c640a49e439da21efd81e34f",
+    "use": "comparative methods and organization only; conclusions are untrusted until independently rerun"
+  },
+  "secrets_audit": "Environment variable names only were listed. No values were printed or stored."
+}
+

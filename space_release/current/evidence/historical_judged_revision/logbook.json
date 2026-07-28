@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "title": "Convex Distance Operator Transport (nPC7M7XLEv)",
+  "emoji": "🎯",
+  "space_id": "DineshAI/nPC7M7XLEv",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-nPC7M7XLEv"
+  ],
+  "updated_at": "2026-07-28T06:41:27+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Convex Distance Operator Transport (nPC7M7XLEv)",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "verify",
+        "title": "verify",
+        "file": "pages/verify/page.md",
+        "children": []
+      },
+      {
+        "slug": "overview",
+        "title": "overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 396,
+  "revision": "1785220887513659425"
+}

@@ -1,0 +1,275 @@
+{
+  "claim": 5,
+  "status": "FALSIFIED",
+  "paper_values": {
+    "MUTAG_CDOT": [
+      0.8617,
+      0.07
+    ],
+    "MUTAG_FGW": [
+      0.8249,
+      0.08
+    ],
+    "ENZYMES_CDOT": [
+      0.5133,
+      0.04
+    ],
+    "ENZYMES_FGW": [
+      0.445,
+      0.03
+    ]
+  },
+  "protocol": {
+    "all_graphs_and_unordered_pairs": true,
+    "geometry": "unweighted geodesic divided by graph diameter",
+    "node_information": "provided labels or attributes",
+    "alpha_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "kernel": "exp(-gamma*D^2)",
+    "outer_cv": "three seeded stratified 10-fold runs",
+    "inner_cv": "stratified 5-fold joint alpha/C/gamma search",
+    "C_grid": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "gamma_grid": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "outer_seeds": [
+      260727,
+      260728,
+      260729
+    ],
+    "max_optimizer_iterations": 200,
+    "process_workers": 8
+  },
+  "disclosed_reconstruction_ambiguities": [
+    "source split seeds are unpublished",
+    "ENZYMES attribute standardization is unspecified; dataset-wise z-scoring is used",
+    "feature-cost scaling is unspecified; per-pair max normalization is used",
+    "optimizer stopping tolerance is unspecified; disclosed at-most-200 stopping is used"
+  ],
+  "results": {
+    "MUTAG": {
+      "data": {
+        "requested_url": "https://www.chrsmrrs.com/graphkerneldatasets/MUTAG.zip",
+        "final_url": "https://www.chrsmrrs.com/graphkerneldatasets/MUTAG.zip",
+        "user_agent": "OpenResearch-CDOT-Reproduction/1.0",
+        "bytes": 24550,
+        "sha256": "c419bdc853c367d2d83da4973c45100954ae15e10f5ae2cddde6ca431f8207f6",
+        "graphs": 188,
+        "nodes": 3371,
+        "node_count_min": 10,
+        "node_count_max": 28,
+        "node_count_mean": 17.9308510638,
+        "classes": [
+          -1,
+          1
+        ],
+        "feature_kind": "provided categorical labels, one-hot encoded",
+        "disconnected_graphs_filled_with_finite_diameter": 0
+      },
+      "diagnostics": {
+        "pairs": 17578,
+        "pair_alpha_method_cells": 175780,
+        "maximum_cdot_marginal_error": 7.077671781985373e-16,
+        "cdot_nonmonotone_steps": 0,
+        "fgw_nonmonotone_steps": 0,
+        "mean_iterations": {
+          "CDOT": 161.47565138240984,
+          "FGW": 7.37413812720446
+        },
+        "distance_matrices_finite_symmetric_zero_diagonal": true,
+        "matrix_sha256": {
+          "CDOT_a000": "65950b1a9752e254358df0b8eef9f3356b88ceeb5117daf44079e154d483ae3c",
+          "CDOT_a025": "681f7e5773247f8b293dd69c96b17224cbe1418a5f92bd9171447ed5856e5ec8",
+          "CDOT_a050": "084771749af1b445d85a337854aadf5114d4119aa8693bc015fc48f3c55bd99b",
+          "CDOT_a075": "dddbd6d8e9e955c70b15b30219d12250c8a77266ba80753a891dd4fda19f0685",
+          "CDOT_a100": "d0849babc929bc73480c2f63a0c7643fb8297ec1ec0856d1ba6eb87b67b2e8fe",
+          "FGW_a000": "65950b1a9752e254358df0b8eef9f3356b88ceeb5117daf44079e154d483ae3c",
+          "FGW_a025": "021e531578b8d923c9c64927fe58c3e05c6141f849a56db0373872b09dc1c732",
+          "FGW_a050": "0fa7975044899793e339b386ab440f590be639f596b7b528c7fd973f925e1b8b",
+          "FGW_a075": "8305f74b2da50e060920f08e90ba74bbdb4a3ed4802dd5f609cc2c4cbd7dba4d",
+          "FGW_a100": "198a1134de746e8991bbe23fcc8f23aadd57ad8329be0283ab7f7ff6e3b30144"
+        }
+      },
+      "summaries": {
+        "CDOT": {
+          "outer_folds": 30,
+          "mean_accuracy": 0.8408382066,
+          "sample_std_accuracy": 0.0661962657,
+          "standard_error": 0.0120857293,
+          "permuted_outcome_mean_accuracy": 0.6597465887
+        },
+        "FGW": {
+          "outer_folds": 30,
+          "mean_accuracy": 0.8335282651,
+          "sample_std_accuracy": 0.0600953094,
+          "standard_error": 0.0109718522,
+          "permuted_outcome_mean_accuracy": 0.6366471735
+        }
+      },
+      "seedwise_mean_accuracy": {
+        "260727": {
+          "CDOT": 0.8347953217,
+          "FGW": 0.8292397661,
+          "CDOT_minus_FGW": 0.0055555556
+        },
+        "260728": {
+          "CDOT": 0.8467836257,
+          "FGW": 0.8248538012,
+          "CDOT_minus_FGW": 0.0219298245
+        },
+        "260729": {
+          "CDOT": 0.8409356725,
+          "FGW": 0.8464912281,
+          "CDOT_minus_FGW": -0.0055555556
+        }
+      },
+      "CDOT_minus_FGW_accuracy": 0.0073099415,
+      "majority_class_rate": 0.664893617,
+      "gates": {
+        "full_graph_count": true,
+        "full_node_count": true,
+        "all_pairs_executed": true,
+        "matrices_finite_symmetric": true,
+        "cdot_marginals_preserved": true,
+        "cdot_traces_monotone": true,
+        "fgw_traces_monotone": true,
+        "three_repeated_nested_10fold_runs": true,
+        "permuted_control_near_chance_and_degraded": true
+      }
+    },
+    "ENZYMES": {
+      "data": {
+        "requested_url": "https://www.chrsmrrs.com/graphkerneldatasets/ENZYMES.zip",
+        "final_url": "https://www.chrsmrrs.com/graphkerneldatasets/ENZYMES.zip",
+        "user_agent": "OpenResearch-CDOT-Reproduction/1.0",
+        "bytes": 536614,
+        "sha256": "13d832eb6ffa084192daf6e5750250028a18437ee692c38d29a10cd60e18aaf4",
+        "graphs": 600,
+        "nodes": 19580,
+        "node_count_min": 2,
+        "node_count_max": 126,
+        "node_count_mean": 32.6333333333,
+        "classes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "feature_kind": "provided attributes, dataset-wise z-scored",
+        "disconnected_graphs_filled_with_finite_diameter": 31
+      },
+      "diagnostics": {
+        "pairs": 179700,
+        "pair_alpha_method_cells": 1797000,
+        "maximum_cdot_marginal_error": 1.1709383462843448e-15,
+        "cdot_nonmonotone_steps": 0,
+        "fgw_nonmonotone_steps": 0,
+        "mean_iterations": {
+          "CDOT": 161.47370172509738,
+          "FGW": 7.742590984974958
+        },
+        "distance_matrices_finite_symmetric_zero_diagonal": true,
+        "matrix_sha256": {
+          "CDOT_a000": "0e73f0cd46313fe22abb7f34e9eb1895c61762e5a35509989acc5b477e1d2233",
+          "CDOT_a025": "bb06fa41a1c1fa50729d0c9aabb1991a10dfeb0c865b98fbf6a3bf7af1c794fa",
+          "CDOT_a050": "413eaed6ae73077d885be23160adf51ae31be06df6818d8bcbf7c4fda7cca627",
+          "CDOT_a075": "76e5cc11a5ea1b4240c025a71dc10c4f65434da67cb0676fe9129725dbee9fd0",
+          "CDOT_a100": "75e628bdd80c8548f64035e65af664ee384cce59ddcb9dfce00a2eb287aecd49",
+          "FGW_a000": "0e73f0cd46313fe22abb7f34e9eb1895c61762e5a35509989acc5b477e1d2233",
+          "FGW_a025": "432043e17a3d9ad74c5fba98162e5908bdcae54e29d37b9c2488a182c7a2624b",
+          "FGW_a050": "51770ade33bc31742d83f63d2ae0c6cd7da32d193aff9d49d9172fe2d97ddaa3",
+          "FGW_a075": "ef2e7b844dd3743478600cfb0ec230eb315f80a4b00c752a608f6b783214857b",
+          "FGW_a100": "7b1a7f0a80adc1d262fb06b9c710dbe80c72d1ae6cd4000d398e00969e297517"
+        }
+      },
+      "summaries": {
+        "CDOT": {
+          "outer_folds": 30,
+          "mean_accuracy": 0.3922222222,
+          "sample_std_accuracy": 0.0544448354,
+          "standard_error": 0.0099402215,
+          "permuted_outcome_mean_accuracy": 0.1788888889
+        },
+        "FGW": {
+          "outer_folds": 30,
+          "mean_accuracy": 0.4477777778,
+          "sample_std_accuracy": 0.0462653792,
+          "standard_error": 0.0084468639,
+          "permuted_outcome_mean_accuracy": 0.1755555556
+        }
+      },
+      "seedwise_mean_accuracy": {
+        "260727": {
+          "CDOT": 0.3866666667,
+          "FGW": 0.445,
+          "CDOT_minus_FGW": -0.0583333333
+        },
+        "260728": {
+          "CDOT": 0.3933333333,
+          "FGW": 0.4466666667,
+          "CDOT_minus_FGW": -0.0533333334
+        },
+        "260729": {
+          "CDOT": 0.3966666667,
+          "FGW": 0.4516666667,
+          "CDOT_minus_FGW": -0.055
+        }
+      },
+      "CDOT_minus_FGW_accuracy": -0.0555555556,
+      "majority_class_rate": 0.1666666667,
+      "gates": {
+        "full_graph_count": true,
+        "full_node_count": true,
+        "all_pairs_executed": true,
+        "matrices_finite_symmetric": true,
+        "cdot_marginals_preserved": true,
+        "cdot_traces_monotone": true,
+        "fgw_traces_monotone": true,
+        "three_repeated_nested_10fold_runs": true,
+        "permuted_control_near_chance_and_degraded": true
+      }
+    }
+  },
+  "classification": {
+    "CDOT_greater_than_FGW_on_both": false,
+    "ENZYMES_direction_reversed_under_every_seed": true,
+    "reason": "direct protocol-matched direction reversal on ENZYMES"
+  },
+  "gates": {
+    "MUTAG_full_graph_count": true,
+    "MUTAG_full_node_count": true,
+    "MUTAG_all_pairs_executed": true,
+    "MUTAG_matrices_finite_symmetric": true,
+    "MUTAG_cdot_marginals_preserved": true,
+    "MUTAG_cdot_traces_monotone": true,
+    "MUTAG_fgw_traces_monotone": true,
+    "MUTAG_three_repeated_nested_10fold_runs": true,
+    "MUTAG_permuted_control_near_chance_and_degraded": true,
+    "ENZYMES_full_graph_count": true,
+    "ENZYMES_full_node_count": true,
+    "ENZYMES_all_pairs_executed": true,
+    "ENZYMES_matrices_finite_symmetric": true,
+    "ENZYMES_cdot_marginals_preserved": true,
+    "ENZYMES_cdot_traces_monotone": true,
+    "ENZYMES_fgw_traces_monotone": true,
+    "ENZYMES_three_repeated_nested_10fold_runs": true,
+    "ENZYMES_permuted_control_near_chance_and_degraded": true
+  },
+  "all_gates_pass": true
+}

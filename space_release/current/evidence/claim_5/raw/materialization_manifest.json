@@ -1,0 +1,36 @@
+{
+  "formal_run_id": "0a682230-6181-4180-ac16-40641eb51375",
+  "selector": "/claim_5/",
+  "files": [
+    {
+      "source": ".openresearch/runtime/claim_5/claim_5_independent_checker.json",
+      "path": "claim_5_independent_checker.json",
+      "bytes": 710,
+      "sha256": "4d19f02ca2a29aa03beb49776ccf82f7c8778dfe614bb4ac88c3e0706ff3ca33"
+    },
+    {
+      "source": ".openresearch/runtime/claim_5/claim_5_nested_cv_rows.json",
+      "path": "claim_5_nested_cv_rows.json",
+      "bytes": 25844,
+      "sha256": "6df81b91eca98ce74117fafbbd9d8e6ab52820b4eb0616fab31fad5dac2cf0af"
+    },
+    {
+      "source": ".openresearch/runtime/claim_5/claim_5_permuted_controls.json",
+      "path": "claim_5_permuted_controls.json",
+      "bytes": 25762,
+      "sha256": "f3991d8cbf3a85646b3a5d3a3b978b2f015280af2db48d8aac18bccc0a69b0ee"
+    },
+    {
+      "source": ".openresearch/runtime/claim_5/claim_5_result.json",
+      "path": "claim_5_result.json",
+      "bytes": 9489,
+      "sha256": "58cbef25521e62a6bcdefc3b085bf3cf18c9181c37d50944dcbb29d13f6b46ec"
+    },
+    {
+      "source": ".openresearch/runtime/claim_5/claim_5_selected_pair_diagnostics.json",
+      "path": "claim_5_selected_pair_diagnostics.json",
+      "bytes": 58949,
+      "sha256": "7ffa258ae9f73cf5080b34c7760949e37243d5d427a075a456400bf42e5a06f3"
+    }
+  ]
+}

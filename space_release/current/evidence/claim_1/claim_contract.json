@@ -1,0 +1,29 @@
+{
+  "claim_id": 1,
+  "verdict_vocabulary": ["VERIFIED", "FALSIFIED", "BLOCKED"],
+  "paper_anchor": "https://ar5iv.labs.arxiv.org/html/2606.02047#S3.Thmtheorem4",
+  "statement": "For every pair of attributed compact metric-measure spaces and every alpha in [0,1], the CDOT objective attains an optimum over the fixed-marginal coupling set and is convex in the coupling.",
+  "domain": "Attributed compact metric-measure spaces with the paper's continuous feature maps and bounded distance operators.",
+  "quantifiers": {
+    "spaces": "all attributed compact metric-measure spaces in Definition 2.1",
+    "fusion_weight": "all real alpha with 0 <= alpha <= 1",
+    "couplings": "all fixed-marginal Borel probability couplings"
+  },
+  "acceptance_obligations": [
+    "nonempty weakly compact coupling set",
+    "weak lower semicontinuity of both objective terms",
+    "attainment by generalized Weierstrass",
+    "affine dependence of the conditional-expectation operator on the coupling",
+    "positive-semidefinite squared Hilbert-Schmidt quadratic term",
+    "destructive negated-squared-norm control violates convexity"
+  ],
+  "finite_executable_scope": {
+    "panels": 60,
+    "support_sizes": [3, 4, 5, 6, 12, 24],
+    "alphas": [0.0, 0.25, 0.5, 0.75, 1.0],
+    "starts_per_panel": 3,
+    "seed": 260602047
+  },
+  "non_circularity": "No sample size, tolerance, or expected numerical slope is derived from the theorem's upper bound. The population conclusion is carried by the reconstructed analytical obligations, not by finite panels."
+}
+

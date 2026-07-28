@@ -1,0 +1,8 @@
+{
+  "claim": 3,
+  "source_anchor": "Section 6.1, Table 2, Appendix H.2 of arXiv:2606.02047v1",
+  "exact_contract": "At n=500 samples per each of four regions (N=2000), alpha=0.5, T=200, and 100 independent trials, CDOT has mean barycentric matching MSE 0.0016 and is lower than FGW 0.0034 and IsoRank 0.0033.",
+  "primary_acceptance": "All exact scale/protocol gates pass and both paired two-sided 95% t-interval upper endpoints for CDOT-minus-baseline are below zero.",
+  "exact_value_policy": "Ordering evidence and agreement with the displayed point estimates are reported separately.",
+  "verdicts": ["VERIFIED", "FALSIFIED", "BLOCKED"]
+}
