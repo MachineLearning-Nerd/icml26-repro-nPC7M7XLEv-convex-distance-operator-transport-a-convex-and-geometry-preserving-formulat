@@ -1,0 +1,22 @@
+{
+  "claim_id": 6,
+  "paper_anchors": [
+    "https://ar5iv.labs.arxiv.org/html/2606.02047#S5.Thmtheorem6",
+    "https://ar5iv.labs.arxiv.org/html/2606.02047#S5.Thmtheorem7",
+    "https://ar5iv.labs.arxiv.org/html/2606.02047#A7.SS6"
+  ],
+  "statement": "Under Assumptions 5.2--5.5, fixed empirical measures on distinct points, and Algorithm 1 with gamma_t=2/(t+2), the lifted population-risk error is at most 32 alpha n_min/(T+3) plus C times the two W1 empirical-measure errors. For iid samples, n_X,n_Y tending to infinity and n_min/T_n tending to zero imply almost-sure risk consistency.",
+  "quantifiers": {
+    "theorem_5_6": "every alpha in [0,1], every iteration count T, and every fixed distinct empirical support satisfying the stated population assumptions",
+    "corollary_5_7": "iid sequences with both sample sizes diverging and n_min/T_n tending to zero"
+  },
+  "acceptance_obligations": [
+    "preserve Assumptions 5.2--5.5 and the distinct-support condition",
+    "execute Algorithm 1 with gamma_0=1 and gamma_t=2/(t+2)",
+    "reconstruct the E1+E2+E3 proof decomposition and explicit constant",
+    "derive almost-sure consistency without using finite trajectories as proof",
+    "independently recompute raw FW gaps and formula rows",
+    "reject the invalid T_n=n schedule for the intended reason"
+  ],
+  "non_circularity": "The analytical certificate carries the universal result. Numerical supports, seeds, checkpoints, and T_n=n^2 diagnostic schedule were declared before observation and are not selected to manufacture a target slope or tolerance."
+}

@@ -17,6 +17,8 @@ from .claim1 import run as run_claim_1
 from .claim1_checker import check as check_claim_1
 from .claim2 import run as run_claim_2
 from .claim2_checker import check as check_claim_2
+from .claim6 import run as run_claim_6
+from .claim6_checker import check as check_claim_6
 
 
 def sha256(path: Path) -> str:
@@ -53,6 +55,14 @@ def main() -> None:
             primary = run_claim_2(claim_dir)
             independent = check_claim_2(claim_dir)
             results["claim_2"] = {
+                "primary": primary,
+                "independent_checker": independent,
+            }
+        if 6 in config["active_claims"]:
+            claim_dir = runtime_dir / "claim_6"
+            primary = run_claim_6(claim_dir)
+            independent = check_claim_6(claim_dir)
+            results["claim_6"] = {
                 "primary": primary,
                 "independent_checker": independent,
             }
@@ -94,6 +104,10 @@ def main() -> None:
                 }
             )
         )
+        if path.stat().st_size <= 100_000:
+            print(f"=== RAW_JSON_BEGIN {path} ===")
+            print(path.read_text(encoding="utf-8"), end="")
+            print(f"=== RAW_JSON_END {path} ===")
     if not summary["all_gates_pass"]:
         raise SystemExit(1)
 
