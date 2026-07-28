@@ -205,7 +205,7 @@ def run(output: Path) -> dict[str, object]:
             )
             monotonicity_failures += sum(
                 later > earlier + TOLERANCE
-                for earlier, later in zip(history, history[1:], strict=True)
+                for earlier, later in zip(history, history[1:])
             )
         rows.append(
             AuditRow(
@@ -301,4 +301,3 @@ def run(output: Path) -> dict[str, object]:
         failed = [name for name, passed in gates.items() if not passed]
         raise RuntimeError("Claim 1 gates failed: " + ", ".join(failed))
     return result
-
