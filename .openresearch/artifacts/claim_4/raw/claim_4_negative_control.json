@@ -1,0 +1,11 @@
+{
+  "mutation": "fabricate atlas IDs 169 and 170 for the sole invalid session",
+  "observed_node_count": 168,
+  "mutated_node_count": 170,
+  "fabricated_ids": [
+    169,
+    170
+  ],
+  "archive_contains_fabricated_ids": false,
+  "rejected": true
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "active_claims": [1, 2, 4, 6],
+  "active_claims": [1, 2, 4, 5, 6],
   "output_directory": ".openresearch/runtime",
   "paper": {
     "arxiv_id": "2606.02047v1",
@@ -11,10 +11,10 @@
     "retrieved_utc": "2026-07-28T12:12:31Z"
   },
   "compute_contract": {
-    "estimated_cores": 4,
+    "estimated_cores": 8,
     "selected_backend": "hf",
     "selected_flavor": "cpu-upgrade",
-    "runtime_class": "654 MB primary-archive download, four-thread extraction, and exhaustive 975-file parse have uncertain runtime",
+    "runtime_class": "full 188/600-graph all-pairs distance computation and nested CV have uncertain multi-hour runtime",
     "thread_limit": 1
   }
 }
