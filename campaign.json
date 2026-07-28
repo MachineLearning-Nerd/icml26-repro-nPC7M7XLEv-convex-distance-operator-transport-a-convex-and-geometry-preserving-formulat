@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "active_claims": [1, 2, 4, 5, 6],
+  "active_claims": [1, 2, 3, 4, 5, 6],
   "output_directory": ".openresearch/runtime",
   "paper": {
     "arxiv_id": "2606.02047v1",
@@ -11,10 +11,10 @@
     "retrieved_utc": "2026-07-28T12:12:31Z"
   },
   "compute_contract": {
-    "estimated_cores": 8,
+    "estimated_cores": 64,
     "selected_backend": "hf",
     "selected_flavor": "cpu-upgrade",
-    "runtime_class": "full 188/600-graph all-pairs distance computation and nested CV have uncertain multi-hour runtime",
+    "runtime_class": "cumulative full TUDataset plus 100 paper-scale N=2000 dense synthetic trials have uncertain multi-hour runtime",
     "thread_limit": 1
   }
 }

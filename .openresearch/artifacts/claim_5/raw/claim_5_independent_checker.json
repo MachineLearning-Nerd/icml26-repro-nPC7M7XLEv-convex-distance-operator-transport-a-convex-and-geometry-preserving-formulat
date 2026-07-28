@@ -1,0 +1,21 @@
+{
+  "checker": "independent fold inventory, raw-mean, and seedwise direction audit",
+  "maximum_summary_error": 3.333344711364816e-11,
+  "fold_shape_failures": 0,
+  "enzymes_reversed_outer_seeds": 3,
+  "dataset_cdot_minus_fgw_margins": {
+    "MUTAG": 0.007309941516666862,
+    "ENZYMES": -0.05555555555333336
+  },
+  "independently_derived_status": "FALSIFIED",
+  "gates": {
+    "all_120_nested_cv_rows_present": true,
+    "all_120_control_rows_present": true,
+    "fold_shapes_exact": true,
+    "raw_means_match_primary": true,
+    "all_control_cells_unique": true,
+    "primary_status_matches_independent_rule": true,
+    "independent_rule_resolves_a_nonblocked_verdict": true
+  },
+  "all_gates_pass": true
+}
