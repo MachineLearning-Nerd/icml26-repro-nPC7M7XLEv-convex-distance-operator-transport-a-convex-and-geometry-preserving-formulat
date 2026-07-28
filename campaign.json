@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "active_claims": [1],
+  "active_claims": [1, 2],
   "output_directory": ".openresearch/runtime",
   "paper": {
     "arxiv_id": "2606.02047v1",

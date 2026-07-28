@@ -1,17 +1,16 @@
 # Convex Distance Operator Transport — claim-by-claim reproduction
 
-This branch freezes the first rigorous baseline for
-[arXiv 2606.02047](https://arxiv.org/abs/2606.02047). It tests Theorem 3.4's
-population existence and convexity claim using an independently reconstructed
-proof-obligation certificate, an executable 60-panel transport-polytope audit,
-an independent vectorized checker, and a destructive non-convex control.
+This experiment line reproduces the theoretical claims in
+[arXiv 2606.02047](https://arxiv.org/abs/2606.02047). The frozen baseline
+tests Theorem 3.4's population existence and convexity claim. This child adds
+Theorems 3.5 and 3.7: the pseudometric proof obligations and the exact
+dispersion identity.
 
-The formal paper value is a universal theorem rather than a scalar. The
-baseline assessment remains `BLOCKED` until its first OpenResearch run
-finishes. Finite panels are formula checks, not substitutes for the compactness
-and lower-semicontinuity argument. Compute is Hugging Face `cpu-upgrade` with
-one enforced numerical thread because clean locked-environment setup has
-uncertain runtime.
+Claim 1 is a `VERIFIED` candidate after all primary, independent, and control
+gates passed. Claim 2 remains `BLOCKED` until this child completes. Finite
+panels are formula checks, not substitutes for the population coupling and
+operator arguments. Compute is Hugging Face `cpu-upgrade` with one enforced
+numerical thread because clean locked-environment setup has uncertain runtime.
 
 Exact command:
 
@@ -19,13 +18,15 @@ Exact command:
 uv run --frozen --python 3.12 python -m cdot_repro.run
 ```
 
-Detailed evidence: [Claim 1 candidate page](candidate/pages/claim-1-convex-qp/page.md).
+Detailed evidence: [Claim 1](candidate/pages/claim-1-convex-qp/page.md) and
+[Claim 2](candidate/pages/claim-2-pseudometric-dispersion/page.md).
 
 ## Experiment log
 
 | Branch / experiment | Purpose | Exact run command | Assessment / outcome | Compute |
 | --- | --- | --- | --- | --- |
-| `orx/baseline-source-pin-and-claim-1-certificate` | Source pin, theorem certificate, executable verifier, independent checker, destructive control | `uv run --frozen --python 3.12 python -m cdot_repro.run` | Pending first run | Hugging Face `cpu-upgrade`; one enforced thread |
+| `orx/baseline-source-pin-and-claim-1-certificate` | Source pin, Theorem 3.4 certificate, verifier, checker, control | `uv run --frozen --python 3.12 python -m cdot_repro.run` | Claim 1 `VERIFIED` candidate; all gates pass | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, one thread enforced; 32 s job |
+| `orx/claim-2-pseudometric-and-dispersion-certificate` | Add Theorems 3.5/3.7 certificate, exhaustive finite domain, raw-witness checker, control | `uv run --frozen --python 3.12 python -m cdot_repro.run` | Pending cumulative run | Hugging Face `cpu-upgrade`; one enforced thread |
 
 ---
 

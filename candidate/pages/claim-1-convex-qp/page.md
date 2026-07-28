@@ -17,7 +17,21 @@ The canonical fixed command is:
 uv run --frozen --python 3.12 python -m cdot_repro.run
 ```
 
-The final observed values, raw JSON links, Git SHA, CPU allocation, and
-runtime will be inserted additively after the baseline run. Until then the
-reviewer verdict is `BLOCKED`.
+Observed at Git `f5f07c0577caf8914e479d05b295fb73dbddef96`:
+
+| Evidence | Observed |
+| --- | ---: |
+| Jensen panels | 60 / 60 pass |
+| Minimum Jensen gap | `-8.88e-16` |
+| Minimum Hessian eigenvalue | `0.0` |
+| Maximum marginal error | `2.78e-16` |
+| Independent quadratic forms | 48 / 48 pass |
+| Negated-term control excess | `0.0177778` (rejected as intended) |
+| Scientific runtime | `3.194 s` |
+| Compute | HF `cpu-upgrade`, 64 logical CPUs exposed, 1 thread enforced |
+
+Raw result:
+[`claim_1_result.json`](../../../.openresearch/artifacts/claim_1/raw/claim_1_result.json).
+The current candidate verdict is `VERIFIED`; only the live evaluator can award
+points.
 

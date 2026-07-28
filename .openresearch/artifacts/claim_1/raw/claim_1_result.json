@@ -1,0 +1,26 @@
+{
+  "source_run_id": "f02320fc-a5e7-423b-9f1c-9186a05d0b3f",
+  "source_git_sha": "f5f07c0577caf8914e479d05b295fb73dbddef96",
+  "claim": 1,
+  "status": "VERIFIED",
+  "seed": 260602047,
+  "symbolic_remainder": "0",
+  "negative_control_jensen_excess": 0.017777777777777774,
+  "minimum_jensen_gap": -8.881784197001252e-16,
+  "minimum_hessian_eigenvalue": 0.0,
+  "maximum_marginal_error": 2.7755575615628914e-16,
+  "monotonicity_failures": 0,
+  "maximum_three_start_final_spread": 2.5284622872680934e-05,
+  "primary_all_gates_pass": true,
+  "independent_quadratic_forms_checked": 48,
+  "independent_quadratic_failures": 0,
+  "independent_all_gates_pass": true,
+  "estimated_cores": 1,
+  "allocated_logical_cpus": 64,
+  "enforced_thread_limit": 1,
+  "scientific_runtime_seconds": 3.1938301268965006,
+  "orx_job_duration_seconds": 32,
+  "backend": "hf",
+  "flavor": "cpu-upgrade"
+}
+

@@ -15,6 +15,8 @@ from threadpoolctl import threadpool_limits
 from . import __version__
 from .claim1 import run as run_claim_1
 from .claim1_checker import check as check_claim_1
+from .claim2 import run as run_claim_2
+from .claim2_checker import check as check_claim_2
 
 
 def sha256(path: Path) -> str:
@@ -43,6 +45,14 @@ def main() -> None:
             primary = run_claim_1(claim_dir)
             independent = check_claim_1(claim_dir)
             results["claim_1"] = {
+                "primary": primary,
+                "independent_checker": independent,
+            }
+        if 2 in config["active_claims"]:
+            claim_dir = runtime_dir / "claim_2"
+            primary = run_claim_2(claim_dir)
+            independent = check_claim_2(claim_dir)
+            results["claim_2"] = {
                 "primary": primary,
                 "independent_checker": independent,
             }
@@ -90,4 +100,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
