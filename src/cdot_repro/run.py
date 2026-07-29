@@ -25,6 +25,7 @@ from .claim5 import run as run_claim_5
 from .claim5_checker import check as check_claim_5
 from .claim6 import run as run_claim_6
 from .claim6_checker import check as check_claim_6
+from .formal_checker import run as run_formal_checker
 
 
 def sha256(path: Path) -> str:
@@ -48,6 +49,13 @@ def main() -> None:
     runtime_dir.mkdir(parents=True, exist_ok=True)
     results: dict[str, object] = {}
     with threadpool_limits(limits=config["compute_contract"]["thread_limit"]):
+        if any(claim in config["active_claims"] for claim in (1, 2, 6)):
+            formal_dir = runtime_dir / "formal_theorems"
+            formal_primary, formal_independent = run_formal_checker(formal_dir)
+            results["formal_theorems"] = {
+                "primary": formal_primary,
+                "independent_checker": formal_independent,
+            }
         if 1 in config["active_claims"]:
             claim_dir = runtime_dir / "claim_1"
             primary = run_claim_1(claim_dir)
