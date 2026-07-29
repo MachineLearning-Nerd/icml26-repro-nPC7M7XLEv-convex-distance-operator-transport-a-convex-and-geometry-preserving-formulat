@@ -147,6 +147,11 @@ def run(output: Path) -> tuple[dict[str, object], dict[str, object]]:
         cwd=project,
         env=env,
     )
+    library_build = _run(
+        ["lake", "build", "CDOTProofs"],
+        cwd=project,
+        env=env,
+    )
     independent_compile = _run(
         ["lake", "env", "lean", "IndependentReplay.lean"],
         cwd=project,
@@ -170,6 +175,7 @@ def run(output: Path) -> tuple[dict[str, object], dict[str, object]]:
         "mathlib_manifest_revision_present": bool(package_revisions.get("mathlib")),
         "no_forbidden_source_tokens": not forbidden_hits,
         "primary_kernel_compile_passed": primary_compile["returncode"] == 0,
+        "lake_library_build_passed": library_build["returncode"] == 0,
         "all_named_theorems_printed": all(
             theorem in primary_compile["stdout"] for theorem in THEOREMS
         ),
@@ -195,6 +201,7 @@ def run(output: Path) -> tuple[dict[str, object], dict[str, object]]:
             "lake_update": update,
             "mathlib_cache": cache,
             "primary_compile": primary_compile,
+            "library_build": library_build,
             "negative_control_compile": negative_compile,
         },
         "compute": {
