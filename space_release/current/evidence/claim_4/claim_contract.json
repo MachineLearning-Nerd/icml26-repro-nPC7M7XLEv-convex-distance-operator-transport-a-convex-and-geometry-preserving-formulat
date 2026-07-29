@@ -2,16 +2,21 @@
   "claim_id": 4,
   "paper_anchor": "https://ar5iv.labs.arxiv.org/html/2606.02047#S6.T3",
   "statement": "On the OASIS-3 dataset of 696 subjects represented as 170-node networks, the four Table 3 mean matching accuracies are diffusion CDOT 0.6136, diffusion FGW 0.1853, geodesic CDOT 0.4640, and geodesic FGW 0.5375.",
-  "route": "falsification of the exact cohort invariant",
-  "quantifier": "the reported 696-subject cohort is represented by 170-node Scale-2 networks",
+  "route": "direct registered Table 3 rerun plus falsification of the exact cohort invariant",
+  "quantifier": "all 4,950 unordered pairs among the first 100 subjects, alongside the reported 696-subject cohort represented by 170-node Scale-2 networks",
   "acceptance_obligations": [
     "download and SHA-256 pin the primary archive named by the data provider",
     "enumerate every archive member, session, and subject",
     "parse the atlas ID of every node in every GraphML",
-    "show that a subject included among the 696 has no 170-node session",
+    "select the lexicographically first 100 subject IDs and each earliest session",
+    "run CDOT and FGW for all 4,950 pairs under normalized diffusion and reciprocal-fiber geodesic distance at alpha=0.5 and T=200",
+    "reproduce CDOT greater than FGW for diffusion and FGW greater than CDOT for geodesic",
+    "independently reconstruct all four means and the exact pair inventory from raw rows",
+    "compare the custom FGW solver with POT on fixed pairs",
+    "show that a subject included among the full 696 has no 170-node session",
     "independently reparse the counterexample",
-    "reject padding or relabeling as a destructive control"
+    "reject padding and show that cyclic anatomical misregistration degrades matching accuracy"
   ],
-  "logical_rule": "The full empirical claim is a conjunction. A primary-data counterexample to its explicit 696-by-170 cohort premise falsifies the claim without requiring an inference about the four numerical cells.",
+  "logical_rule": "The full empirical claim is a conjunction. The complete registered first-100 execution directly tests the two Table 3 method orderings, while a primary-data counterexample independently falsifies the explicit 696-by-170 cohort premise. Exact numeric recovery is reported separately from directional recovery.",
   "non_circularity": "The archive, all-member enumeration, exact ID set, and 170-node threshold come from the source claim and provider page, not from observed outcomes."
 }

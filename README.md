@@ -28,7 +28,8 @@ Detailed evidence: [Claim 1](candidate/pages/claim-1-convex-qp/page.md),
 [Claim 5](candidate/pages/claim-5-tudataset/page.md), and
 [Claim 6](candidate/pages/claim-6-risk-bound-consistency/page.md).
 
-Read the [illustrated technical report](reports/cdot-reproduction/report.md)
+Read the [illustrated technical report](reports/cdot-reproduction/report.md),
+the [release and verification report](reports/cdot-reproduction/release_report.md),
 or the [self-contained marimo tutorial](notebooks/cdot_reproduction.py).
 [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-nPC7M7XLEv-convex-distance-operator-transport-a-convex-and-geometry-preserving-formulat/blob/main/notebooks/cdot_reproduction.py)
 

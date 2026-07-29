@@ -1,0 +1,1989 @@
+{
+  "all_gates_pass": true,
+  "results": {
+    "claim_1": {
+      "primary": {
+        "claim": 1,
+        "status": "VERIFIED",
+        "scope": {
+          "population_result": "supported by independently reconstructed proof obligations",
+          "finite_executable_panels": 60,
+          "largest_support": 24,
+          "finite_checks_do_not_replace_population_proof": true
+        },
+        "seed": 260602047,
+        "symbolic_certificate": {
+          "identity": "theta||r1||^2+(1-theta)||r2||^2-||theta*r1+(1-theta)*r2||^2 = theta(1-theta)||r1-r2||^2",
+          "symbolic_remainder": "0",
+          "passes": true
+        },
+        "negative_control": {
+          "mutation": "negate the squared structural Hilbert-Schmidt term",
+          "jensen_excess": 0.017777777777777774,
+          "expected": "strictly positive convexity violation",
+          "passed": true
+        },
+        "summary": {
+          "minimum_jensen_gap": -8.881784197001252e-16,
+          "minimum_hessian_eigenvalue": 0.0,
+          "maximum_marginal_error": 2.7755575615628914e-16,
+          "monotonicity_failures": 0,
+          "maximum_three_start_final_spread": 2.5284622872680934e-05
+        },
+        "gates": {
+          "exact_symbolic_factorization": true,
+          "all_60_jensen_checks_pass": true,
+          "all_vectorized_hessians_psd": true,
+          "transport_marginals_preserved": true,
+          "frank_wolfe_objective_monotone": true,
+          "negative_squared_norm_control_rejected": true,
+          "population_proof_certificate_present": true
+        },
+        "all_gates_pass": true
+      },
+      "independent_checker": {
+        "checker": "independent vectorized A.T@A quadratic-form audit",
+        "independent_seed": 134,
+        "quadratic_forms_checked": 48,
+        "quadratic_failures": 0,
+        "gates": {
+          "raw_schema_valid": true,
+          "recorded_jensen_nonnegative": true,
+          "recorded_hessians_psd": true,
+          "independent_quadratic_forms_nonnegative": true,
+          "recorded_marginals_exact": true,
+          "recorded_fw_monotone": true
+        },
+        "all_gates_pass": true
+      }
+    },
+    "claim_2": {
+      "primary": {
+        "claim": 2,
+        "status": "VERIFIED",
+        "scope": {
+          "population_result": "supported by independently reconstructed proof obligations",
+          "dispersion_witnesses": 32,
+          "complete_declared_two_point_domain_cells": 320,
+          "finite_checks_do_not_replace_population_proof": true
+        },
+        "seed": 37005,
+        "summary": {
+          "maximum_dispersion_identity_error": 2.498001805406602e-16,
+          "minimum_positive_dispersion": 0.03838081237012167,
+          "identity_failures": 0,
+          "symmetry_failures": 0,
+          "triangle_failures": 0,
+          "maximum_triangle_excess": 5.551115123125783e-17
+        },
+        "negative_control": {
+          "mutation": "square the valid discrepancy before applying triangle inequality",
+          "triangle_excess": 0.08120000000000005,
+          "expected": "strictly positive violation",
+          "passed": true
+        },
+        "gates": {
+          "dispersion_identity_32_diffuse_couplings": true,
+          "dispersion_strictly_positive": true,
+          "complete_registered_finite_domain_enumerated": true,
+          "identity_passes": true,
+          "symmetry_passes": true,
+          "triangle_passes": true,
+          "squared_distance_control_rejected": true,
+          "population_proof_certificate_present": true
+        },
+        "all_gates_pass": true
+      },
+      "independent_checker": {
+        "checker": "raw witness four-index enumeration and table recheck",
+        "maximum_independent_dispersion_error": 1.942890293094024e-16,
+        "maximum_witness_marginal_error": 1.1102230246251565e-16,
+        "triangle_failures": 0,
+        "symmetry_failures": 0,
+        "gates": {
+          "all_32_raw_witnesses_recomputed": true,
+          "independent_four_index_identity_agrees": true,
+          "witness_marginals_exact": true,
+          "all_320_triangle_rows_rechecked": true,
+          "recorded_symmetry_rechecked": true
+        },
+        "all_gates_pass": true
+      }
+    },
+    "claim_6": {
+      "primary": {
+        "claim": 6,
+        "status": "VERIFIED",
+        "scope": {
+          "population_result": "supported by an independently reconstructed proof-obligation certificate under Assumptions 5.2--5.5",
+          "finite_diagnostics": 2,
+          "finite_checks_do_not_replace_population_proof": true,
+          "consistency_rate_rows_are_formula_diagnostics_not_empirical_proof": true
+        },
+        "seeds": [
+          56001,
+          56002
+        ],
+        "summary": {
+          "maximum_final_fw_duality_gap": 9.900242946852059e-06,
+          "minimum_final_theorem_bound": 0.04680643588493418,
+          "maximum_marginal_error": 1.8041124150158794e-16,
+          "smallest_valid_n_over_T": 0.001953125,
+          "invalid_control_limit_indicator": 15.953261927945473
+        },
+        "negative_control": {
+          "mutation": "replace a valid T_n=n^2 schedule by T_n=n",
+          "reason_for_rejection": "n_min/T_n remains one",
+          "last_optimization_term": 15.953261927945473,
+          "passed": true
+        },
+        "gates": {
+          "exact_algorithm_1_schedule_executed": true,
+          "two_predeclared_seed_support_panels": true,
+          "transport_marginals_preserved": true,
+          "finite_fw_gap_below_theorem_bound": true,
+          "noncircular_consistency_schedule_has_n_over_T_to_zero": true,
+          "invalid_linear_schedule_control_rejected": true,
+          "population_proof_certificate_present": true
+        },
+        "all_gates_pass": true
+      },
+      "independent_checker": {
+        "checker": "independent matrix-gradient, assignment, and schedule audit",
+        "maximum_fw_gap_disagreement": 0.0,
+        "maximum_witness_marginal_error": 1.8041124150158794e-16,
+        "bound_formula_failures": 0,
+        "valid_schedule_monotonic_failures": 0,
+        "control_ratio_failures": 0,
+        "gates": {
+          "all_raw_witnesses_recomputed": true,
+          "independent_fw_gap_agrees": true,
+          "witness_marginals_exact": true,
+          "theorem_bound_formula_recomputed": true,
+          "valid_schedule_ratio_strictly_decreases": true,
+          "invalid_control_ratio_stays_one": true
+        },
+        "all_gates_pass": true
+      }
+    },
+    "claim_4": {
+      "primary": {
+        "claim": 4,
+        "status": "FALSIFIED",
+        "exact_claim_tested": "The exact 696-by-170 cohort invariant and the Table 3 numerical comparison directions under the registered first-100/all-4,950-pair protocol.",
+        "logical_falsification": "The composite literal statement is falsified because OAS30938 has no 170-node session. Separately, the complete registered Table 3 protocol directly tests both reported method-ordering claims.",
+        "scope": {
+          "archive_sessions": 975,
+          "archive_subjects": 696,
+          "valid_170_node_subjects": 695,
+          "invalid_subjects": [
+            {
+              "subject": "OAS30938",
+              "sessions": [
+                {
+                  "subject": "OAS30938",
+                  "day": 95,
+                  "file": "sub-OAS30938_ses-d0095_atlas-L2018_res-scale2_conndata-network_connectivity.graphml",
+                  "node_count": 168,
+                  "min_multiscale_id": 1,
+                  "max_multiscale_id": 168,
+                  "exact_ids_1_to_170": false
+                }
+              ]
+            }
+          ],
+          "table_3_numeric_cells_rerun": true
+        },
+        "data_provenance": {
+          "primary_landing_page": "https://braingraph.org/cms/download-pit-group-connectomes/",
+          "archive": {
+            "requested_url": "https://braingraph.org/static/oasis3_graphmls_scale2.7z",
+            "final_url": "https://braingraph.org/static/oasis3_graphmls_scale2.7z",
+            "user_agent": "OpenResearch-CDOT-Reproduction/1.0",
+            "bytes": 654450976,
+            "sha256": "599e56c6968f3e01be66bdbb5689c0a16ed03e5a44e1071a66c2609390fe939f"
+          },
+          "archive_expected_sha256": "599e56c6968f3e01be66bdbb5689c0a16ed03e5a44e1071a66c2609390fe939f",
+          "archive_expected_bytes": 654450976,
+          "extractor": {
+            "requested_url": "https://www.7-zip.org/a/7z2501-linux-x64.tar.xz",
+            "final_url": "https://www.7-zip.org/a/7z2501-linux-x64.tar.xz",
+            "user_agent": "OpenResearch-CDOT-Reproduction/1.0",
+            "bytes": 1571044,
+            "sha256": "4ca3b7c6f2f67866b92622818b58233dc70367be2f36b498eb0bdeaaa44b53f4"
+          },
+          "archive_listing_sha256": "236b3442c324541695e8d02eabae8be322bf3270cf672aa5f832b221e6b45698",
+          "extracted_tree_aggregate_sha256": "8cf44ac26abb5b8f9f34fd5ee4e69e98a7df461c8e680841078e6d90f5249ac1",
+          "counterexample_file": "sub-OAS30938_ses-d0095_atlas-L2018_res-scale2_conndata-network_connectivity.graphml",
+          "counterexample_file_sha256": "65c4559e2ae0990efca870279ca569166353c74c6aab4a65d8e4b8abfc70359e"
+        },
+        "negative_control": {
+          "mutation": "fabricate atlas IDs 169 and 170 for the sole invalid session",
+          "observed_node_count": 168,
+          "mutated_node_count": 170,
+          "fabricated_ids": [
+            169,
+            170
+          ],
+          "archive_contains_fabricated_ids": false,
+          "rejected": true
+        },
+        "stage_runtimes_seconds": {
+          "archive_download_and_hash_seconds": 57.774098159046844,
+          "extractor_download_and_unpack_seconds": 1.349165763007477,
+          "archive_listing_seconds": 0.017738663824275136,
+          "archive_extraction_seconds": 9.302531513851136,
+          "all_session_parse_and_hash_seconds": 134.81903952988796,
+          "table_3_first_100_all_pairs_seconds": 4556.220093777869
+        },
+        "gates": {
+          "primary_archive_hash_exact": true,
+          "primary_archive_size_exact": true,
+          "official_7zip_binary_hash_exact": true,
+          "archive_listing_has_975_graphml_members": true,
+          "extraction_has_same_975_names": true,
+          "all_975_sessions_parsed_and_hashed": true,
+          "all_696_subject_ids_enumerated": true,
+          "exactly_695_subjects_have_a_valid_170_node_session": true,
+          "assumption_satisfying_counterexample_is_exact": true,
+          "padding_control_rejected": true
+        },
+        "all_gates_pass": true,
+        "raw_artifact_chunks": {
+          "session_audit": [
+            {
+              "path": "claim_4_session_audit_000.json",
+              "rows": 200,
+              "sha256": "b02d3514b2e38557002434bb8c038b7707646f2ab5b8932b5a88936f1b4cc92e",
+              "bytes": 43052
+            },
+            {
+              "path": "claim_4_session_audit_001.json",
+              "rows": 200,
+              "sha256": "bb132ee6ddcdb3b3d1f823034fbb1c5f362f3cad999feb3e87be435cb913b1cf",
+              "bytes": 43032
+            },
+            {
+              "path": "claim_4_session_audit_002.json",
+              "rows": 200,
+              "sha256": "df16fb3a1a4c665d9320bbb4b057c4e92d461be0b96770611ef93ffcbcf713ed",
+              "bytes": 43044
+            },
+            {
+              "path": "claim_4_session_audit_003.json",
+              "rows": 200,
+              "sha256": "7b3fa4a2f89989e2595d159a79f403286059dafbe6a4f1b6821d06f64a567e44",
+              "bytes": 43029
+            },
+            {
+              "path": "claim_4_session_audit_004.json",
+              "rows": 175,
+              "sha256": "ef9a279aca6db462b7c95f6a87a4861b6a0a6c25c16a66b99257b2f862466b84",
+              "bytes": 37664
+            }
+          ],
+          "file_manifest": [
+            {
+              "path": "claim_4_file_manifest_000.json",
+              "rows": 200,
+              "sha256": "842b762e67822d8387f7afe2818ca9ab7f735ebb185fb904fdbc74fa5db30a27",
+              "bytes": 37402
+            },
+            {
+              "path": "claim_4_file_manifest_001.json",
+              "rows": 200,
+              "sha256": "d2d3db66e66e4b0e93b62a8be4227bf7b3b2e9dccba911e808507f70d65d2622",
+              "bytes": 37402
+            },
+            {
+              "path": "claim_4_file_manifest_002.json",
+              "rows": 200,
+              "sha256": "5df36dd004321cf4316819c8adb39ffbc5a151b16e84ee25a90d6038fbbd4345",
+              "bytes": 37402
+            },
+            {
+              "path": "claim_4_file_manifest_003.json",
+              "rows": 200,
+              "sha256": "84b060645156c33e32721641ba0510161e5ff660b56c0def9d28420814a7b72f",
+              "bytes": 37402
+            },
+            {
+              "path": "claim_4_file_manifest_004.json",
+              "rows": 175,
+              "sha256": "b0d4243b7f4b16faff180f22db1f35e208d8c9133b4975b9187fb56dec3cd11e",
+              "bytes": 32727
+            }
+          ]
+        },
+        "table_3": {
+          "source_table_3": {
+            "diffusion_CDOT": 0.6136,
+            "diffusion_FGW": 0.1853,
+            "geodesic_CDOT": 0.464,
+            "geodesic_FGW": 0.5375
+          },
+          "protocol": {
+            "selection": "lexicographically first 100 subject IDs, earliest session",
+            "pairs": 4950,
+            "iterations": 200,
+            "alpha": 0.5,
+            "diffusion_laplacian": "normalized",
+            "diffusion_t": 1.0,
+            "geodesic_edge_cost": "reciprocal number_of_fibers",
+            "distance_normalization": "divide by maximum",
+            "hard_matching": "Hungarian maximization of the final coupling",
+            "pair_workers": 8,
+            "torch_threads_per_worker": 1
+          },
+          "rerun": {
+            "diffusion_CDOT": {
+              "pairs": 4950,
+              "mean_accuracy": 0.7186226976,
+              "sample_std_accuracy": 0.0991591291,
+              "standard_error": 0.0014093865
+            },
+            "diffusion_FGW": {
+              "pairs": 4950,
+              "mean_accuracy": 0.1540475342,
+              "sample_std_accuracy": 0.0295674031,
+              "standard_error": 0.0004202528
+            },
+            "geodesic_CDOT": {
+              "pairs": 4950,
+              "mean_accuracy": 0.4651527035,
+              "sample_std_accuracy": 0.1441825973,
+              "standard_error": 0.0020493222
+            },
+            "geodesic_FGW": {
+              "pairs": 4950,
+              "mean_accuracy": 0.5341390374,
+              "sample_std_accuracy": 0.1619584363,
+              "standard_error": 0.002301977
+            }
+          },
+          "quantified_margins": {
+            "diffusion_CDOT_minus_FGW": 0.5645751634,
+            "geodesic_FGW_minus_CDOT": 0.0689863339
+          },
+          "external_FGW_oracle": {
+            "implementation": "POT 0.9.6.post1 fused_gromov_wasserstein2",
+            "rows": 6,
+            "max_absolute_objective_difference": 0.0
+          },
+          "negative_control": {
+            "mutation": "right anatomical categories cyclically shifted by 17 nodes",
+            "pairs": 12,
+            "main_mean_accuracy_same_pairs": 0.4832107843,
+            "misregistered_mean_accuracy": 0.0653186274,
+            "degradation": 0.4178921569
+          },
+          "selected_subjects": [
+            {
+              "ordinal": 1,
+              "subject": "OAS30001",
+              "file": "sub-OAS30001_ses-d0757_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 2,
+              "subject": "OAS30002",
+              "file": "sub-OAS30002_ses-d2340_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 3,
+              "subject": "OAS30003",
+              "file": "sub-OAS30003_ses-d1631_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 4,
+              "subject": "OAS30004",
+              "file": "sub-OAS30004_ses-d1101_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 5,
+              "subject": "OAS30005",
+              "file": "sub-OAS30005_ses-d0581_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 6,
+              "subject": "OAS30006",
+              "file": "sub-OAS30006_ses-d0373_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 7,
+              "subject": "OAS30007",
+              "file": "sub-OAS30007_ses-d0061_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 8,
+              "subject": "OAS30008",
+              "file": "sub-OAS30008_ses-d0061_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 9,
+              "subject": "OAS30009",
+              "file": "sub-OAS30009_ses-d0148_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 10,
+              "subject": "OAS30011",
+              "file": "sub-OAS30011_ses-d0055_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 11,
+              "subject": "OAS30014",
+              "file": "sub-OAS30014_ses-d1176_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 12,
+              "subject": "OAS30015",
+              "file": "sub-OAS30015_ses-d0788_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 13,
+              "subject": "OAS30016",
+              "file": "sub-OAS30016_ses-d0021_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 14,
+              "subject": "OAS30017",
+              "file": "sub-OAS30017_ses-d0054_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 15,
+              "subject": "OAS30018",
+              "file": "sub-OAS30018_ses-d0070_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 16,
+              "subject": "OAS30025",
+              "file": "sub-OAS30025_ses-d0210_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 17,
+              "subject": "OAS30027",
+              "file": "sub-OAS30027_ses-d2394_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 18,
+              "subject": "OAS30028",
+              "file": "sub-OAS30028_ses-d0043_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 19,
+              "subject": "OAS30029",
+              "file": "sub-OAS30029_ses-d0131_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 20,
+              "subject": "OAS30030",
+              "file": "sub-OAS30030_ses-d0170_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 21,
+              "subject": "OAS30032",
+              "file": "sub-OAS30032_ses-d1661_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 22,
+              "subject": "OAS30033",
+              "file": "sub-OAS30033_ses-d0133_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 23,
+              "subject": "OAS30034",
+              "file": "sub-OAS30034_ses-d0044_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 24,
+              "subject": "OAS30035",
+              "file": "sub-OAS30035_ses-d2218_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 25,
+              "subject": "OAS30036",
+              "file": "sub-OAS30036_ses-d0059_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 26,
+              "subject": "OAS30037",
+              "file": "sub-OAS30037_ses-d0154_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 27,
+              "subject": "OAS30038",
+              "file": "sub-OAS30038_ses-d2242_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 28,
+              "subject": "OAS30040",
+              "file": "sub-OAS30040_ses-d4230_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 29,
+              "subject": "OAS30043",
+              "file": "sub-OAS30043_ses-d0145_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 30,
+              "subject": "OAS30044",
+              "file": "sub-OAS30044_ses-d0054_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 31,
+              "subject": "OAS30046",
+              "file": "sub-OAS30046_ses-d0072_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 32,
+              "subject": "OAS30048",
+              "file": "sub-OAS30048_ses-d3367_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 33,
+              "subject": "OAS30049",
+              "file": "sub-OAS30049_ses-d0013_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 34,
+              "subject": "OAS30050",
+              "file": "sub-OAS30050_ses-d0110_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 35,
+              "subject": "OAS30051",
+              "file": "sub-OAS30051_ses-d0200_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 36,
+              "subject": "OAS30052",
+              "file": "sub-OAS30052_ses-d1296_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 37,
+              "subject": "OAS30060",
+              "file": "sub-OAS30060_ses-d0074_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 38,
+              "subject": "OAS30061",
+              "file": "sub-OAS30061_ses-d0035_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 39,
+              "subject": "OAS30062",
+              "file": "sub-OAS30062_ses-d1134_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 40,
+              "subject": "OAS30065",
+              "file": "sub-OAS30065_ses-d0548_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 41,
+              "subject": "OAS30066",
+              "file": "sub-OAS30066_ses-d0524_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 42,
+              "subject": "OAS30070",
+              "file": "sub-OAS30070_ses-d0070_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 43,
+              "subject": "OAS30072",
+              "file": "sub-OAS30072_ses-d1379_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 44,
+              "subject": "OAS30073",
+              "file": "sub-OAS30073_ses-d1587_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 45,
+              "subject": "OAS30074",
+              "file": "sub-OAS30074_ses-d1871_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 46,
+              "subject": "OAS30075",
+              "file": "sub-OAS30075_ses-d0143_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 47,
+              "subject": "OAS30076",
+              "file": "sub-OAS30076_ses-d1735_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 48,
+              "subject": "OAS30079",
+              "file": "sub-OAS30079_ses-d0019_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 49,
+              "subject": "OAS30080",
+              "file": "sub-OAS30080_ses-d0048_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 50,
+              "subject": "OAS30082",
+              "file": "sub-OAS30082_ses-d1700_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 51,
+              "subject": "OAS30084",
+              "file": "sub-OAS30084_ses-d1360_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 52,
+              "subject": "OAS30085",
+              "file": "sub-OAS30085_ses-d1566_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 53,
+              "subject": "OAS30087",
+              "file": "sub-OAS30087_ses-d0260_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 54,
+              "subject": "OAS30088",
+              "file": "sub-OAS30088_ses-d0093_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 55,
+              "subject": "OAS30090",
+              "file": "sub-OAS30090_ses-d0118_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 56,
+              "subject": "OAS30091",
+              "file": "sub-OAS30091_ses-d0092_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 57,
+              "subject": "OAS30092",
+              "file": "sub-OAS30092_ses-d3727_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 58,
+              "subject": "OAS30093",
+              "file": "sub-OAS30093_ses-d0070_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 59,
+              "subject": "OAS30095",
+              "file": "sub-OAS30095_ses-d0033_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 60,
+              "subject": "OAS30096",
+              "file": "sub-OAS30096_ses-d0024_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 61,
+              "subject": "OAS30097",
+              "file": "sub-OAS30097_ses-d0504_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 62,
+              "subject": "OAS30099",
+              "file": "sub-OAS30099_ses-d0032_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 63,
+              "subject": "OAS30101",
+              "file": "sub-OAS30101_ses-d0919_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 64,
+              "subject": "OAS30103",
+              "file": "sub-OAS30103_ses-d4255_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 65,
+              "subject": "OAS30104",
+              "file": "sub-OAS30104_ses-d0328_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 66,
+              "subject": "OAS30107",
+              "file": "sub-OAS30107_ses-d0940_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 67,
+              "subject": "OAS30108",
+              "file": "sub-OAS30108_ses-d0168_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 68,
+              "subject": "OAS30109",
+              "file": "sub-OAS30109_ses-d0432_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 69,
+              "subject": "OAS30110",
+              "file": "sub-OAS30110_ses-d0155_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 70,
+              "subject": "OAS30111",
+              "file": "sub-OAS30111_ses-d0385_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 71,
+              "subject": "OAS30112",
+              "file": "sub-OAS30112_ses-d0091_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 72,
+              "subject": "OAS30113",
+              "file": "sub-OAS30113_ses-d2280_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 73,
+              "subject": "OAS30115",
+              "file": "sub-OAS30115_ses-d0138_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 74,
+              "subject": "OAS30116",
+              "file": "sub-OAS30116_ses-d0017_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 75,
+              "subject": "OAS30117",
+              "file": "sub-OAS30117_ses-d2034_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 76,
+              "subject": "OAS30119",
+              "file": "sub-OAS30119_ses-d3260_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 77,
+              "subject": "OAS30121",
+              "file": "sub-OAS30121_ses-d2392_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 78,
+              "subject": "OAS30125",
+              "file": "sub-OAS30125_ses-d0201_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 79,
+              "subject": "OAS30126",
+              "file": "sub-OAS30126_ses-d1105_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 80,
+              "subject": "OAS30127",
+              "file": "sub-OAS30127_ses-d0098_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 81,
+              "subject": "OAS30130",
+              "file": "sub-OAS30130_ses-d0025_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 82,
+              "subject": "OAS30132",
+              "file": "sub-OAS30132_ses-d0063_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 83,
+              "subject": "OAS30133",
+              "file": "sub-OAS30133_ses-d0505_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 84,
+              "subject": "OAS30134",
+              "file": "sub-OAS30134_ses-d0080_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 85,
+              "subject": "OAS30135",
+              "file": "sub-OAS30135_ses-d1000_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 86,
+              "subject": "OAS30136",
+              "file": "sub-OAS30136_ses-d0063_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 87,
+              "subject": "OAS30137",
+              "file": "sub-OAS30137_ses-d3165_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 88,
+              "subject": "OAS30139",
+              "file": "sub-OAS30139_ses-d0101_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 89,
+              "subject": "OAS30140",
+              "file": "sub-OAS30140_ses-d0172_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 90,
+              "subject": "OAS30141",
+              "file": "sub-OAS30141_ses-d0544_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 91,
+              "subject": "OAS30142",
+              "file": "sub-OAS30142_ses-d0075_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 92,
+              "subject": "OAS30143",
+              "file": "sub-OAS30143_ses-d2235_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 93,
+              "subject": "OAS30145",
+              "file": "sub-OAS30145_ses-d4247_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 94,
+              "subject": "OAS30146",
+              "file": "sub-OAS30146_ses-d1042_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 95,
+              "subject": "OAS30147",
+              "file": "sub-OAS30147_ses-d0048_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 96,
+              "subject": "OAS30149",
+              "file": "sub-OAS30149_ses-d0051_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 97,
+              "subject": "OAS30150",
+              "file": "sub-OAS30150_ses-d0100_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 98,
+              "subject": "OAS30152",
+              "file": "sub-OAS30152_ses-d0111_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 99,
+              "subject": "OAS30157",
+              "file": "sub-OAS30157_ses-d2674_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            },
+            {
+              "ordinal": 100,
+              "subject": "OAS30158",
+              "file": "sub-OAS30158_ses-d2467_atlas-L2018_res-scale2_conndata-network_connectivity.graphml"
+            }
+          ],
+          "oracle_rows": [
+            {
+              "left_subject": "OAS30001",
+              "right_subject": "OAS30002",
+              "metric": "diffusion",
+              "custom_final_objective": 0.0003632815,
+              "pot_final_objective": 0.0003632815,
+              "absolute_difference": 0.0,
+              "custom_nonmonotone_steps": 0
+            },
+            {
+              "left_subject": "OAS30001",
+              "right_subject": "OAS30002",
+              "metric": "geodesic",
+              "custom_final_objective": 0.0002920029,
+              "pot_final_objective": 0.0002920029,
+              "absolute_difference": 0.0,
+              "custom_nonmonotone_steps": 0
+            },
+            {
+              "left_subject": "OAS30002",
+              "right_subject": "OAS30003",
+              "metric": "diffusion",
+              "custom_final_objective": 0.0003050272,
+              "pot_final_objective": 0.0003050272,
+              "absolute_difference": 0.0,
+              "custom_nonmonotone_steps": 0
+            },
+            {
+              "left_subject": "OAS30002",
+              "right_subject": "OAS30003",
+              "metric": "geodesic",
+              "custom_final_objective": 0.005059272,
+              "pot_final_objective": 0.005059272,
+              "absolute_difference": 0.0,
+              "custom_nonmonotone_steps": 0
+            },
+            {
+              "left_subject": "OAS30003",
+              "right_subject": "OAS30004",
+              "metric": "diffusion",
+              "custom_final_objective": 0.0003228236,
+              "pot_final_objective": 0.0003228236,
+              "absolute_difference": 0.0,
+              "custom_nonmonotone_steps": 0
+            },
+            {
+              "left_subject": "OAS30003",
+              "right_subject": "OAS30004",
+              "metric": "geodesic",
+              "custom_final_objective": 0.0021010423,
+              "pot_final_objective": 0.0021010423,
+              "absolute_difference": 0.0,
+              "custom_nonmonotone_steps": 0
+            }
+          ],
+          "control_rows": [
+            {
+              "pair_index": 0,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.0647058824
+            },
+            {
+              "pair_index": 0,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0294117647
+            },
+            {
+              "pair_index": 0,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0882352941
+            },
+            {
+              "pair_index": 0,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0882352941
+            },
+            {
+              "pair_index": 1,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.0294117647
+            },
+            {
+              "pair_index": 1,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0235294118
+            },
+            {
+              "pair_index": 1,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0294117647
+            },
+            {
+              "pair_index": 1,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0647058824
+            },
+            {
+              "pair_index": 2,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.1176470588
+            },
+            {
+              "pair_index": 2,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0411764706
+            },
+            {
+              "pair_index": 2,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0352941176
+            },
+            {
+              "pair_index": 2,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0294117647
+            },
+            {
+              "pair_index": 3,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.1352941176
+            },
+            {
+              "pair_index": 3,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0411764706
+            },
+            {
+              "pair_index": 3,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.1058823529
+            },
+            {
+              "pair_index": 3,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.1294117647
+            },
+            {
+              "pair_index": 4,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.1
+            },
+            {
+              "pair_index": 4,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0294117647
+            },
+            {
+              "pair_index": 4,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0647058824
+            },
+            {
+              "pair_index": 4,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0823529412
+            },
+            {
+              "pair_index": 5,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.1117647059
+            },
+            {
+              "pair_index": 5,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0176470588
+            },
+            {
+              "pair_index": 5,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0882352941
+            },
+            {
+              "pair_index": 5,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0941176471
+            },
+            {
+              "pair_index": 6,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.1294117647
+            },
+            {
+              "pair_index": 6,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0235294118
+            },
+            {
+              "pair_index": 6,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0588235294
+            },
+            {
+              "pair_index": 6,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0588235294
+            },
+            {
+              "pair_index": 7,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.1352941176
+            },
+            {
+              "pair_index": 7,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0294117647
+            },
+            {
+              "pair_index": 7,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0470588235
+            },
+            {
+              "pair_index": 7,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0588235294
+            },
+            {
+              "pair_index": 8,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.1117647059
+            },
+            {
+              "pair_index": 8,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0411764706
+            },
+            {
+              "pair_index": 8,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0470588235
+            },
+            {
+              "pair_index": 8,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0705882353
+            },
+            {
+              "pair_index": 9,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.0764705882
+            },
+            {
+              "pair_index": 9,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0176470588
+            },
+            {
+              "pair_index": 9,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0470588235
+            },
+            {
+              "pair_index": 9,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0647058824
+            },
+            {
+              "pair_index": 10,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.1235294118
+            },
+            {
+              "pair_index": 10,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0588235294
+            },
+            {
+              "pair_index": 10,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0411764706
+            },
+            {
+              "pair_index": 10,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0294117647
+            },
+            {
+              "pair_index": 11,
+              "metric": "diffusion",
+              "method": "CDOT",
+              "accuracy": 0.1235294118
+            },
+            {
+              "pair_index": 11,
+              "metric": "diffusion",
+              "method": "FGW",
+              "accuracy": 0.0588235294
+            },
+            {
+              "pair_index": 11,
+              "metric": "geodesic",
+              "method": "CDOT",
+              "accuracy": 0.0294117647
+            },
+            {
+              "pair_index": 11,
+              "metric": "geodesic",
+              "method": "FGW",
+              "accuracy": 0.0117647059
+            }
+          ],
+          "gates": {
+            "paper_first_100_subjects": true,
+            "paper_all_4950_pairs": true,
+            "paper_T200_alpha_half": true,
+            "both_metrics_and_methods": true,
+            "diffusion_direction_reproduced": true,
+            "geodesic_direction_reproduced": true,
+            "all_marginals_preserved": true,
+            "all_traces_monotone": true,
+            "fixed_pair_custom_FGW_matches_POT": true,
+            "misregistration_control_degrades": true
+          },
+          "all_gates_pass": true,
+          "raw_pair_chunks": [
+            {
+              "path": "claim_4_table3_pairs_000.json",
+              "rows": 500,
+              "sha256": "9b7805c1170218a66659185840f8d1e7118de8cdf55f5ed68971a579c319121f",
+              "bytes": 216116
+            },
+            {
+              "path": "claim_4_table3_pairs_001.json",
+              "rows": 500,
+              "sha256": "08e3041720cdcbd56ab9de005667d9deab6765e84aa7e7a2357157b46ae88554",
+              "bytes": 216525
+            },
+            {
+              "path": "claim_4_table3_pairs_002.json",
+              "rows": 500,
+              "sha256": "f754d32f069774aed2ef4d731d2b1626af4bd25c145039e3dadcfa3a1029e947",
+              "bytes": 216566
+            },
+            {
+              "path": "claim_4_table3_pairs_003.json",
+              "rows": 500,
+              "sha256": "0b3483fd3912baf62e38a70d90051f15cab0b9b5fd60751e108620626b8d79e8",
+              "bytes": 216579
+            },
+            {
+              "path": "claim_4_table3_pairs_004.json",
+              "rows": 500,
+              "sha256": "5584e122e8652834fb4fd5fa904439be03e7669c908bd7b4a8475961bb19654f",
+              "bytes": 216557
+            },
+            {
+              "path": "claim_4_table3_pairs_005.json",
+              "rows": 500,
+              "sha256": "872030fbed77338c665c843ddf2a9fb9bf97b5badd3dbc2b96f520cd9b64477e",
+              "bytes": 216583
+            },
+            {
+              "path": "claim_4_table3_pairs_006.json",
+              "rows": 500,
+              "sha256": "079297058390fd87eaac1933a37e3163c2c5dd090e2ad000576a9cfa0111b5f0",
+              "bytes": 216553
+            },
+            {
+              "path": "claim_4_table3_pairs_007.json",
+              "rows": 500,
+              "sha256": "bac6ae39fb670539506ef8e8a376fcf12a67fca24ca1f30a192dcf6ada3ee25a",
+              "bytes": 216538
+            },
+            {
+              "path": "claim_4_table3_pairs_008.json",
+              "rows": 500,
+              "sha256": "a6c3d181895949a45bad34a35503900e92a2ade910947f8c77b072fa21837a7b",
+              "bytes": 217075
+            },
+            {
+              "path": "claim_4_table3_pairs_009.json",
+              "rows": 500,
+              "sha256": "863cae7cedc29031384db57df572681c27d654d930c8a9cc599d2ec9b52dbaeb",
+              "bytes": 216906
+            },
+            {
+              "path": "claim_4_table3_pairs_010.json",
+              "rows": 500,
+              "sha256": "c31fd52d92c253680a7f295e51fdc7c10ea89958cf8fe88255c9256bc19bcd3b",
+              "bytes": 217014
+            },
+            {
+              "path": "claim_4_table3_pairs_011.json",
+              "rows": 500,
+              "sha256": "e86cef5010fc19c2aead2da6abe607c822ecb2e47fef3d97bbc78e046b70b3c6",
+              "bytes": 217004
+            },
+            {
+              "path": "claim_4_table3_pairs_012.json",
+              "rows": 500,
+              "sha256": "39596a7e434a8f25c03e77d5fb0470e6e38c5fe6a04caba92364468d73189afd",
+              "bytes": 216931
+            },
+            {
+              "path": "claim_4_table3_pairs_013.json",
+              "rows": 500,
+              "sha256": "d6061604d97997f96632c55806e6b84071a128a8a2eee65db35a3c5e82176d4c",
+              "bytes": 217053
+            },
+            {
+              "path": "claim_4_table3_pairs_014.json",
+              "rows": 500,
+              "sha256": "127692a3bf59c0b4cf695deceabbe9a52fb4419b661f0d5adfa60b9d74a9e0d2",
+              "bytes": 217034
+            },
+            {
+              "path": "claim_4_table3_pairs_015.json",
+              "rows": 500,
+              "sha256": "f7837fdcb41ec009ce5a92bad23016f66ca1610a06e9dbd72a9aa583ca2069a3",
+              "bytes": 217093
+            },
+            {
+              "path": "claim_4_table3_pairs_016.json",
+              "rows": 500,
+              "sha256": "156f355340d4946103221966fc54c898316dc32aab327c6506185955e1ed0eb7",
+              "bytes": 217026
+            },
+            {
+              "path": "claim_4_table3_pairs_017.json",
+              "rows": 500,
+              "sha256": "b9e7293b5d1cfddd3d21ac5f875a2d9e2603e33478cd36977a6c20279e3400db",
+              "bytes": 216967
+            },
+            {
+              "path": "claim_4_table3_pairs_018.json",
+              "rows": 500,
+              "sha256": "10fe39d27b680057744652a15a36fba3decd9373e03e77f1a1c4905a0ef2c774",
+              "bytes": 217050
+            },
+            {
+              "path": "claim_4_table3_pairs_019.json",
+              "rows": 500,
+              "sha256": "af19ec21df1b854b4432430a14090c81ac765631a9c5a5e18bbcfba320b6623e",
+              "bytes": 217060
+            },
+            {
+              "path": "claim_4_table3_pairs_020.json",
+              "rows": 500,
+              "sha256": "02d0d45dd2a1e4b8c62f4d542ef32ce8d6b1cd4ad495f7c971f8a39528335c84",
+              "bytes": 217126
+            },
+            {
+              "path": "claim_4_table3_pairs_021.json",
+              "rows": 500,
+              "sha256": "238f8c670029d1ae648a4a430a7d39ce51a92a83a40bb7c63a25de6c427eda20",
+              "bytes": 217010
+            },
+            {
+              "path": "claim_4_table3_pairs_022.json",
+              "rows": 500,
+              "sha256": "afc6b3c3fa97c2369096605ea2975b1f5b55a18cbe41980ecd95fb4e54ac2158",
+              "bytes": 217042
+            },
+            {
+              "path": "claim_4_table3_pairs_023.json",
+              "rows": 500,
+              "sha256": "fc2e44b08e2bf495f5d7ceaeae287f1f01787e3fb404f7186134f4ec6eb46aa0",
+              "bytes": 217079
+            },
+            {
+              "path": "claim_4_table3_pairs_024.json",
+              "rows": 500,
+              "sha256": "b56d07a511e1e8b32f418661d31ba7d6bb1a1a510403401382198c3d6a1889cb",
+              "bytes": 217002
+            },
+            {
+              "path": "claim_4_table3_pairs_025.json",
+              "rows": 500,
+              "sha256": "80ec0c4e6180c75636461c907dfeced5637689dddf9dcf84317a416fae00f231",
+              "bytes": 217024
+            },
+            {
+              "path": "claim_4_table3_pairs_026.json",
+              "rows": 500,
+              "sha256": "f4f75db666a23ab995c525f002123dedadf29bfaaa5f9f552cb1cc2340b62dfa",
+              "bytes": 217049
+            },
+            {
+              "path": "claim_4_table3_pairs_027.json",
+              "rows": 500,
+              "sha256": "ad634221a081fc1112d1cfded8631c7ce537385d0093d2b21a3904ce075e8c0b",
+              "bytes": 217027
+            },
+            {
+              "path": "claim_4_table3_pairs_028.json",
+              "rows": 500,
+              "sha256": "9214c7b104ef46f94d15b69e69de8f9c5280a8436f1022c9205ea462844539a2",
+              "bytes": 217035
+            },
+            {
+              "path": "claim_4_table3_pairs_029.json",
+              "rows": 500,
+              "sha256": "44f99995efe8e0cd9613c8bc095dc623040b20e5ec0415ca435e657c8e2957b9",
+              "bytes": 217071
+            },
+            {
+              "path": "claim_4_table3_pairs_030.json",
+              "rows": 500,
+              "sha256": "87e85d9dfc12bb4cad4d7e66a404263bc2cd9e7a8120ad89db6f9277487564fb",
+              "bytes": 217014
+            },
+            {
+              "path": "claim_4_table3_pairs_031.json",
+              "rows": 500,
+              "sha256": "3caf8c0c3357072538eaf6bce4568f440048102aaa12fb53158941c1a29302e5",
+              "bytes": 217095
+            },
+            {
+              "path": "claim_4_table3_pairs_032.json",
+              "rows": 500,
+              "sha256": "850dbb79d14f7efb9b559c41b4c06fd5317f6917c623ba3ca0d3bca288d03873",
+              "bytes": 217010
+            },
+            {
+              "path": "claim_4_table3_pairs_033.json",
+              "rows": 500,
+              "sha256": "18f5910ce12cf0ac064e7c52e1000b4791c1b5306f725dd8bde6481d2c59c04b",
+              "bytes": 217008
+            },
+            {
+              "path": "claim_4_table3_pairs_034.json",
+              "rows": 500,
+              "sha256": "e8f8643e8f7c4d58f8a63baac4a1ab492872f0299aab3a5b304c88510011b304",
+              "bytes": 217088
+            },
+            {
+              "path": "claim_4_table3_pairs_035.json",
+              "rows": 500,
+              "sha256": "a07c3964b17a1813e7c093f702714052bfe41d54716861a59cb4127443860a53",
+              "bytes": 217012
+            },
+            {
+              "path": "claim_4_table3_pairs_036.json",
+              "rows": 500,
+              "sha256": "9961027a6bf2c02452021d39edbab8153b0d2f6d9b5cf19e45e9737ca7cf7c5e",
+              "bytes": 217037
+            },
+            {
+              "path": "claim_4_table3_pairs_037.json",
+              "rows": 500,
+              "sha256": "402b9ce7f0725220f6fca441959758f9c11fd7b1f3a7d1d5c24a5f1f7202f1bb",
+              "bytes": 217061
+            },
+            {
+              "path": "claim_4_table3_pairs_038.json",
+              "rows": 500,
+              "sha256": "1bb027827a8d60500551a2edf9ce998403cc100829c4d6f255db102791828766",
+              "bytes": 217035
+            },
+            {
+              "path": "claim_4_table3_pairs_039.json",
+              "rows": 300,
+              "sha256": "6a12f3e21665ec71690ed770097715616f0f8570ff21e8801e08c89c0e641d3d",
+              "bytes": 130300
+            }
+          ]
+        }
+      },
+      "independent_checker": {
+        "checker": "independent filename inventory plus direct ElementTree reparse of the primary-archive counterexample",
+        "counterexample_file": "sub-OAS30938_ses-d0095_atlas-L2018_res-scale2_conndata-network_connectivity.graphml",
+        "independent_node_count": 168,
+        "independent_min_id": 1,
+        "independent_max_id": 168,
+        "independent_subject_count": 696,
+        "table3_raw_rows": 19800,
+        "table3_unique_pairs": 4950,
+        "table3_independent_summary": {
+          "diffusion_CDOT": 0.7186226975644445,
+          "diffusion_FGW": 0.1540475341651717,
+          "geodesic_CDOT": 0.4651527035051313,
+          "geodesic_FGW": 0.5341390374333334
+        },
+        "table3_summary_max_abs_error": 3.555544747513295e-11,
+        "table3_diffusion_CDOT_minus_FGW": 0.5645751633992728,
+        "table3_geodesic_FGW_minus_CDOT": 0.06898633392820203,
+        "gates": {
+          "all_chunked_sessions_loaded": true,
+          "all_subject_rows_loaded": true,
+          "filename_parser_independently_finds_696_subjects": true,
+          "counterexample_has_one_session": true,
+          "independent_xml_parser_finds_exact_ids_1_to_168": true,
+          "no_counterexample_session_contains_169_or_170": true,
+          "primary_falsification_status_rechecked": true,
+          "table3_all_19800_method_metric_rows_loaded": true,
+          "table3_exact_4950_pair_inventory": true,
+          "table3_each_cell_has_4950_rows": true,
+          "table3_summary_recomputed_from_raw_rows": true,
+          "table3_diffusion_direction_rechecked": true,
+          "table3_geodesic_direction_rechecked": true,
+          "table3_primary_gates_rechecked": true
+        },
+        "all_gates_pass": true
+      }
+    },
+    "claim_5": {
+      "primary": {
+        "claim": 5,
+        "status": "FALSIFIED",
+        "paper_values": {
+          "MUTAG_CDOT": [
+            0.8617,
+            0.07
+          ],
+          "MUTAG_FGW": [
+            0.8249,
+            0.08
+          ],
+          "ENZYMES_CDOT": [
+            0.5133,
+            0.04
+          ],
+          "ENZYMES_FGW": [
+            0.445,
+            0.03
+          ]
+        },
+        "protocol": {
+          "all_graphs_and_unordered_pairs": true,
+          "geometry": "unweighted geodesic divided by graph diameter",
+          "node_information": "provided labels or attributes",
+          "alpha_grid": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "kernel": "exp(-gamma*D^2)",
+          "outer_cv": "three seeded stratified 10-fold runs",
+          "inner_cv": "stratified 5-fold joint alpha/C/gamma search",
+          "C_grid": [
+            0.1,
+            1.0,
+            10.0,
+            100.0
+          ],
+          "gamma_grid": [
+            0.001,
+            0.01,
+            0.1,
+            1.0,
+            10.0
+          ],
+          "outer_seeds": [
+            260727,
+            260728,
+            260729
+          ],
+          "max_optimizer_iterations": 200,
+          "process_workers": 8
+        },
+        "disclosed_reconstruction_ambiguities": [
+          "source split seeds are unpublished",
+          "ENZYMES attribute standardization is unspecified; dataset-wise z-scoring is used",
+          "feature-cost scaling is unspecified; per-pair max normalization is used",
+          "optimizer stopping tolerance is unspecified; disclosed at-most-200 stopping is used"
+        ],
+        "results": {
+          "MUTAG": {
+            "data": {
+              "requested_url": "https://www.chrsmrrs.com/graphkerneldatasets/MUTAG.zip",
+              "final_url": "https://www.chrsmrrs.com/graphkerneldatasets/MUTAG.zip",
+              "user_agent": "OpenResearch-CDOT-Reproduction/1.0",
+              "bytes": 24550,
+              "sha256": "c419bdc853c367d2d83da4973c45100954ae15e10f5ae2cddde6ca431f8207f6",
+              "graphs": 188,
+              "nodes": 3371,
+              "node_count_min": 10,
+              "node_count_max": 28,
+              "node_count_mean": 17.9308510638,
+              "classes": [
+                -1,
+                1
+              ],
+              "feature_kind": "provided categorical labels, one-hot encoded",
+              "disconnected_graphs_filled_with_finite_diameter": 0
+            },
+            "diagnostics": {
+              "pairs": 17578,
+              "pair_alpha_method_cells": 175780,
+              "maximum_cdot_marginal_error": 7.077671781985373e-16,
+              "cdot_nonmonotone_steps": 0,
+              "fgw_nonmonotone_steps": 0,
+              "mean_iterations": {
+                "CDOT": 161.47565138240984,
+                "FGW": 7.37413812720446
+              },
+              "distance_matrices_finite_symmetric_zero_diagonal": true,
+              "matrix_sha256": {
+                "CDOT_a000": "65950b1a9752e254358df0b8eef9f3356b88ceeb5117daf44079e154d483ae3c",
+                "CDOT_a025": "681f7e5773247f8b293dd69c96b17224cbe1418a5f92bd9171447ed5856e5ec8",
+                "CDOT_a050": "084771749af1b445d85a337854aadf5114d4119aa8693bc015fc48f3c55bd99b",
+                "CDOT_a075": "dddbd6d8e9e955c70b15b30219d12250c8a77266ba80753a891dd4fda19f0685",
+                "CDOT_a100": "d0849babc929bc73480c2f63a0c7643fb8297ec1ec0856d1ba6eb87b67b2e8fe",
+                "FGW_a000": "65950b1a9752e254358df0b8eef9f3356b88ceeb5117daf44079e154d483ae3c",
+                "FGW_a025": "021e531578b8d923c9c64927fe58c3e05c6141f849a56db0373872b09dc1c732",
+                "FGW_a050": "0fa7975044899793e339b386ab440f590be639f596b7b528c7fd973f925e1b8b",
+                "FGW_a075": "8305f74b2da50e060920f08e90ba74bbdb4a3ed4802dd5f609cc2c4cbd7dba4d",
+                "FGW_a100": "198a1134de746e8991bbe23fcc8f23aadd57ad8329be0283ab7f7ff6e3b30144"
+              }
+            },
+            "summaries": {
+              "CDOT": {
+                "outer_folds": 30,
+                "mean_accuracy": 0.8408382066,
+                "sample_std_accuracy": 0.0661962657,
+                "standard_error": 0.0120857293,
+                "permuted_outcome_mean_accuracy": 0.6597465887
+              },
+              "FGW": {
+                "outer_folds": 30,
+                "mean_accuracy": 0.8335282651,
+                "sample_std_accuracy": 0.0600953094,
+                "standard_error": 0.0109718522,
+                "permuted_outcome_mean_accuracy": 0.6366471735
+              }
+            },
+            "seedwise_mean_accuracy": {
+              "260727": {
+                "CDOT": 0.8347953217,
+                "FGW": 0.8292397661,
+                "CDOT_minus_FGW": 0.0055555556
+              },
+              "260728": {
+                "CDOT": 0.8467836257,
+                "FGW": 0.8248538012,
+                "CDOT_minus_FGW": 0.0219298245
+              },
+              "260729": {
+                "CDOT": 0.8409356725,
+                "FGW": 0.8464912281,
+                "CDOT_minus_FGW": -0.0055555556
+              }
+            },
+            "CDOT_minus_FGW_accuracy": 0.0073099415,
+            "majority_class_rate": 0.664893617,
+            "gates": {
+              "full_graph_count": true,
+              "full_node_count": true,
+              "all_pairs_executed": true,
+              "matrices_finite_symmetric": true,
+              "cdot_marginals_preserved": true,
+              "cdot_traces_monotone": true,
+              "fgw_traces_monotone": true,
+              "three_repeated_nested_10fold_runs": true,
+              "permuted_control_near_chance_and_degraded": true
+            }
+          },
+          "ENZYMES": {
+            "data": {
+              "requested_url": "https://www.chrsmrrs.com/graphkerneldatasets/ENZYMES.zip",
+              "final_url": "https://www.chrsmrrs.com/graphkerneldatasets/ENZYMES.zip",
+              "user_agent": "OpenResearch-CDOT-Reproduction/1.0",
+              "bytes": 536614,
+              "sha256": "13d832eb6ffa084192daf6e5750250028a18437ee692c38d29a10cd60e18aaf4",
+              "graphs": 600,
+              "nodes": 19580,
+              "node_count_min": 2,
+              "node_count_max": 126,
+              "node_count_mean": 32.6333333333,
+              "classes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "feature_kind": "provided attributes, dataset-wise z-scored",
+              "disconnected_graphs_filled_with_finite_diameter": 31
+            },
+            "diagnostics": {
+              "pairs": 179700,
+              "pair_alpha_method_cells": 1797000,
+              "maximum_cdot_marginal_error": 1.1709383462843448e-15,
+              "cdot_nonmonotone_steps": 0,
+              "fgw_nonmonotone_steps": 0,
+              "mean_iterations": {
+                "CDOT": 161.47370172509738,
+                "FGW": 7.742590984974958
+              },
+              "distance_matrices_finite_symmetric_zero_diagonal": true,
+              "matrix_sha256": {
+                "CDOT_a000": "0e73f0cd46313fe22abb7f34e9eb1895c61762e5a35509989acc5b477e1d2233",
+                "CDOT_a025": "bb06fa41a1c1fa50729d0c9aabb1991a10dfeb0c865b98fbf6a3bf7af1c794fa",
+                "CDOT_a050": "413eaed6ae73077d885be23160adf51ae31be06df6818d8bcbf7c4fda7cca627",
+                "CDOT_a075": "76e5cc11a5ea1b4240c025a71dc10c4f65434da67cb0676fe9129725dbee9fd0",
+                "CDOT_a100": "75e628bdd80c8548f64035e65af664ee384cce59ddcb9dfce00a2eb287aecd49",
+                "FGW_a000": "0e73f0cd46313fe22abb7f34e9eb1895c61762e5a35509989acc5b477e1d2233",
+                "FGW_a025": "432043e17a3d9ad74c5fba98162e5908bdcae54e29d37b9c2488a182c7a2624b",
+                "FGW_a050": "51770ade33bc31742d83f63d2ae0c6cd7da32d193aff9d49d9172fe2d97ddaa3",
+                "FGW_a075": "ef2e7b844dd3743478600cfb0ec230eb315f80a4b00c752a608f6b783214857b",
+                "FGW_a100": "7b1a7f0a80adc1d262fb06b9c710dbe80c72d1ae6cd4000d398e00969e297517"
+              }
+            },
+            "summaries": {
+              "CDOT": {
+                "outer_folds": 30,
+                "mean_accuracy": 0.3922222222,
+                "sample_std_accuracy": 0.0544448354,
+                "standard_error": 0.0099402215,
+                "permuted_outcome_mean_accuracy": 0.1788888889
+              },
+              "FGW": {
+                "outer_folds": 30,
+                "mean_accuracy": 0.4477777778,
+                "sample_std_accuracy": 0.0462653792,
+                "standard_error": 0.0084468639,
+                "permuted_outcome_mean_accuracy": 0.1755555556
+              }
+            },
+            "seedwise_mean_accuracy": {
+              "260727": {
+                "CDOT": 0.3866666667,
+                "FGW": 0.445,
+                "CDOT_minus_FGW": -0.0583333333
+              },
+              "260728": {
+                "CDOT": 0.3933333333,
+                "FGW": 0.4466666667,
+                "CDOT_minus_FGW": -0.0533333334
+              },
+              "260729": {
+                "CDOT": 0.3966666667,
+                "FGW": 0.4516666667,
+                "CDOT_minus_FGW": -0.055
+              }
+            },
+            "CDOT_minus_FGW_accuracy": -0.0555555556,
+            "majority_class_rate": 0.1666666667,
+            "gates": {
+              "full_graph_count": true,
+              "full_node_count": true,
+              "all_pairs_executed": true,
+              "matrices_finite_symmetric": true,
+              "cdot_marginals_preserved": true,
+              "cdot_traces_monotone": true,
+              "fgw_traces_monotone": true,
+              "three_repeated_nested_10fold_runs": true,
+              "permuted_control_near_chance_and_degraded": true
+            }
+          }
+        },
+        "classification": {
+          "CDOT_greater_than_FGW_on_both": false,
+          "ENZYMES_direction_reversed_under_every_seed": true,
+          "reason": "direct protocol-matched direction reversal on ENZYMES"
+        },
+        "gates": {
+          "MUTAG_full_graph_count": true,
+          "MUTAG_full_node_count": true,
+          "MUTAG_all_pairs_executed": true,
+          "MUTAG_matrices_finite_symmetric": true,
+          "MUTAG_cdot_marginals_preserved": true,
+          "MUTAG_cdot_traces_monotone": true,
+          "MUTAG_fgw_traces_monotone": true,
+          "MUTAG_three_repeated_nested_10fold_runs": true,
+          "MUTAG_permuted_control_near_chance_and_degraded": true,
+          "ENZYMES_full_graph_count": true,
+          "ENZYMES_full_node_count": true,
+          "ENZYMES_all_pairs_executed": true,
+          "ENZYMES_matrices_finite_symmetric": true,
+          "ENZYMES_cdot_marginals_preserved": true,
+          "ENZYMES_cdot_traces_monotone": true,
+          "ENZYMES_fgw_traces_monotone": true,
+          "ENZYMES_three_repeated_nested_10fold_runs": true,
+          "ENZYMES_permuted_control_near_chance_and_degraded": true
+        },
+        "all_gates_pass": true
+      },
+      "independent_checker": {
+        "checker": "independent fold inventory, raw-mean, and seedwise direction audit",
+        "maximum_summary_error": 3.333344711364816e-11,
+        "fold_shape_failures": 0,
+        "enzymes_reversed_outer_seeds": 3,
+        "dataset_cdot_minus_fgw_margins": {
+          "MUTAG": 0.007309941516666862,
+          "ENZYMES": -0.05555555555333336
+        },
+        "independently_derived_status": "FALSIFIED",
+        "gates": {
+          "all_120_nested_cv_rows_present": true,
+          "all_120_control_rows_present": true,
+          "fold_shapes_exact": true,
+          "raw_means_match_primary": true,
+          "all_control_cells_unique": true,
+          "primary_status_matches_independent_rule": true,
+          "independent_rule_resolves_a_nonblocked_verdict": true
+        },
+        "all_gates_pass": true
+      }
+    },
+    "claim_3": {
+      "primary": {
+        "claim": 3,
+        "status": "VERIFIED",
+        "claim_contract": {
+          "primary_test": "At n=500 per region (N=2000), the 100-trial CDOT mean MSE is below both FGW and IsoRank at alpha=0.5 and T=200.",
+          "ordering_acceptance": "upper endpoint of each paired two-sided 95% t interval for CDOT-minus-baseline is below zero",
+          "exact_value_audit": "paper and rerun means are reported separately; ordering support is not represented as exact displayed-value agreement"
+        },
+        "protocol": {
+          "per_cluster_n": 500,
+          "total_N": 2000,
+          "trials": 100,
+          "iterations": 200,
+          "alpha": 0.5,
+          "distance_normalization": "each Euclidean distance matrix divided by its maximum",
+          "feature_cost": "0/1 region-label mismatch",
+          "mse": "sample mean squared Euclidean error between X and N*pi@Y",
+          "seed_policy": "NumPy PCG64 seeds 260602047..260602146",
+          "workers": 4,
+          "threads_per_worker": 16
+        },
+        "source_table_2": {
+          "trials": 100,
+          "CDOT": {
+            "mean_mse": 0.0016,
+            "displayed_std": 0.0
+          },
+          "FGW": {
+            "mean_mse": 0.0034,
+            "displayed_std": 0.0
+          },
+          "IsoRank": {
+            "mean_mse": 0.0033,
+            "displayed_std": 0.0
+          }
+        },
+        "summaries": {
+          "CDOT": {
+            "trials": 100,
+            "mean_mse": 0.001693640051,
+            "sample_std_mse": 0.00051267266,
+            "ci95_low": 0.001591914673,
+            "ci95_high": 0.001795365429,
+            "paper_mean_mse": 0.0016,
+            "absolute_mean_difference_from_paper": 9.3640051e-05
+          },
+          "FGW": {
+            "trials": 100,
+            "mean_mse": 0.003514014474,
+            "sample_std_mse": 0.000494537302,
+            "ci95_low": 0.003415887544,
+            "ci95_high": 0.003612141404,
+            "paper_mean_mse": 0.0034,
+            "absolute_mean_difference_from_paper": 0.000114014474
+          },
+          "IsoRank": {
+            "trials": 100,
+            "mean_mse": 0.003377851629,
+            "sample_std_mse": 0.000479648057,
+            "ci95_low": 0.003282679048,
+            "ci95_high": 0.003473024209,
+            "paper_mean_mse": 0.0033,
+            "absolute_mean_difference_from_paper": 7.7851629e-05
+          }
+        },
+        "paired_cdot_minus_baseline": {
+          "FGW": {
+            "mean_cdot_minus_baseline": -0.001820374423,
+            "ci95_low": -0.001854597448,
+            "ci95_high": -0.001786151398
+          },
+          "IsoRank": {
+            "mean_cdot_minus_baseline": -0.001684211578,
+            "ci95_low": -0.001718531956,
+            "ci95_high": -0.001649891199
+          }
+        },
+        "paper_ordering_supported": true,
+        "controls": {
+          "lazy_standard_objective_abs_error": 0.0,
+          "lazy_standard_mse_abs_error": 0.0,
+          "low_rank_dense_isorank_max_abs_error": 0.0,
+          "normal_feature_mse": 0.044837658951,
+          "wrong_feature_mse": 1.713243344798,
+          "gates": {
+            "lazy_standard_objective_match": true,
+            "lazy_standard_mse_match": true,
+            "low_rank_dense_isorank_match": true,
+            "wrong_feature_control_degrades_mse": true,
+            "low_rank_residual_bound_finite": true
+          },
+          "all_gates_pass": true
+        },
+        "gates": {
+          "paper_scale_n500_per_region": true,
+          "paper_total_N2000": true,
+          "paper_100_trials": true,
+          "paper_alpha_half": true,
+          "paper_T200": true,
+          "all_300_method_rows_present": true,
+          "every_trial_method_cell_unique": true,
+          "all_mse_finite_nonnegative": true,
+          "all_cdot_marginals_certified": true,
+          "all_fgw_marginals_preserved": true,
+          "cdot_optimization_monotone": true,
+          "fgw_optimization_monotone": true,
+          "parity_and_negative_controls_pass": true
+        },
+        "all_gates_pass": true,
+        "disclosed_deviations": [
+          "The paper publishes neither code nor random seeds; deterministic independent seeds are registered here.",
+          "The paper leaves the CDOT empirical step-size policy unspecified; exact quadratic line search is used and checked against standard FW.",
+          "The paper does not specify a CDOT initial coupling; the independent product coupling is used.",
+          "POT's disclosed conditional-gradient stopping rule may converge before the maximum T=200 iterations.",
+          "The low-rank IsoRank recurrence is algebraically equivalent to the stated dense recurrence and is parity-checked before use."
+        ]
+      },
+      "independent_checker": {
+        "checker": "independent inventory, raw mean, paired interval, verdict, and tamper audit",
+        "maximum_summary_error": 1.2000036381243362e-13,
+        "paired_cdot_minus_baseline": {
+          "FGW": {
+            "mean": -0.0018203744230400004,
+            "ci95_low": -0.0018545974479945773,
+            "ci95_high": -0.0017861513980854235
+          },
+          "IsoRank": {
+            "mean": -0.0016842115778199999,
+            "ci95_low": -0.0017185319561547209,
+            "ci95_high": -0.0016498911994852789
+          }
+        },
+        "independently_derived_status": "VERIFIED",
+        "gates": {
+          "exact_300_row_inventory": true,
+          "exact_trial_seed_inventory": true,
+          "exact_method_inventory": true,
+          "raw_means_match_primary": true,
+          "paired_intervals_match_primary": true,
+          "primary_status_matches_independent_rule": true,
+          "independent_rule_resolves_a_nonblocked_verdict": true,
+          "parity_and_label_controls_pass": true,
+          "missing_row_tamper_is_rejected": true
+        },
+        "all_gates_pass": true
+      }
+    }
+  },
+  "provenance": {
+    "package_version": "0.1.0",
+    "git_sha": "a8661d20b21b352094c22c9358aee1791b327f14",
+    "python": "3.12.12",
+    "platform": "Linux-6.12.90-120.164.amzn2023.x86_64-x86_64-with-glibc2.36",
+    "allocated_logical_cpus": 64,
+    "enforced_thread_limit": 1,
+    "estimated_cores": 64,
+    "selected_backend": "hf",
+    "selected_flavor": "cpu-upgrade",
+    "runtime_seconds": 23217.893967628013,
+    "active_claims": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  }
+}

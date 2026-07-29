@@ -100,6 +100,8 @@ The verifier is invoked only through the fixed cumulative command. The runner ra
 - [claim_3_trials.json](../../evidence/claim_3/raw/claim_3_trials.json)
 - [materialization_manifest.json](../../evidence/claim_3/raw/materialization_manifest.json)
 
+Final cumulative regression: run `4df2d784-42ce-4fa3-af50-3d03063f38fb` at Git `e11a535552fc6f854fe5c07086034992ae426eae` reran all six claims; every primary and independent checker gate passed. [Cumulative run summary](../../evidence/claim_4/raw/formal_4df2d784/run_summary.json).
+
 ### Claim contract and evaluation files
 
 - [EVAL.md](../../evidence/claim_3/EVAL.md)
