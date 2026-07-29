@@ -52,7 +52,7 @@ theorem claim1_squared_residual_jensen
 Jensen convex for every fusion weight in `[0,1]`. -/
 theorem claim1_cdot_objective_jensen
     (α θ f₁ f₂ r₁ r₂ : ℝ)
-    (hα0 : 0 ≤ α) (hα1 : α ≤ 1)
+    (hα0 : 0 ≤ α) (_hα1 : α ≤ 1)
     (hθ0 : 0 ≤ θ) (hθ1 : θ ≤ 1) :
     (1 - α) * (θ * f₁ + (1 - θ) * f₂) +
         α / 2 * (θ * r₁ + (1 - θ) * r₂) ^ 2 ≤
@@ -84,7 +84,39 @@ theorem l2_triangle_nonnegative
   have hdot :
       a * c + b * d ≤
         Real.sqrt (a ^ 2 + b ^ 2) * Real.sqrt (c ^ 2 + d ^ 2) := by
-    nlinarith [sq_nonneg (a * d - b * c)]
+    have hprod0 :
+        0 ≤ Real.sqrt (a ^ 2 + b ^ 2) * Real.sqrt (c ^ 2 + d ^ 2) :=
+      mul_nonneg hsqrtA hsqrtC
+    have hprod_sq :
+        (Real.sqrt (a ^ 2 + b ^ 2) * Real.sqrt (c ^ 2 + d ^ 2)) ^ 2 =
+          (a ^ 2 + b ^ 2) * (c ^ 2 + d ^ 2) := by
+      rw [mul_pow, hAsq, hCsq]
+    have hdot_sq :
+        (a * c + b * d) ^ 2 ≤
+          (Real.sqrt (a ^ 2 + b ^ 2) *
+            Real.sqrt (c ^ 2 + d ^ 2)) ^ 2 := by
+      rw [hprod_sq]
+      nlinarith [sq_nonneg (a * d - b * c)]
+    by_contra hnot
+    have hgt :
+        Real.sqrt (a ^ 2 + b ^ 2) * Real.sqrt (c ^ 2 + d ^ 2) <
+          a * c + b * d := lt_of_not_ge hnot
+    have hdot0 : 0 < a * c + b * d := lt_of_le_of_lt hprod0 hgt
+    have hdiff :
+        0 <
+          (a * c + b * d) -
+            Real.sqrt (a ^ 2 + b ^ 2) * Real.sqrt (c ^ 2 + d ^ 2) :=
+      sub_pos.mpr hgt
+    have hsum :
+        0 <
+          (a * c + b * d) +
+            Real.sqrt (a ^ 2 + b ^ 2) * Real.sqrt (c ^ 2 + d ^ 2) :=
+      add_pos_of_pos_of_nonneg hdot0 hprod0
+    have hsqgt :
+        (Real.sqrt (a ^ 2 + b ^ 2) * Real.sqrt (c ^ 2 + d ^ 2)) ^ 2 <
+          (a * c + b * d) ^ 2 := by
+      nlinarith [mul_pos hdiff hsum]
+    exact (not_lt_of_ge hdot_sq) hsqgt
   nlinarith
 
 theorem l2_monotone_nonnegative
@@ -105,7 +137,7 @@ inputs `f` and `r` are respectively the feature and operator component
 discrepancies supplied by the gluing/conditional-expectation lemmas. -/
 theorem claim2_weighted_fusion_triangle
     (wf wr fxy fyz fxz rxy ryz rxz : ℝ)
-    (hwf : 0 ≤ wf) (hwr : 0 ≤ wr)
+    (_hwf : 0 ≤ wf) (_hwr : 0 ≤ wr)
     (hfxy : 0 ≤ fxy) (hfyz : 0 ≤ fyz) (hfxz : 0 ≤ fxz)
     (hrxy : 0 ≤ rxy) (hryz : 0 ≤ ryz) (hrxz : 0 ≤ rxz)
     (hftri : fxz ≤ fxy + fyz) (hrtri : rxz ≤ rxy + ryz) :
