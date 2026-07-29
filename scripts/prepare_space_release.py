@@ -162,6 +162,40 @@ def claim_page(claim: int) -> str:
     )
 
 
+def trackio_markdown_page(title: str, cell_id: str, content: str) -> str:
+    return (
+        f"# {title}\n\n"
+        "---\n"
+        "<!-- trackio-cell\n"
+        '{"type":"markdown","id":"'
+        f'{cell_id}","created_at":"2026-07-29T04:00:00+00:00",'
+        f'"title":{json.dumps(title)},"pinned":true,'
+        '"pinned_at":"2026-07-29T04:00:00+00:00"}\n'
+        "-->\n"
+        f"{content.strip()}\n"
+    )
+
+
+def canonical_claim_page(claim: int) -> str:
+    metadata = CLAIMS[claim]
+    content = claim_page(claim)
+    if content.startswith("# "):
+        content = "\n".join(content.splitlines()[1:]).lstrip()
+    for old, new in (
+        ("../../evidence/", "../../current/evidence/"),
+        ("../../code/", "../../current/code/"),
+        ("../../environment/", "../../current/environment/"),
+        ("../../report/", "../../current/report/"),
+        ("../../notebook/", "../../current/notebook/"),
+    ):
+        content = content.replace(old, new)
+    return trackio_markdown_page(
+        f"CURRENT — {metadata['title']}",
+        f"cell_current_claim_{claim}",
+        content,
+    )
+
+
 def executive_summary() -> str:
     rows = [
         "| Claim | Current points | Possible points | Confidence | Evidence status | Basis and remaining risk |",
@@ -302,7 +336,7 @@ def logbook() -> dict:
         {
             "slug": metadata["slug"],
             "title": metadata["title"],
-            "file": f"current/pages/{metadata['slug']}/page.md",
+            "file": f"pages/{metadata['slug']}/page.md",
             "children": [],
         }
         for metadata in CLAIMS.values()
@@ -318,19 +352,19 @@ def logbook() -> dict:
         "root": {
             "slug": "index",
             "title": "Current CDOT claim-by-claim reproduction",
-            "file": "current/pages/index.md",
+            "file": "pages/index.md",
             "children": [
                 {
                     "slug": "executive-summary",
                     "title": "Release forecast and claim summary",
-                    "file": "current/pages/executive-summary/page.md",
+                    "file": "pages/executive-summary/page.md",
                     "children": [],
                 },
                 *claim_children,
                 {
                     "slug": "visibility",
                     "title": "Evaluator visibility matrix",
-                    "file": "current/pages/visibility/page.md",
+                    "file": "pages/current-visibility/page.md",
                     "children": [],
                 },
                 {
@@ -342,7 +376,7 @@ def logbook() -> dict:
                 {
                     "slug": "notebook",
                     "title": "Tutorial notebook",
-                    "file": "current/pages/notebook/page.md",
+                    "file": "pages/current-notebook/page.md",
                     "children": [],
                 },
                 {
@@ -417,6 +451,39 @@ def main() -> None:
         destination = pages / metadata["slug"] / "page.md"
         destination.parent.mkdir(parents=True)
         destination.write_text(claim_page(claim), encoding="utf-8")
+
+    canonical_pages = output / "pages"
+    for claim, metadata in CLAIMS.items():
+        destination = canonical_pages / metadata["slug"] / "page.md"
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(canonical_claim_page(claim), encoding="utf-8")
+    for name, title, cell_id, content in (
+        (
+            "executive-summary",
+            "CURRENT — release forecast and claim summary",
+            "cell_current_executive_summary",
+            executive_summary(),
+        ),
+        (
+            "current-visibility",
+            "CURRENT — evaluator visibility matrix",
+            "cell_current_visibility",
+            visibility_page(),
+        ),
+        (
+            "current-notebook",
+            "CURRENT — tutorial notebook",
+            "cell_current_notebook",
+            notebook_page(),
+        ),
+    ):
+        destination = canonical_pages / name / "page.md"
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        adjusted = content.replace("../../", "../../current/")
+        destination.write_text(
+            trackio_markdown_page(title, cell_id, adjusted),
+            encoding="utf-8",
+        )
 
     for source in sorted((ROOT / "src" / "cdot_repro").glob("*.py")):
         copy_text(source, output / "current" / "code" / source.name)

@@ -127,7 +127,7 @@ def audit(judged: Path, candidate: Path) -> dict:
     claim_pages = [
         file_name
         for file_name in node_files
-        if re.search(r"current/pages/claim-[1-6]-", file_name)
+        if re.search(r"^pages/claim-[1-6]-", file_name)
     ]
     if len(claim_pages) != 6:
         gaps.append(f"expected six claim pages, found {len(claim_pages)}")
@@ -137,7 +137,7 @@ def audit(judged: Path, candidate: Path) -> dict:
             if marker.lower() not in text.lower():
                 gaps.append(f"{file_name}: missing marker {marker!r}")
 
-    visibility = candidate / "current" / "pages" / "visibility" / "page.md"
+    visibility = candidate / "pages" / "current-visibility" / "page.md"
     if visibility.is_file():
         text = visibility.read_text(encoding="utf-8")
         for claim in range(1, 7):
@@ -147,6 +147,19 @@ def audit(judged: Path, candidate: Path) -> dict:
             gaps.append("visibility matrix has an incomplete capability row")
     else:
         gaps.append("visibility matrix missing")
+
+    immediate_trackio_pages = sorted(
+        path.parent.name
+        for path in (candidate / "pages").glob("*/page.md")
+    )
+    for claim in range(1, 7):
+        if not any(
+            slug.startswith(f"claim-{claim}-")
+            for slug in immediate_trackio_pages
+        ):
+            gaps.append(
+                f"Trackio immediate pages missing canonical Claim {claim}"
+            )
 
     judged_paths = {path.relative_to(judged).as_posix() for path in files(judged)}
     candidate_paths = {path.relative_to(candidate).as_posix() for path in files(candidate)}
