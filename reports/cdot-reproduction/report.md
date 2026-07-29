@@ -141,9 +141,9 @@ score remains `4/12` until the evaluator processes a new Hugging Face revision.
 ## Reproducibility and lineage
 
 The current cumulative evidence branch is
-`orx/judge-repair-canonical-trackio-pages-plus-oasis` at
-`a8661d20b21b352094c22c9358aee1791b327f14`. Formal run
-`4b2b62af-7c7d-4f12-9b6e-2fcfa0eb0d6f` completed in 23,217.89 seconds
+`orx/release-candidate-complete-raw-oasis-evidence` at
+`e11a535552fc6f854fe5c07086034992ae426eae`. Formal run
+`4df2d784-42ce-4fa3-af50-3d03063f38fb` completed in 38,009.73 seconds
 with 64 logical CPUs exposed on Hugging Face `cpu-upgrade`. The OASIS route
 used eight independent one-thread pair workers; all earlier accepted checks
 were rerun cumulatively and every primary and independent gate passed.

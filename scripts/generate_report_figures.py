@@ -134,7 +134,7 @@ def claim5_benchmarks() -> None:
 
 
 def oasis_cohort() -> None:
-    result = load(4, "formal_4b2b62af/claim_4_result.json")
+    result = load(4, "formal_4df2d784/claim_4_result.json")
     valid = result["scope"]["valid_170_node_subjects"]
     total = result["scope"]["archive_subjects"]
     table3 = result["table_3"]

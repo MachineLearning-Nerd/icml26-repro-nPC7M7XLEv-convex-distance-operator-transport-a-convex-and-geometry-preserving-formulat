@@ -1,0 +1,41 @@
+{
+  "audit_date_utc": "2026-07-29",
+  "tool": "trackio",
+  "tool_version": "0.33.0",
+  "candidate": "/private/tmp/cdot-release-4df2d784.dywgky/candidate-pass1",
+  "mode": "exported logbook served read-only over localhost and read through Trackio URL mode",
+  "server_command": "python3 -m http.server 8765 --bind 127.0.0.1 --directory /private/tmp/cdot-release-4df2d784.dywgky/candidate-pass1",
+  "page_list_command": "trackio logbook read --path http://127.0.0.1:8765 --json pages",
+  "claim_4_command": "trackio logbook read --path http://127.0.0.1:8765 --json page claim-4-oasis-cohort",
+  "local_path_mode_note": "Trackio local-path mode is for an authoring tree containing .trackio/logbook/pages. URL mode is the supported route for an exported logbook.json candidate and was therefore used for this deployment-format audit.",
+  "pages_discovered": [
+    "index",
+    "verify",
+    "overview",
+    "claim-1-convex-qp",
+    "claim-2-pseudometric-dispersion",
+    "claim-3-synthetic-table2",
+    "claim-4-oasis-cohort",
+    "claim-5-tudataset",
+    "claim-6-risk-bound-consistency",
+    "current-notebook",
+    "current-visibility",
+    "executive-summary"
+  ],
+  "all_six_current_claim_pages_discovered": true,
+  "claim_4_page_opened": true,
+  "claim_4_visible_sections": {
+    "verdict": true,
+    "exact_claim_and_assumptions": true,
+    "exact_fixed_command": true,
+    "primary_verifier_link": true,
+    "independent_checker_link": true,
+    "negative_control": true,
+    "inline_numerical_results": true,
+    "complete_raw_pair_links": true,
+    "git_sha_and_run_id": true,
+    "runtime_and_cpu": true,
+    "limitations_and_deviations": true
+  },
+  "result": "PASS"
+}

@@ -49,9 +49,9 @@ CLAIMS = {
         "title": "Claim 4: OASIS-3 cohort and Table 3",
         "status": "FALSIFIED",
         "confidence": "HIGH",
-        "git_sha": "a8661d20b21b352094c22c9358aee1791b327f14",
-        "run_id": "4b2b62af-7c7d-4f12-9b6e-2fcfa0eb0d6f",
-        "runtime": "4,759.483 Claim 4 seconds; 23,217.894 cumulative seconds",
+        "git_sha": "e11a535552fc6f854fe5c07086034992ae426eae",
+        "run_id": "4df2d784-42ce-4fa3-af50-3d03063f38fb",
+        "runtime": "11,591.732 Claim 4 seconds; 38,009.734 cumulative seconds",
         "seeds": "deterministic first-100/all-pairs protocol; no stochastic seed",
     },
     5: {
@@ -143,6 +143,12 @@ def claim_page(claim: int) -> str:
         f"{chr(10).join(code_links)}\n\n"
         "### Raw machine-readable evidence\n\n"
         f"{raw_links(claim)}\n\n"
+        "Final cumulative regression: run "
+        "`4df2d784-42ce-4fa3-af50-3d03063f38fb` at Git "
+        "`e11a535552fc6f854fe5c07086034992ae426eae` reran all six claims; "
+        "every primary and independent checker gate passed. "
+        "[Cumulative run summary]"
+        "(../../evidence/claim_4/raw/formal_4df2d784/run_summary.json).\n\n"
         "### Claim contract and evaluation files\n\n"
         f"{supporting_links(claim)}\n\n"
         "## Provenance\n\n"
@@ -284,7 +290,7 @@ def historical_page() -> str:
         "`1f2e1bcdc00bd792921b6b010c90fe8120f78405`. They are retained as immutable "
         "history and are **not** the current verifier.\n\n"
         "The current verification is superseding evidence at Git "
-        "`a8661d20b21b352094c22c9358aee1791b327f14` plus this release child. "
+        "`e11a535552fc6f854fe5c07086034992ae426eae` plus this presentation-only release child. "
         "Use the current claim pages linked from the root.\n\n"
         "- [Original index](#/historical-original-index)\n"
         "- [Original overview](#/historical-original-overview)\n"
