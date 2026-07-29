@@ -103,6 +103,7 @@ def _install_elan(work: Path) -> tuple[Path, dict[str, object]]:
 def run(output: Path) -> tuple[dict[str, object], dict[str, object]]:
     """Compile the certificate, replay it independently, and reject a false proof."""
 
+    output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     formal_source = Path("formal").resolve()
     work = output / "lean-work"
