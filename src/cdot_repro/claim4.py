@@ -604,8 +604,12 @@ def table3_rerun(
         "gates": gates,
         "all_gates_pass": all(gates.values()),
     }
+    # Keep every machine-readable chunk below run.py's 100 kB inline-evidence
+    # ceiling. The 500-row scientific chunks from the first formal run were
+    # 130--217 kB, so their hashes were logged but their contents were not.
+    # This changes only serialization granularity, never the pair inventory.
     pair_chunks = write_compact_chunks(
-        output, "claim_4_table3_pairs", rows, 500
+        output, "claim_4_table3_pairs", rows, 200
     )
     result["raw_pair_chunks"] = pair_chunks
     (output / "claim_4_table3_result.json").write_text(

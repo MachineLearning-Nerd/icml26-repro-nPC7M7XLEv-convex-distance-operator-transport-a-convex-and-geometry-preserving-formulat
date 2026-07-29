@@ -17,7 +17,7 @@ The executable path is deliberately small:
 ```text
 cdot_repro.run
   ├── claim1 / claim2 / claim6: symbolic proof obligations + finite audits
-  ├── claim4: primary-archive enumeration + independent XML checker
+  ├── claim4: 4,950 OASIS pairs + archive audit + independent checker
   ├── claim5: all graph pairs + nested RBF-SVM cross-validation
   └── claim3: 100 paper-scale trials + independent paired checker
 ```
@@ -59,20 +59,38 @@ verdict. A missing-row mutation was rejected. The reproduced means lie within
 `0.0001141` of the three paper means, but this numerical proximity is reported
 separately from the ordering test.
 
-## Two direct empirical challenges
+## OASIS-3: both Table 3 directions and a cohort counterexample
 
 Claim 4 states that the Table 3 cohort contains 696 subjects represented by
-170-node networks. Exhaustive parsing and hashing of all 975 sessions in the
-primary OASIS-3 archive found all 696 subject IDs, but only 695 subjects have
-any 170-node session.
+170-node networks and reports opposite method orderings for diffusion and
+geodesic distance. The registered route selected the first 100 lexical
+subjects and earliest session, then ran CDOT and FGW for every one of the
+4,950 unordered pairs at `alpha=0.5`, `T=200`.
 
-![OASIS-3 cohort counterexample](images/claim4_cohort.svg)
+![OASIS-3 Table 3 reproduction and cohort counterexample](images/claim4_cohort.svg)
 
+| Metric | Paper CDOT | Paper FGW | Reproduction CDOT | Reproduction FGW |
+| --- | ---: | ---: | ---: | ---: |
+| Diffusion | `0.6136` | `0.1853` | `0.718623 ± 0.001409 SE` | `0.154048 ± 0.000420 SE` |
+| Geodesic | `0.4640` | `0.5375` | `0.465153 ± 0.002049 SE` | `0.534139 ± 0.002302 SE` |
+
+Both reported directions reproduce. The independent checker loaded all
+19,800 method/metric rows, reconstructed all 4,950 pairs, and recomputed the
+means with maximum error `3.56e-11`. Six custom FGW objectives matched POT
+exactly. A cyclic anatomical misregistration control reduced mean accuracy
+from `0.48321` to `0.06532`.
+
+Separately, exhaustive parsing and hashing of all 975 primary-archive sessions
+found all 696 subject IDs, but only 695 subjects have any 170-node session.
 Subject `OAS30938` has one 168-node session with atlas IDs 1 through 168. An
 independent XML parser confirmed it, and a control that fabricated IDs 169 and
-170 was rejected. This is a direct counterexample to the cohort invariant, so
-Claim 4 is marked `FALSIFIED`. The four Table 3 accuracy cells were not rerun
-and are not inferred from that counterexample.
+170 was rejected. This directly contradicts the literal 696-by-170 cohort
+invariant, so the composite Claim 4 verdict is `FALSIFIED`. Directional
+recovery is reported separately from exact-cell recovery; diffusion CDOT
+differs materially from the paper value, and unpublished preprocessing details
+remain an explicit limitation.
+
+## TUDataset classification challenge
 
 Claim 5 was tested on every MUTAG and ENZYMES graph, every unordered graph pair,
 all five fusion weights, and three repeated nested 10-fold/5-fold RBF-SVM
@@ -113,7 +131,7 @@ the invalid schedule `T_n=n`. Each fails for its intended registered reason.
 | 1 | Theorem 3.4: convex QP and attainment | proof certificate + exact formula audits | `VERIFIED` | HIGH |
 | 2 | Theorems 3.5/3.7: pseudometric and dispersion gap | proof certificate + exhaustive finite domain | `VERIFIED` | HIGH |
 | 3 | Table 2: `0.0016 < 0.0034, 0.0033` | `0.001694 < 0.003514, 0.003378` | `VERIFIED` | HIGH |
-| 4 | 696-subject, 170-node Table 3 cohort | one included subject has only 168 nodes | `FALSIFIED` | HIGH |
+| 4 | Table 3 diffusion/geodesic ordering on 696-subject, 170-node cohort | both 4,950-pair directions reproduce; one included subject has only 168 nodes | `FALSIFIED` | HIGH |
 | 5 | CDOT beats FGW on MUTAG and ENZYMES | MUTAG aligns; ENZYMES reverses | `FALSIFIED` | MEDIUM |
 | 6 | Theorem 5.6 / Corollary 5.7 | proof certificate + exact schedule audits | `VERIFIED` | HIGH |
 
@@ -122,12 +140,13 @@ score remains `4/12` until the evaluator processes a new Hugging Face revision.
 
 ## Reproducibility and lineage
 
-The cumulative winning branch is
-`orx/claim-3-full-scale-synthetic-table-2-cpu-reprodu` at
-`2517fb252abbd2aef3c8666e6337b44f6d198724`. The Claim 3 run ID is
-`8a1fe020-2a83-4a6a-bbc6-910568b8b5c1`; its scientific runtime was
-19,878.94 seconds with 64 logical CPUs allocated as four workers × 16
-numerical threads. Earlier accepted checks are rerun cumulatively.
+The current cumulative evidence branch is
+`orx/judge-repair-canonical-trackio-pages-plus-oasis` at
+`a8661d20b21b352094c22c9358aee1791b327f14`. Formal run
+`4b2b62af-7c7d-4f12-9b6e-2fcfa0eb0d6f` completed in 23,217.89 seconds
+with 64 logical CPUs exposed on Hugging Face `cpu-upgrade`. The OASIS route
+used eight independent one-thread pair workers; all earlier accepted checks
+were rerun cumulatively and every primary and independent gate passed.
 
 Raw JSON, independent checker output, controls, claim contracts, source audits,
 limitations, exact code, and the lockfile are linked from the canonical claim

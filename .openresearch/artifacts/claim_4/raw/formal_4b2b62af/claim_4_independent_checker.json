@@ -1,0 +1,36 @@
+{
+  "checker": "independent filename inventory plus direct ElementTree reparse of the primary-archive counterexample",
+  "counterexample_file": "sub-OAS30938_ses-d0095_atlas-L2018_res-scale2_conndata-network_connectivity.graphml",
+  "independent_node_count": 168,
+  "independent_min_id": 1,
+  "independent_max_id": 168,
+  "independent_subject_count": 696,
+  "table3_raw_rows": 19800,
+  "table3_unique_pairs": 4950,
+  "table3_independent_summary": {
+    "diffusion_CDOT": 0.7186226975644445,
+    "diffusion_FGW": 0.1540475341651717,
+    "geodesic_CDOT": 0.4651527035051313,
+    "geodesic_FGW": 0.5341390374333334
+  },
+  "table3_summary_max_abs_error": 3.555544747513295e-11,
+  "table3_diffusion_CDOT_minus_FGW": 0.5645751633992728,
+  "table3_geodesic_FGW_minus_CDOT": 0.06898633392820203,
+  "gates": {
+    "all_chunked_sessions_loaded": true,
+    "all_subject_rows_loaded": true,
+    "filename_parser_independently_finds_696_subjects": true,
+    "counterexample_has_one_session": true,
+    "independent_xml_parser_finds_exact_ids_1_to_168": true,
+    "no_counterexample_session_contains_169_or_170": true,
+    "primary_falsification_status_rechecked": true,
+    "table3_all_19800_method_metric_rows_loaded": true,
+    "table3_exact_4950_pair_inventory": true,
+    "table3_each_cell_has_4950_rows": true,
+    "table3_summary_recomputed_from_raw_rows": true,
+    "table3_diffusion_direction_rechecked": true,
+    "table3_geodesic_direction_rechecked": true,
+    "table3_primary_gates_rechecked": true
+  },
+  "all_gates_pass": true
+}

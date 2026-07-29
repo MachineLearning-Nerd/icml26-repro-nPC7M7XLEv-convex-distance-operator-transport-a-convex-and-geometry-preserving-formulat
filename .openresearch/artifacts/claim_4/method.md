@@ -23,6 +23,13 @@ independent checker reconstructs the exact pair inventory, all four raw means,
 and both directions without calling the primary summarizer; it also directly
 reparses the archive counterexample with a separate XML code path.
 
+Formal run `4b2b62af-7c7d-4f12-9b6e-2fcfa0eb0d6f` passed all gates. It
+observed diffusion CDOT/FGW means `0.7186226976/0.1540475342` and geodesic
+CDOT/FGW means `0.4651527035/0.5341390374`. The independent checker loaded
+all 19,800 rows and reproduced the summaries to `3.56e-11`. The release
+candidate uses 200-row JSON chunks only to keep each raw artifact below the
+runner's 100 kB inline-evidence ceiling.
+
 Estimated active cores are eight during matching and four during extraction.
 Hugging Face `cpu-upgrade` is mandatory because the cumulative run is
 multi-hour and uses more than one CPU core.

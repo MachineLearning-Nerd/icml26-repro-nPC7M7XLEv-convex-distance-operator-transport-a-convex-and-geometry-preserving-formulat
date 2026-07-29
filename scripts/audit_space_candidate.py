@@ -161,6 +161,63 @@ def audit(judged: Path, candidate: Path) -> dict:
                 f"Trackio immediate pages missing canonical Claim {claim}"
             )
 
+    claim4_raw_root = (
+        candidate / "current" / "evidence" / "claim_4" / "raw"
+    )
+    pair_groups: dict[Path, list[Path]] = {}
+    if claim4_raw_root.is_dir():
+        for path in claim4_raw_root.rglob("claim_4_table3_pairs_*.json"):
+            pair_groups.setdefault(path.parent, []).append(path)
+    claim4_pair_audits: list[dict[str, object]] = []
+    complete_pair_group = False
+    for parent, paths in sorted(pair_groups.items()):
+        rows: list[dict[str, object]] = []
+        for path in sorted(paths):
+            rows.extend(json.loads(path.read_text(encoding="utf-8")))
+        cell_counts = {
+            f"{metric}_{method}": sum(
+                row.get("metric") == metric and row.get("method") == method
+                for row in rows
+            )
+            for metric in ("diffusion", "geodesic")
+            for method in ("CDOT", "FGW")
+        }
+        unique_pairs = {
+            (str(row.get("left_subject")), str(row.get("right_subject")))
+            for row in rows
+        }
+        max_bytes = max((path.stat().st_size for path in paths), default=0)
+        valid = (
+            len(rows) == 19_800
+            and len(unique_pairs) == 4_950
+            and all(count == 4_950 for count in cell_counts.values())
+            and max_bytes <= 100_000
+            and (parent / "claim_4_table3_result.json").is_file()
+            and (parent / "claim_4_independent_checker.json").is_file()
+        )
+        complete_pair_group = complete_pair_group or valid
+        claim4_pair_audits.append(
+            {
+                "directory": parent.relative_to(candidate).as_posix(),
+                "chunks": len(paths),
+                "rows": len(rows),
+                "unique_pairs": len(unique_pairs),
+                "cell_counts": cell_counts,
+                "max_chunk_bytes": max_bytes,
+                "result_and_checker_colocated": (
+                    (parent / "claim_4_table3_result.json").is_file()
+                    and (parent / "claim_4_independent_checker.json").is_file()
+                ),
+                "complete_evaluator_visible_group": valid,
+            }
+        )
+    if not complete_pair_group:
+        gaps.append(
+            "Claim 4 lacks one evaluator-visible raw directory containing "
+            "19,800 rows, 4,950 pairs, four 4,950-row cells, colocated result "
+            "and checker, and only <=100 kB chunks"
+        )
+
     judged_paths = {path.relative_to(judged).as_posix() for path in files(judged)}
     candidate_paths = {path.relative_to(candidate).as_posix() for path in files(candidate)}
     missing_old = sorted(judged_paths - candidate_paths)
@@ -196,6 +253,7 @@ def audit(judged: Path, candidate: Path) -> dict:
             entry["byte_identical"] for entry in protected_page_hashes
         ),
         "protected_page_checks": protected_page_hashes,
+        "claim4_raw_pair_audits": claim4_pair_audits,
         "secret_pattern_findings": secrets,
         "gaps": gaps,
         "all_gates_pass": not gaps,

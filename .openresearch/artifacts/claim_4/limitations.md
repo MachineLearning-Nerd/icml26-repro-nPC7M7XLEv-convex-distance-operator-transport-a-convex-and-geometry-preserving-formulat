@@ -11,6 +11,9 @@
 - The paper does not specify whether its diffusion Laplacian is normalized.
   The main route pins the normalized choice rather than silently guessing.
 - Directional recovery and exact-cell recovery are reported separately.
+- Both method directions reproduce, but diffusion CDOT differs from the paper
+  by about `+0.1050` absolute. Unpublished preprocessing details prevent
+  claiming exact-cell recovery.
 - The data provider calls the archive Scale 2 / 170 nodes; the verifier checks
   the stronger condition that every archived session has exact atlas IDs
   1 through 170.

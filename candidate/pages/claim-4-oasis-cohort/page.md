@@ -13,25 +13,43 @@ Exact command:
 uv run --frozen --python 3.12 python -m cdot_repro.run
 ```
 
-The previous archive-only formal run
-`1da20861-93a5-4053-af25-7168943eaeee` at Git
-`783db52bac086f41d8ce4c58b36f5fb4d2111164` passed every archive-integrity gate.
-The exact 654,450,976-byte archive contains 975 sessions and 696 subjects,
+Formal run `4b2b62af-7c7d-4f12-9b6e-2fcfa0eb0d6f` at Git
+`a8661d20b21b352094c22c9358aee1791b327f14` passed every primary and
+independent gate. The exact 654,450,976-byte archive contains 975 sessions and 696 subjects,
 but only 695 subjects have any exact 170-node session. `OAS30938` has one
 session with 168 nodes and atlas IDs 1 through 168. Its file SHA-256 is
 `65c4559e2ae0990efca870279ca569166353c74c6aab4a65d8e4b8abfc70359e`.
 An independent XML parser confirmed the counterexample, and padding IDs 169
 and 170 was rejected.
 
-Its scientific runtime was `195.316717781825` seconds. The superseding formal
-run and its exact four observed cells will be inserted only after the complete
-4,950-pair verifier and independent checker finish successfully.
+The complete rerun observed:
+
+| Metric | Paper CDOT | Paper FGW | Reproduction CDOT | Reproduction FGW | Direction |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Diffusion | `0.6136` | `0.1853` | `0.7186226976 ± 0.0014093865 SE` | `0.1540475342 ± 0.0004202528 SE` | reproduced |
+| Geodesic | `0.4640` | `0.5375` | `0.4651527035 ± 0.0020493222 SE` | `0.5341390374 ± 0.0023019770 SE` | reproduced |
+
+The independent checker loaded exactly 19,800 method/metric rows, reconstructed
+all 4,950 unique pairs, and recomputed the four means with maximum absolute
+error `3.56e-11`. Every marginal and monotonic-objective gate passed. Six
+fixed-pair FGW objectives matched POT `0.9.6.post1` exactly. The 12-pair
+anatomical misregistration control degraded mean accuracy from `0.4832107843`
+to `0.0653186274`.
+
+Claim 4 is `FALSIFIED` for the composite literal statement because the exact
+696-by-170 cohort invariant is false. Separately, the registered full Table 3
+route faithfully reproduces both reported method-ordering directions; exact
+cell agreement is not asserted.
 
 Raw evidence:
 
-- [Primary result](../../../.openresearch/artifacts/claim_4/raw/claim_4_result.json)
-- [Independent checker](../../../.openresearch/artifacts/claim_4/raw/claim_4_independent_checker.json)
-- [Materialization manifest](../../../.openresearch/artifacts/claim_4/raw/materialization_manifest.json)
+- [Superseding primary result](../../../.openresearch/artifacts/claim_4/raw/formal_4b2b62af/claim_4_result.json)
+- [Table 3 result](../../../.openresearch/artifacts/claim_4/raw/formal_4b2b62af/claim_4_table3_result.json)
+- [Independent checker](../../../.openresearch/artifacts/claim_4/raw/formal_4b2b62af/claim_4_independent_checker.json)
+- [Cumulative run summary](../../../.openresearch/artifacts/claim_4/raw/formal_4b2b62af/run_summary.json)
+- [Formal materialization manifest](../../../.openresearch/artifacts/claim_4/raw/formal_4b2b62af/materialization_manifest.json)
 
-This pre-run page is not release-ready and makes no claim about the pending
-numerical result.
+The first formal serialization used 500-row pair chunks, whose logged hashes
+show sizes of 130–217 kB. The release-candidate child changes only serialization
+to 200 rows per chunk so every raw row is evaluator-downloadable under the
+runner's 100 kB inline-evidence ceiling.

@@ -134,28 +134,56 @@ def claim5_benchmarks() -> None:
 
 
 def oasis_cohort() -> None:
-    result = load(4)
+    result = load(4, "formal_4b2b62af/claim_4_result.json")
     valid = result["scope"]["valid_170_node_subjects"]
     total = result["scope"]["archive_subjects"]
+    table3 = result["table_3"]
+    labels = ["Diffusion\nCDOT", "Diffusion\nFGW", "Geodesic\nCDOT", "Geodesic\nFGW"]
+    paper = [
+        table3["source_table_3"]["diffusion_CDOT"],
+        table3["source_table_3"]["diffusion_FGW"],
+        table3["source_table_3"]["geodesic_CDOT"],
+        table3["source_table_3"]["geodesic_FGW"],
+    ]
+    observed = [
+        table3["rerun"]["diffusion_CDOT"]["mean_accuracy"],
+        table3["rerun"]["diffusion_FGW"]["mean_accuracy"],
+        table3["rerun"]["geodesic_CDOT"]["mean_accuracy"],
+        table3["rerun"]["geodesic_FGW"]["mean_accuracy"],
+    ]
 
-    fig, ax = plt.subplots(figsize=(8.4, 3.8))
-    ax.barh(["Primary OASIS-3 archive"], [valid], color="#2563eb", label="Has a 170-node session")
-    ax.barh(["Primary OASIS-3 archive"], [total - valid], left=[valid], color="#dc2626", label="No 170-node session")
-    ax.text(valid / 2, 0, f"{valid} subjects", color="white", ha="center", va="center", weight="bold")
+    fig, axes = plt.subplots(1, 2, figsize=(10.4, 4.2), gridspec_kw={"width_ratios": [1.2, 1]})
+    ax = axes[0]
+    x = np.arange(4)
+    ax.bar(x - 0.18, paper, 0.36, color="#cbd5e1", label="Paper")
+    ax.bar(x + 0.18, observed, 0.36, color=["#2563eb", "#f97316", "#2563eb", "#f97316"], label="Reproduction")
+    ax.set_xticks(x, labels)
+    ax.set_ylim(0, 0.82)
+    ax.set_ylabel("Mean matching accuracy")
+    ax.set_title("All 4,950 pairs")
+    ax.grid(axis="y", alpha=0.2)
+    ax.legend(frameon=False, loc="upper right")
+
+    ax = axes[1]
+    ax.barh(["Archive"], [valid], color="#2563eb", label="Has 170-node session")
+    ax.barh(["Archive"], [total - valid], left=[valid], color="#dc2626", label="No 170-node session")
+    ax.text(valid / 2, 0, f"{valid}", color="white", ha="center", va="center", weight="bold")
     ax.text(valid + 0.5, 0, "1", color="white", ha="center", va="center", weight="bold")
     ax.annotate(
         "OAS30938: one 168-node session",
         xy=(valid + 0.5, 0),
-        xytext=(valid - 125, 0.38),
+        xytext=(valid - 240, 0.34),
         arrowprops={"arrowstyle": "->", "color": "#991b1b"},
         color="#991b1b",
-        fontsize=10,
+        fontsize=9,
     )
     ax.set_xlim(0, total)
-    ax.set_xlabel("Subjects enumerated from all 975 sessions")
-    ax.set_title("Claim 4 counterexample: the 696-subject 170-node cohort invariant is false")
-    ax.legend(frameon=False, loc="lower left")
+    ax.set_xlabel("Subjects")
+    ax.set_title("All 975 sessions audited")
+    ax.legend(frameon=False, loc="lower left", fontsize=8)
     ax.grid(axis="x", alpha=0.18)
+    fig.suptitle("Claim 4: both Table 3 directions reproduce; cohort invariant is false", y=1.02)
+    fig.subplots_adjust(wspace=0.32)
     finish(fig, "claim4_cohort.svg")
 
 

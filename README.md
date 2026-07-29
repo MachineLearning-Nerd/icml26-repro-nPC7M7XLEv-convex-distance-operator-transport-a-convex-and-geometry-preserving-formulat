@@ -6,8 +6,10 @@ proof-obligation certificates for the three universal theorems with
 paper-scale empirical checks.
 
 Claims 1, 2, and 6 are `VERIFIED` candidates. Claim 4 is a `FALSIFIED`
-candidate after exhaustive primary-archive and independent counterexample
-checks. Claim 5 is a `FALSIFIED` candidate: the full run found the paper's
+candidate for the literal 696-by-170 cohort invariant, while its faithful
+all-4,950-pair rerun reproduces both Table 3 method directions: diffusion
+CDOT `0.718623` versus FGW `0.154048`, and geodesic CDOT `0.465153` versus
+FGW `0.534139`. Claim 5 is a `FALSIFIED` candidate: the full run found the paper's
 MUTAG direction but a stable ENZYMES reversal (CDOT `0.39222`, FGW `0.44778`)
 under all three outer seeds. Claim 3 is `VERIFIED` at the exact paper scale:
 CDOT `0.001694`, FGW `0.003514`, and IsoRank `0.003378` over 100 paired
@@ -40,6 +42,7 @@ or the [self-contained marimo tutorial](notebooks/cdot_reproduction.py).
 | `orx/claim-4-exhaustive-oasis-3-cohort-falsification` | Exhaustively hash and parse the primary OASIS-3 archive; independently check any 170-node counterexample and reject padding | `uv run --frozen --python 3.12 python -m cdot_repro.run` | Claim 4 `FALSIFIED` candidate; cumulative claims pass | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, four extraction cores estimated; 3m42s job |
 | `orx/claim-5-full-tudataset-nested-cv-reproduction` | Full MUTAG/ENZYMES all-pairs distances, nested 10×5-fold RBF-SVM, checker, and permuted-label controls | `uv run --frozen --python 3.12 python -m cdot_repro.run` | Claim 5 `FALSIFIED` candidate: MUTAG +0.00731, ENZYMES −0.05556; all cumulative gates pass | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, eight one-thread workers; 1h41m job |
 | `orx/claim-3-full-scale-synthetic-table-2-cpu-reprodu` | Exact-scale synthetic reconstruction: 2,000 points, 100 trials, CDOT/FGW/IsoRank, paired checker and destructive controls | `uv run --frozen --python 3.12 python -m cdot_repro.run` | Claim 3 `VERIFIED` candidate; CDOT lower than both baselines with paired 95% intervals below zero; all cumulative gates pass | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, four workers × 16 numerical threads; 5h31m job |
+| `orx/judge-repair-canonical-trackio-pages-plus-oasis` | Add canonical Trackio claim pages and faithful OASIS-3 Table 3 first-100/all-4,950-pair rerun | `uv run --frozen --python 3.12 python -m cdot_repro.run` | All six primary and independent gates pass; both Table 3 directions reproduce and the cohort counterexample remains exact | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, eight one-thread OASIS workers; 6h27m cumulative job |
 | `main` | Public README, report, figures, and notebook | Not run as an experiment (publication surface) | Presentation-only mirror after release gates | No experiment compute |
 
 ---
