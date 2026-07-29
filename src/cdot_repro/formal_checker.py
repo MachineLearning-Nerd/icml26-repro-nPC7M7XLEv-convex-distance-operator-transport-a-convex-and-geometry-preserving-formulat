@@ -23,6 +23,7 @@ ELAN_URL = (
 ELAN_SHA256 = "f81c2e48c1588d4612cd2c8851947898a45ac8d72748a07dff3a5694f1cf589b"
 LEAN_TOOLCHAIN = "leanprover/lean4:v4.19.0"
 MATHLIB_REVISION = "v4.19.0"
+MATHLIB_COMMIT = "c44e0c8ee63ca166450922a373c7409c5d26b00b"
 THEOREMS = [
     "CDOTFormal.claim1_compact_attainment",
     "CDOTFormal.claim1_cdot_objective_jensen",
@@ -170,9 +171,13 @@ def run(output: Path) -> tuple[dict[str, object], dict[str, object]]:
     }
     gates = {
         "pinned_elan_archive_hash": download["observed_sha256"] == ELAN_SHA256,
-        "pinned_lean_toolchain": LEAN_TOOLCHAIN
-        in lean_version["stdout"],
-        "mathlib_manifest_revision_present": bool(package_revisions.get("mathlib")),
+        "pinned_lean_toolchain_file": (
+            project / "lean-toolchain"
+        ).read_text(encoding="utf-8").strip()
+        == LEAN_TOOLCHAIN,
+        "reported_lean_version": "version 4.19.0" in lean_version["stdout"],
+        "exact_mathlib_manifest_commit": package_revisions.get("mathlib")
+        == MATHLIB_COMMIT,
         "no_forbidden_source_tokens": not forbidden_hits,
         "primary_kernel_compile_passed": primary_compile["returncode"] == 0,
         "lake_library_build_passed": library_build["returncode"] == 0,
@@ -232,6 +237,19 @@ def run(output: Path) -> tuple[dict[str, object], dict[str, object]]:
     )
     (output / "formal_independent_checker.json").write_text(
         json.dumps(independent, indent=2) + "\n", encoding="utf-8"
+    )
+    print("=== LEAN_FORMAL_GATE_SUMMARY ===")
+    print(
+        json.dumps(
+            {
+                "primary_gates": gates,
+                "independent_gates": independent_gates,
+                "lean_version": lean_version["stdout"].strip(),
+                "resolved_mathlib_commit": package_revisions.get("mathlib"),
+                "negative_control_returncode": negative_compile["returncode"],
+            },
+            indent=2,
+        )
     )
     if not primary["all_gates_pass"] or not independent["all_gates_pass"]:
         raise RuntimeError("formal proof gates failed")
