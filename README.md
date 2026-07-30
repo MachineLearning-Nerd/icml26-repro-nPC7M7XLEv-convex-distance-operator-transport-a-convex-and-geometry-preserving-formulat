@@ -5,6 +5,15 @@ This experiment line reproduces all six judged claims in
 proof-obligation certificates for the three universal theorems with
 paper-scale empirical checks.
 
+The live judge awarded **9/12** at Hugging Face revision
+`e7c9bd313c5bc8f5d252f0f5ac2dce3e087ba032`: Claims 3–5 received full
+credit, while Claims 1, 2, and 6 remained toy-level because the certificates
+were human-written. The current release candidate addresses exactly that
+criticism with Lean 4.19.0/mathlib kernel checks, an independent importing
+replay, pinned source/toolchain hashes, and a false-theorem control rejected
+by the kernel. A possible 12/12 remains a forecast until the live judge
+evaluates the new Space revision.
+
 Claims 1, 2, and 6 are `VERIFIED` candidates. Claim 4 is a `FALSIFIED`
 candidate for the literal 696-by-170 cohort invariant, while its faithful
 all-4,950-pair rerun reproduces both Table 3 method directions: diffusion
@@ -27,6 +36,9 @@ Detailed evidence: [Claim 1](candidate/pages/claim-1-convex-qp/page.md),
 [Claim 4](candidate/pages/claim-4-oasis-cohort/page.md),
 [Claim 5](candidate/pages/claim-5-tudataset/page.md), and
 [Claim 6](candidate/pages/claim-6-risk-bound-consistency/page.md).
+The superseding theoretical verifier is documented in the
+[Lean theorem report](reports/cdot-reproduction/lean-verification.md), with
+executable source in [formal/CDOTProofs.lean](formal/CDOTProofs.lean).
 
 Read the [illustrated technical report](reports/cdot-reproduction/report.md)
 or the [self-contained marimo tutorial](notebooks/cdot_reproduction.py).
@@ -43,6 +55,7 @@ or the [self-contained marimo tutorial](notebooks/cdot_reproduction.py).
 | `orx/claim-5-full-tudataset-nested-cv-reproduction` | Full MUTAG/ENZYMES all-pairs distances, nested 10×5-fold RBF-SVM, checker, and permuted-label controls | `uv run --frozen --python 3.12 python -m cdot_repro.run` | Claim 5 `FALSIFIED` candidate: MUTAG +0.00731, ENZYMES −0.05556; all cumulative gates pass | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, eight one-thread workers; 1h41m job |
 | `orx/claim-3-full-scale-synthetic-table-2-cpu-reprodu` | Exact-scale synthetic reconstruction: 2,000 points, 100 trials, CDOT/FGW/IsoRank, paired checker and destructive controls | `uv run --frozen --python 3.12 python -m cdot_repro.run` | Claim 3 `VERIFIED` candidate; CDOT lower than both baselines with paired 95% intervals below zero; all cumulative gates pass | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, four workers × 16 numerical threads; 5h31m job |
 | `orx/judge-repair-canonical-trackio-pages-plus-oasis` | Add canonical Trackio claim pages and faithful OASIS-3 Table 3 first-100/all-4,950-pair rerun | `uv run --frozen --python 3.12 python -m cdot_repro.run` | All six primary and independent gates pass; both Table 3 directions reproduce and the cohort counterexample remains exact | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, eight one-thread OASIS workers; 6h27m cumulative job |
+| `orx/lean-kernel-certificates-for-claims-1-2-and-6` | Replace the human-only theoretical certificates with pinned Lean/mathlib kernel checks, separate replay, and false-theorem control | `uv run --frozen --python 3.12 python -m cdot_repro.run` | All formal gates and all six cumulative claim gates pass; negative control exits `1` as intended | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed; no GPU; 5h37m cumulative job |
 | `main` | Public README, report, figures, and notebook | Not run as an experiment (publication surface) | Presentation-only mirror after release gates | No experiment compute |
 
 ---

@@ -1,0 +1,67 @@
+{
+  "run_id": "6b7ccf1e-9abb-4909-aa87-0712d870cebc",
+  "experiment_id": "a78f7331-673b-4e9a-ad45-41761cc8e799",
+  "git_sha": "4aadbbfe008cc725fbba6005ccbadacb929db40c",
+  "fixed_command": "uv run --frozen --python 3.12 python -m cdot_repro.run",
+  "claim_scope": [1, 2, 6],
+  "verdict": "VERIFIED",
+  "proof_system": "Lean 4 kernel plus pinned mathlib",
+  "lean_toolchain": "leanprover/lean4:v4.19.0",
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "lake_version": "Lake version 5.0.0-6caaee8 (Lean version 4.19.0)",
+  "mathlib_requested_revision": "v4.19.0",
+  "resolved_mathlib_commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+  "elan": {
+    "version": "v4.1.2",
+    "url": "https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz",
+    "expected_sha256": "f81c2e48c1588d4612cd2c8851947898a45ac8d72748a07dff3a5694f1cf589b",
+    "observed_sha256": "f81c2e48c1588d4612cd2c8851947898a45ac8d72748a07dff3a5694f1cf589b",
+    "bytes": 4985879
+  },
+  "source_sha256": "5f56b005ebf859199d653e09fe114731abb1f75f577819180cdd85f223aabd0d",
+  "theorems": [
+    "CDOTFormal.claim1_compact_attainment",
+    "CDOTFormal.claim1_cdot_objective_jensen",
+    "CDOTFormal.claim2_weighted_fusion_triangle",
+    "CDOTFormal.claim2_dispersion_gap",
+    "CDOTFormal.claim6_three_obligation_bound",
+    "CDOTFormal.claim6_consistency_squeeze"
+  ],
+  "forbidden_source_tokens": ["sorry", "admit", "axiom ", "unsafe "],
+  "gates": {
+    "pinned_elan_archive_hash": true,
+    "pinned_lean_toolchain_file": true,
+    "reported_lean_version": true,
+    "exact_mathlib_manifest_commit": true,
+    "no_forbidden_source_tokens": true,
+    "primary_kernel_compile_passed": true,
+    "lake_library_build_passed": true,
+    "all_named_theorems_printed": true,
+    "independent_replay_passed": true,
+    "negative_control_rejected": true
+  },
+  "returncodes": {
+    "primary_compile": 0,
+    "lake_library_build": 0,
+    "independent_replay": 0,
+    "negative_control_compile": 1
+  },
+  "stage_runtime_seconds": {
+    "lean_version_and_toolchain_install": 6.166575654000098,
+    "lake_update": 53.0098270630001,
+    "mathlib_cache": 4.652485733000049,
+    "primary_compile": 12.547081574000003,
+    "library_build": 14.421148726999945,
+    "independent_replay": 3.9996768320002047,
+    "negative_control_compile": 4.136221082000247
+  },
+  "compute": {
+    "estimated_cores": 2,
+    "selected_backend": "hf",
+    "selected_flavor": "cpu-upgrade",
+    "actual_logical_cpus": 64,
+    "gpu_used": false,
+    "cumulative_runtime": "5h37m"
+  },
+  "all_gates_pass": true
+}

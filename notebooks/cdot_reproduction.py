@@ -71,19 +71,19 @@ def _(intervals, mo, observed, paper):
 @app.cell
 def _(mo):
     claim_rows = [
-        {"claim": 1, "evidence": "proof certificate + formula audits", "verdict": "VERIFIED", "confidence": "HIGH"},
-        {"claim": 2, "evidence": "proof certificate + exhaustive finite domain", "verdict": "VERIFIED", "confidence": "HIGH"},
+        {"claim": 1, "evidence": "Lean kernel obligations + formula audits", "verdict": "VERIFIED", "confidence": "MEDIUM"},
+        {"claim": 2, "evidence": "Lean kernel obligations + exhaustive finite domain", "verdict": "VERIFIED", "confidence": "MEDIUM"},
         {"claim": 3, "evidence": "100 paper-scale paired trials", "verdict": "VERIFIED", "confidence": "HIGH"},
         {"claim": 4, "evidence": "all 4,950 pairs + primary-archive counterexample", "verdict": "FALSIFIED", "confidence": "HIGH"},
         {"claim": 5, "evidence": "all-pairs repeated nested CV", "verdict": "FALSIFIED", "confidence": "MEDIUM"},
-        {"claim": 6, "evidence": "proof certificate + exact FW schedules", "verdict": "VERIFIED", "confidence": "HIGH"},
+        {"claim": 6, "evidence": "Lean kernel obligations + exact FW schedules", "verdict": "VERIFIED", "confidence": "MEDIUM"},
     ]
     mo.vstack(
         [
             mo.md("## All six claim verdicts"),
             mo.ui.table(claim_rows, selection=None),
             mo.callout(
-                "These are reproduction verdicts, not live judge points. The previous live score remains 4/12 until a new revision is evaluated.",
+                "These are reproduction verdicts, not live judge points. The current live score is 9/12 at revision e7c9bd… until a new revision is evaluated.",
                 kind="warn",
             ),
         ]

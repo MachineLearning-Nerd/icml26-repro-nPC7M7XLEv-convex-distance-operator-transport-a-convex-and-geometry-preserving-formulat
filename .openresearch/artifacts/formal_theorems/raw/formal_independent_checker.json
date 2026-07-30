@@ -1,0 +1,25 @@
+{
+  "run_id": "6b7ccf1e-9abb-4909-aa87-0712d870cebc",
+  "source_sha256_recomputed": "5f56b005ebf859199d653e09fe114731abb1f75f577819180cdd85f223aabd0d",
+  "gates": {
+    "separate_compilation_unit": true,
+    "replay_compile_passed": true,
+    "negative_control_failed_to_compile": true,
+    "primary_source_hash_recomputed": true
+  },
+  "command": ["lake", "env", "lean", "IndependentReplay.lean"],
+  "returncode": 0,
+  "runtime_seconds": 3.9996768320002047,
+  "checked_declarations": [
+    "claim1_compact_attainment",
+    "claim1_squared_residual_identity",
+    "claim1_cdot_objective_jensen",
+    "claim2_weighted_fusion_triangle",
+    "claim2_dispersion_gap",
+    "claim6_three_obligation_bound",
+    "claim6_optimization_monotone",
+    "claim6_consistency_squeeze",
+    "claim6_bad_schedule_control"
+  ],
+  "all_gates_pass": true
+}

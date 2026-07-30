@@ -1,0 +1,10 @@
+{
+  "run_id": "6b7ccf1e-9abb-4909-aa87-0712d870cebc",
+  "mutation": "reverse the Jensen inequality for a squared residual",
+  "command": ["lake", "env", "lean", "NegativeControl.lean"],
+  "expected": "Lean kernel rejects the deliberately false theorem",
+  "returncode": 1,
+  "runtime_seconds": 4.136221082000247,
+  "compiler_output": "NegativeControl.lean:9:2: error: linarith failed to find a contradiction",
+  "rejected_as_intended": true
+}

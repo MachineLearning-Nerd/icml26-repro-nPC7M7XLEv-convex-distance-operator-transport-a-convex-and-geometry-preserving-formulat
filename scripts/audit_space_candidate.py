@@ -47,7 +47,11 @@ def sha256(path: Path) -> str:
 
 def files(root: Path) -> list[Path]:
     return sorted(
-        path for path in root.rglob("*") if path.is_file() and ".git" not in path.parts
+        path
+        for path in root.rglob("*")
+        if path.is_file()
+        and ".git" not in path.relative_to(root).parts
+        and ".cache" not in path.relative_to(root).parts
     )
 
 
@@ -125,9 +129,9 @@ def audit(judged: Path, candidate: Path) -> dict:
     traverse(logbook["root"])
 
     claim_pages = [
-        file_name
-        for file_name in node_files
-        if re.search(r"^pages/claim-[1-6]-", file_name)
+        node["file"]
+        for node in logbook["root"].get("children", [])
+        if re.search(r"^pages/claim-[1-6]-", node["file"])
     ]
     if len(claim_pages) != 6:
         gaps.append(f"expected six claim pages, found {len(claim_pages)}")
@@ -137,7 +141,14 @@ def audit(judged: Path, candidate: Path) -> dict:
             if marker.lower() not in text.lower():
                 gaps.append(f"{file_name}: missing marker {marker!r}")
 
-    visibility = candidate / "pages" / "current-visibility" / "page.md"
+    visibility_candidates = [
+        candidate / "pages" / "lean-visibility" / "page.md",
+        candidate / "pages" / "current-visibility" / "page.md",
+    ]
+    visibility = next(
+        (path for path in visibility_candidates if path.is_file()),
+        visibility_candidates[0],
+    )
     if visibility.is_file():
         text = visibility.read_text(encoding="utf-8")
         for claim in range(1, 7):

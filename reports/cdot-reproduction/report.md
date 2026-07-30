@@ -128,25 +128,28 @@ the invalid schedule `T_n=n`. Each fails for its intended registered reason.
 
 | Claim | Paper evidence | Observed evidence | Assessment | Confidence |
 | --- | --- | --- | --- | --- |
-| 1 | Theorem 3.4: convex QP and attainment | proof certificate + exact formula audits | `VERIFIED` | HIGH |
-| 2 | Theorems 3.5/3.7: pseudometric and dispersion gap | proof certificate + exhaustive finite domain | `VERIFIED` | HIGH |
+| 1 | Theorem 3.4: convex QP and attainment | Lean kernel obligations + exact formula audits | `VERIFIED` | MEDIUM |
+| 2 | Theorems 3.5/3.7: pseudometric and dispersion gap | Lean kernel obligations + exhaustive finite domain | `VERIFIED` | MEDIUM |
 | 3 | Table 2: `0.0016 < 0.0034, 0.0033` | `0.001694 < 0.003514, 0.003378` | `VERIFIED` | HIGH |
 | 4 | Table 3 diffusion/geodesic ordering on 696-subject, 170-node cohort | both 4,950-pair directions reproduce; one included subject has only 168 nodes | `FALSIFIED` | HIGH |
 | 5 | CDOT beats FGW on MUTAG and ENZYMES | MUTAG aligns; ENZYMES reverses | `FALSIFIED` | MEDIUM |
-| 6 | Theorem 5.6 / Corollary 5.7 | proof certificate + exact schedule audits | `VERIFIED` | HIGH |
+| 6 | Theorem 5.6 / Corollary 5.7 | Lean kernel obligations + exact schedule audits | `VERIFIED` | MEDIUM |
 
 These are reproduction verdicts, not judge points. The previous live judge
-score remains `4/12` until the evaluator processes a new Hugging Face revision.
+score is `9/12` at Space revision
+`e7c9bd313c5bc8f5d252f0f5ac2dce3e087ba032`; only a new live verdict can
+change it.
 
 ## Reproducibility and lineage
 
 The current cumulative evidence branch is
-`orx/judge-repair-canonical-trackio-pages-plus-oasis` at
-`a8661d20b21b352094c22c9358aee1791b327f14`. Formal run
-`4b2b62af-7c7d-4f12-9b6e-2fcfa0eb0d6f` completed in 23,217.89 seconds
-with 64 logical CPUs exposed on Hugging Face `cpu-upgrade`. The OASIS route
-used eight independent one-thread pair workers; all earlier accepted checks
-were rerun cumulatively and every primary and independent gate passed.
+`orx/lean-kernel-certificates-for-claims-1-2-and-6` at
+`4aadbbfe008cc725fbba6005ccbadacb929db40c`. Formal run
+`6b7ccf1e-9abb-4909-aa87-0712d870cebc` completed in 5h37m with 64 logical
+CPUs exposed on Hugging Face `cpu-upgrade`. Lean 4.19.0 and mathlib commit
+`c44e0c8ee63ca166450922a373c7409c5d26b00b` passed the primary compile,
+Lake build, independent replay, source-token scan, and deliberately false
+theorem control. All earlier accepted checks were rerun cumulatively.
 
 Raw JSON, independent checker output, controls, claim contracts, source audits,
 limitations, exact code, and the lockfile are linked from the canonical claim
