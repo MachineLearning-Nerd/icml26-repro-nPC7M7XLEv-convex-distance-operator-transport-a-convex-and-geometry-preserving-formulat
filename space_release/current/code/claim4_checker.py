@@ -5,7 +5,10 @@ from __future__ import annotations
 import json
 import re
 import xml.etree.ElementTree as ET
+from itertools import combinations
 from pathlib import Path
+
+import numpy as np
 
 
 GRAPHML_NS = "http://graphml.graphdrawing.org/xmlns"
@@ -59,6 +62,53 @@ def check(runtime_dir: Path) -> dict[str, object]:
     recorded_invalid = [
         row for row in session_rows if row["subject"] == "OAS30938"
     ]
+    table3 = json.loads(
+        (runtime_dir / "claim_4_table3_result.json").read_text()
+    )
+    pair_rows: list[dict[str, object]] = []
+    for path in sorted(runtime_dir.glob("claim_4_table3_pairs_*.json")):
+        pair_rows.extend(json.loads(path.read_text()))
+    expected_pairs = {
+        (left, right) for left, right in combinations(range(100), 2)
+    }
+    subject_order = [
+        str(row["subject"]) for row in table3["selected_subjects"]
+    ]
+    observed_pairs = {
+        (
+            subject_order.index(str(row["left_subject"])),
+            subject_order.index(str(row["right_subject"])),
+        )
+        for row in pair_rows
+    }
+    independent_summary: dict[str, float] = {}
+    for metric in ("diffusion", "geodesic"):
+        for method in ("CDOT", "FGW"):
+            values = np.asarray(
+                [
+                    float(row["accuracy"])
+                    for row in pair_rows
+                    if row["metric"] == metric
+                    and row["method"] == method
+                ]
+            )
+            independent_summary[f"{metric}_{method}"] = float(values.mean())
+    recorded_summary = {
+        key: float(value["mean_accuracy"])
+        for key, value in table3["rerun"].items()
+    }
+    summary_error = max(
+        abs(independent_summary[key] - recorded_summary[key])
+        for key in independent_summary
+    )
+    diffusion_margin = (
+        independent_summary["diffusion_CDOT"]
+        - independent_summary["diffusion_FGW"]
+    )
+    geodesic_margin = (
+        independent_summary["geodesic_FGW"]
+        - independent_summary["geodesic_CDOT"]
+    )
     gates = {
         "all_chunked_sessions_loaded": len(session_rows) == 975,
         "all_subject_rows_loaded": len(subject_rows) == 696,
@@ -71,6 +121,23 @@ def check(runtime_dir: Path) -> dict[str, object]:
         and 170 not in ids,
         "primary_falsification_status_rechecked": primary["status"]
         == "FALSIFIED",
+        "table3_all_19800_method_metric_rows_loaded": len(pair_rows)
+        == 4_950 * 4,
+        "table3_exact_4950_pair_inventory": observed_pairs
+        == expected_pairs,
+        "table3_each_cell_has_4950_rows": all(
+            sum(
+                row["metric"] == metric and row["method"] == method
+                for row in pair_rows
+            )
+            == 4_950
+            for metric in ("diffusion", "geodesic")
+            for method in ("CDOT", "FGW")
+        ),
+        "table3_summary_recomputed_from_raw_rows": summary_error < 1e-9,
+        "table3_diffusion_direction_rechecked": diffusion_margin > 0,
+        "table3_geodesic_direction_rechecked": geodesic_margin > 0,
+        "table3_primary_gates_rechecked": table3["all_gates_pass"],
     }
     result = {
         "checker": (
@@ -82,6 +149,12 @@ def check(runtime_dir: Path) -> dict[str, object]:
         "independent_min_id": min(ids),
         "independent_max_id": max(ids),
         "independent_subject_count": len(subject_counts),
+        "table3_raw_rows": len(pair_rows),
+        "table3_unique_pairs": len(observed_pairs),
+        "table3_independent_summary": independent_summary,
+        "table3_summary_max_abs_error": summary_error,
+        "table3_diffusion_CDOT_minus_FGW": diffusion_margin,
+        "table3_geodesic_FGW_minus_CDOT": geodesic_margin,
         "gates": gates,
         "all_gates_pass": all(gates.values()),
     }

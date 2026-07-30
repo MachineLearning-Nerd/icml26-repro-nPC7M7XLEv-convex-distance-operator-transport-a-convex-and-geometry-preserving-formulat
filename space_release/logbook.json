@@ -14,54 +14,54 @@
   "root": {
     "slug": "index",
     "title": "Current CDOT claim-by-claim reproduction",
-    "file": "current/pages/index.md",
+    "file": "pages/index.md",
     "children": [
       {
         "slug": "executive-summary",
         "title": "Release forecast and claim summary",
-        "file": "current/pages/executive-summary/page.md",
+        "file": "pages/executive-summary/page.md",
         "children": []
       },
       {
         "slug": "claim-1-convex-qp",
         "title": "Claim 1: convex quadratic program",
-        "file": "current/pages/claim-1-convex-qp/page.md",
+        "file": "pages/claim-1-convex-qp/page.md",
         "children": []
       },
       {
         "slug": "claim-2-pseudometric-dispersion",
         "title": "Claim 2: pseudometric and dispersion gap",
-        "file": "current/pages/claim-2-pseudometric-dispersion/page.md",
+        "file": "pages/claim-2-pseudometric-dispersion/page.md",
         "children": []
       },
       {
         "slug": "claim-3-synthetic-table2",
         "title": "Claim 3: synthetic Table 2",
-        "file": "current/pages/claim-3-synthetic-table2/page.md",
+        "file": "pages/claim-3-synthetic-table2/page.md",
         "children": []
       },
       {
         "slug": "claim-4-oasis-cohort",
         "title": "Claim 4: OASIS-3 cohort and Table 3",
-        "file": "current/pages/claim-4-oasis-cohort/page.md",
+        "file": "pages/claim-4-oasis-cohort/page.md",
         "children": []
       },
       {
         "slug": "claim-5-tudataset",
         "title": "Claim 5: TUDataset graph classification",
-        "file": "current/pages/claim-5-tudataset/page.md",
+        "file": "pages/claim-5-tudataset/page.md",
         "children": []
       },
       {
         "slug": "claim-6-risk-bound-consistency",
         "title": "Claim 6: risk bound and consistency",
-        "file": "current/pages/claim-6-risk-bound-consistency/page.md",
+        "file": "pages/claim-6-risk-bound-consistency/page.md",
         "children": []
       },
       {
         "slug": "visibility",
         "title": "Evaluator visibility matrix",
-        "file": "current/pages/visibility/page.md",
+        "file": "pages/current-visibility/page.md",
         "children": []
       },
       {
@@ -73,7 +73,7 @@
       {
         "slug": "notebook",
         "title": "Tutorial notebook",
-        "file": "current/pages/notebook/page.md",
+        "file": "pages/current-notebook/page.md",
         "children": []
       },
       {

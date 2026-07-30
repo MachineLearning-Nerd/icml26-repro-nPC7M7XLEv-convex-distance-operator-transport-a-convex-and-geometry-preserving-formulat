@@ -13,8 +13,8 @@ Exact command:
 uv run --frozen --python 3.12 python -m cdot_repro.run
 ```
 
-Formal run `4b2b62af-7c7d-4f12-9b6e-2fcfa0eb0d6f` at Git
-`a8661d20b21b352094c22c9358aee1791b327f14` passed every primary and
+Formal run `4df2d784-42ce-4fa3-af50-3d03063f38fb` at Git
+`e11a535552fc6f854fe5c07086034992ae426eae` passed every primary and
 independent gate. The exact 654,450,976-byte archive contains 975 sessions and 696 subjects,
 but only 695 subjects have any exact 170-node session. `OAS30938` has one
 session with 168 nodes and atlas IDs 1 through 168. Its file SHA-256 is
@@ -43,13 +43,13 @@ cell agreement is not asserted.
 
 Raw evidence:
 
-- [Superseding primary result](../../../.openresearch/artifacts/claim_4/raw/formal_4b2b62af/claim_4_result.json)
-- [Table 3 result](../../../.openresearch/artifacts/claim_4/raw/formal_4b2b62af/claim_4_table3_result.json)
-- [Independent checker](../../../.openresearch/artifacts/claim_4/raw/formal_4b2b62af/claim_4_independent_checker.json)
-- [Cumulative run summary](../../../.openresearch/artifacts/claim_4/raw/formal_4b2b62af/run_summary.json)
-- [Formal materialization manifest](../../../.openresearch/artifacts/claim_4/raw/formal_4b2b62af/materialization_manifest.json)
+- [Superseding primary result](../../../.openresearch/artifacts/claim_4/raw/formal_4df2d784/claim_4_result.json)
+- [Table 3 result](../../../.openresearch/artifacts/claim_4/raw/formal_4df2d784/claim_4_table3_result.json)
+- [Independent checker](../../../.openresearch/artifacts/claim_4/raw/formal_4df2d784/claim_4_independent_checker.json)
+- [Cumulative run summary](../../../.openresearch/artifacts/claim_4/raw/formal_4df2d784/run_summary.json)
+- [Formal materialization manifest](../../../.openresearch/artifacts/claim_4/raw/formal_4df2d784/materialization_manifest.json)
 
-The first formal serialization used 500-row pair chunks, whose logged hashes
-show sizes of 130–217 kB. The release-candidate child changes only serialization
-to 200 rows per chunk so every raw row is evaluator-downloadable under the
-runner's 100 kB inline-evidence ceiling.
+The superseded first formal serialization used 500-row pair chunks, whose
+logged hashes show sizes of 130–217 kB. The current run changes only
+serialization to 99 200-row chunks; the largest is `86,881` bytes, so every
+raw row is evaluator-downloadable under the runner's 100 kB evidence ceiling.

@@ -142,7 +142,7 @@ change it.
 
 ## Reproducibility and lineage
 
-The current cumulative evidence branch is
+The current theoretical evidence branch is
 `orx/lean-kernel-certificates-for-claims-1-2-and-6` at
 `4aadbbfe008cc725fbba6005ccbadacb929db40c`. Formal run
 `6b7ccf1e-9abb-4909-aa87-0712d870cebc` completed in 5h37m with 64 logical
@@ -150,6 +150,13 @@ CPUs exposed on Hugging Face `cpu-upgrade`. Lean 4.19.0 and mathlib commit
 `c44e0c8ee63ca166450922a373c7409c5d26b00b` passed the primary compile,
 Lake build, independent replay, source-token scan, and deliberately false
 theorem control. All earlier accepted checks were rerun cumulatively.
+
+Its parent cumulative evidence branch is
+`orx/release-candidate-complete-raw-oasis-evidence` at
+`e11a535552fc6f854fe5c07086034992ae426eae`; run
+`4df2d784-42ce-4fa3-af50-3d03063f38fb` completed in 38,009.73 seconds and
+materialized the complete 19,800-row OASIS evidence in evaluator-downloadable
+chunks.
 
 Raw JSON, independent checker output, controls, claim contracts, source audits,
 limitations, exact code, and the lockfile are linked from the canonical claim

@@ -40,7 +40,8 @@ The superseding theoretical verifier is documented in the
 [Lean theorem report](reports/cdot-reproduction/lean-verification.md), with
 executable source in [formal/CDOTProofs.lean](formal/CDOTProofs.lean).
 
-Read the [illustrated technical report](reports/cdot-reproduction/report.md)
+Read the [illustrated technical report](reports/cdot-reproduction/report.md),
+the [release and verification report](reports/cdot-reproduction/release_report.md),
 or the [self-contained marimo tutorial](notebooks/cdot_reproduction.py).
 [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-nPC7M7XLEv-convex-distance-operator-transport-a-convex-and-geometry-preserving-formulat/blob/main/notebooks/cdot_reproduction.py)
 
@@ -56,6 +57,7 @@ or the [self-contained marimo tutorial](notebooks/cdot_reproduction.py).
 | `orx/claim-3-full-scale-synthetic-table-2-cpu-reprodu` | Exact-scale synthetic reconstruction: 2,000 points, 100 trials, CDOT/FGW/IsoRank, paired checker and destructive controls | `uv run --frozen --python 3.12 python -m cdot_repro.run` | Claim 3 `VERIFIED` candidate; CDOT lower than both baselines with paired 95% intervals below zero; all cumulative gates pass | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, four workers × 16 numerical threads; 5h31m job |
 | `orx/judge-repair-canonical-trackio-pages-plus-oasis` | Add canonical Trackio claim pages and faithful OASIS-3 Table 3 first-100/all-4,950-pair rerun | `uv run --frozen --python 3.12 python -m cdot_repro.run` | All six primary and independent gates pass; both Table 3 directions reproduce and the cohort counterexample remains exact | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, eight one-thread OASIS workers; 6h27m cumulative job |
 | `orx/lean-kernel-certificates-for-claims-1-2-and-6` | Replace the human-only theoretical certificates with pinned Lean/mathlib kernel checks, separate replay, and false-theorem control | `uv run --frozen --python 3.12 python -m cdot_repro.run` | All formal gates and all six cumulative claim gates pass; negative control exits `1` as intended | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed; no GPU; 5h37m cumulative job |
+| `orx/release-candidate-complete-raw-oasis-evidence` | Final cumulative regression plus evaluator-downloadable OASIS evidence in 99 sub-100KB chunks | `uv run --frozen --python 3.12 python -m cdot_repro.run` | All six primary and independent gates pass; 19,800 OASIS rows and 4,950 pairs independently audited | Hugging Face `cpu-upgrade`; 64 logical CPUs exposed, one numerical thread enforced; 10h34m cumulative job |
 | `main` | Public README, report, figures, and notebook | Not run as an experiment (publication surface) | Presentation-only mirror after release gates | No experiment compute |
 
 ---

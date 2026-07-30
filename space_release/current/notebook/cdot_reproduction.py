@@ -74,7 +74,7 @@ def _(mo):
         {"claim": 1, "evidence": "proof certificate + formula audits", "verdict": "VERIFIED", "confidence": "HIGH"},
         {"claim": 2, "evidence": "proof certificate + exhaustive finite domain", "verdict": "VERIFIED", "confidence": "HIGH"},
         {"claim": 3, "evidence": "100 paper-scale paired trials", "verdict": "VERIFIED", "confidence": "HIGH"},
-        {"claim": 4, "evidence": "primary-archive counterexample", "verdict": "FALSIFIED", "confidence": "HIGH"},
+        {"claim": 4, "evidence": "all 4,950 pairs + primary-archive counterexample", "verdict": "FALSIFIED", "confidence": "HIGH"},
         {"claim": 5, "evidence": "all-pairs repeated nested CV", "verdict": "FALSIFIED", "confidence": "MEDIUM"},
         {"claim": 6, "evidence": "proof certificate + exact FW schedules", "verdict": "VERIFIED", "confidence": "HIGH"},
     ]
@@ -93,10 +93,31 @@ def _(mo):
 
 @app.cell
 def _(mo):
+    oasis_rows = [
+        {"metric": "diffusion", "paper CDOT": 0.6136, "paper FGW": 0.1853, "observed CDOT": 0.7186226976, "observed FGW": 0.1540475342},
+        {"metric": "geodesic", "paper CDOT": 0.4640, "paper FGW": 0.5375, "observed CDOT": 0.4651527035, "observed FGW": 0.5341390374},
+    ]
+    mo.vstack(
+        [
+            mo.md("## OASIS-3 Table 3 and cohort audit"),
+            mo.ui.table(oasis_rows, selection=None),
+            mo.md(
+                "Both method directions reproduce over all 4,950 pairs. "
+                "Independently, exhaustive parsing of 975 sessions finds "
+                "`OAS30938` has only one 168-node session, contradicting the "
+                "literal 696-by-170 cohort invariant."
+            ),
+        ]
+    )
+    return
+
+
+@app.cell
+def _(mo):
     choice = mo.ui.dropdown(
         options={
             "Claim 3 — exact-scale synthetic": "The full run used four regions × 500 samples, 100 paired trials, α=0.5, and T=200.",
-            "Claim 4 — OASIS-3 cohort": "All 975 sessions and 696 subjects were enumerated; OAS30938 has only one 168-node session.",
+            "Claim 4 — OASIS-3 Table 3": "All 4,950 pairs reproduce both directions: diffusion 0.718623 > 0.154048 and geodesic 0.465153 < 0.534139. All 975 sessions were also audited; OAS30938 has only one 168-node session.",
             "Claim 5 — TUDataset": "All graph pairs and five fusion weights were evaluated with three repeated nested 10×5-fold RBF-SVM runs.",
         },
         value="Claim 3 — exact-scale synthetic",

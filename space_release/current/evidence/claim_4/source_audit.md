@@ -15,6 +15,13 @@ first 100 subjects, `alpha=0.5`, `T=200`, diffusion scale `t=1`, and the four
 Table 3 accuracies. The provider independently describes OASIS-3 as 696
 subjects and Scale 2 as 170 nodes.
 
-This route tests the cohort premise over the entire primary archive. It does
-not reinterpret a failed numerical rerun, missing access, or an implementation
-error as falsification.
+The registered numerical route uses the lexicographically first 100 subject
+IDs and each earliest session because the paper publishes neither filenames
+nor code. It evaluates all 4,950 unordered pairs, not a proxy subset. The
+paper names a graph Laplacian but does not specify normalized versus
+combinatorial form; the registered main route discloses the normalized
+Laplacian.
+
+The archive route separately tests the cohort premise over the entire primary
+archive. It does not reinterpret a failed numerical rerun, missing access, or
+an implementation error as falsification.

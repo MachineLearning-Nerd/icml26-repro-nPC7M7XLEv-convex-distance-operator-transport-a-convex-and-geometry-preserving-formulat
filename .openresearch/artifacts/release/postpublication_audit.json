@@ -1,0 +1,43 @@
+{
+  "space_id": "DineshAI/nPC7M7XLEv",
+  "published_revision": "e7c9bd313c5bc8f5d252f0f5ac2dce3e087ba032",
+  "publication_parent_revision": "3445f49f57ef2a72286f68932d9700def4faafb6",
+  "upload_mode": "Hugging Face create_commit API with additive CommitOperationAdd operations only",
+  "uploaded_text_paths": 249,
+  "downloaded_exact_revision": true,
+  "uploaded_hashes_verified": 249,
+  "uploaded_hash_errors": [],
+  "release_manifest_entries_verified": 248,
+  "release_manifest_errors": [],
+  "evaluator_blind_traversal": {
+    "files_opened": 231,
+    "claim_pages_found": 6,
+    "gaps": [],
+    "all_gates_pass": true
+  },
+  "historical_safety": {
+    "protected_judged_paths": 45,
+    "old_file_set_is_subset": true,
+    "protected_pages_byte_identical": true
+  },
+  "claim_4_raw_inventory": {
+    "chunks": 99,
+    "rows": 19800,
+    "unique_pairs": 4950,
+    "rows_per_method_metric_cell": 4950,
+    "max_chunk_bytes": 86881,
+    "result_and_checker_colocated": true
+  },
+  "trackio_remote_read": {
+    "command": "trackio logbook read --path DineshAI/nPC7M7XLEv pages",
+    "all_six_current_claim_pages_discovered": true,
+    "current_claim_pages_opened": [
+      "claim-1-convex-qp",
+      "claim-4-oasis-cohort",
+      "claim-5-tudataset"
+    ]
+  },
+  "judge_state": "awaiting live evaluator",
+  "score_claimed": false,
+  "result": "PASS"
+}

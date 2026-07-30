@@ -1,0 +1,90 @@
+{
+  "formal_run_id": "4b2b62af-7c7d-4f12-9b6e-2fcfa0eb0d6f",
+  "selector": "/claim_4/",
+  "files": [
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_file_manifest_000.json",
+      "path": "claim_4_file_manifest_000.json",
+      "bytes": 37402,
+      "sha256": "842b762e67822d8387f7afe2818ca9ab7f735ebb185fb904fdbc74fa5db30a27"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_file_manifest_001.json",
+      "path": "claim_4_file_manifest_001.json",
+      "bytes": 37402,
+      "sha256": "d2d3db66e66e4b0e93b62a8be4227bf7b3b2e9dccba911e808507f70d65d2622"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_file_manifest_002.json",
+      "path": "claim_4_file_manifest_002.json",
+      "bytes": 37402,
+      "sha256": "5df36dd004321cf4316819c8adb39ffbc5a151b16e84ee25a90d6038fbbd4345"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_file_manifest_003.json",
+      "path": "claim_4_file_manifest_003.json",
+      "bytes": 37402,
+      "sha256": "84b060645156c33e32721641ba0510161e5ff660b56c0def9d28420814a7b72f"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_file_manifest_004.json",
+      "path": "claim_4_file_manifest_004.json",
+      "bytes": 32727,
+      "sha256": "b0d4243b7f4b16faff180f22db1f35e208d8c9133b4975b9187fb56dec3cd11e"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_independent_checker.json",
+      "path": "claim_4_independent_checker.json",
+      "bytes": 1530,
+      "sha256": "6e692795dba346d4b594a127fc25bfb3747d63bfcbe302838ab514ca75bdd34c"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_negative_control.json",
+      "path": "claim_4_negative_control.json",
+      "bytes": 248,
+      "sha256": "1a264f2b0723a3278e59fca0132747c2d0efe98d464f91792ebc905665ac3811"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_result.json",
+      "path": "claim_4_result.json",
+      "bytes": 41381,
+      "sha256": "1933b791ecd9bcf1da1f809603bcbc64a1c15ed7d3833e4c4224eaf7b1df8b8f"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_session_audit_000.json",
+      "path": "claim_4_session_audit_000.json",
+      "bytes": 43052,
+      "sha256": "b02d3514b2e38557002434bb8c038b7707646f2ab5b8932b5a88936f1b4cc92e"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_session_audit_001.json",
+      "path": "claim_4_session_audit_001.json",
+      "bytes": 43032,
+      "sha256": "bb132ee6ddcdb3b3d1f823034fbb1c5f362f3cad999feb3e87be435cb913b1cf"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_session_audit_002.json",
+      "path": "claim_4_session_audit_002.json",
+      "bytes": 43044,
+      "sha256": "df16fb3a1a4c665d9320bbb4b057c4e92d461be0b96770611ef93ffcbcf713ed"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_session_audit_003.json",
+      "path": "claim_4_session_audit_003.json",
+      "bytes": 43029,
+      "sha256": "7b3fa4a2f89989e2595d159a79f403286059dafbe6a4f1b6821d06f64a567e44"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_session_audit_004.json",
+      "path": "claim_4_session_audit_004.json",
+      "bytes": 37664,
+      "sha256": "ef9a279aca6db462b7c95f6a87a4861b6a0a6c25c16a66b99257b2f862466b84"
+    },
+    {
+      "source": ".openresearch/runtime/claim_4/claim_4_table3_result.json",
+      "path": "claim_4_table3_result.json",
+      "bytes": 33385,
+      "sha256": "69d5f5d438049429af2ea0f6119d6a8d0e608ae77ac5c6a8f5598a00092407c3"
+    }
+  ]
+}
