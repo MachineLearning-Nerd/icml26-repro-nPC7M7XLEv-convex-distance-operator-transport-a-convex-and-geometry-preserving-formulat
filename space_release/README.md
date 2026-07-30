@@ -13,11 +13,14 @@ tags:
  - paper-nPC7M7XLEv
 ---
 
-# Convex Distance Operator Transport — current claim-by-claim reproduction
+# CDOT reproduction — Lean kernel verification added
 
-The canonical logbook now exposes direct evidence for all six judged claims.
-The previous live score remains **4/12** until the live evaluator processes
-this revision. Current reproduction verdicts are four `VERIFIED` and two
-`FALSIFIED`; no claim is promoted from toy or proxy evidence.
+The previous live score is **9/12** at revision `e7c9bd313c5bc8f5d252f0f5ac2dce3e087ba032`. This
+additive candidate addresses the only remaining deductions—Claims 1, 2, and
+6—with pinned Lean 4.19.0/mathlib kernel checks, an independent replay, and a
+false-theorem negative control. It is a forecasted improvement, not a new
+judge score.
 
-The exact judged pages remain reachable under **Historical rejected baseline**.
+Open the logbook at **CURRENT — CDOT kernel-checked claim reproduction**.
+Every file from the 9/12 revision remains preserved; the rejected human-only
+theoretical pages are reachable under **Historical rejected baseline**.
