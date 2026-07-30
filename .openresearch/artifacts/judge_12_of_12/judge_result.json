@@ -1,0 +1,25 @@
+{
+  "source_url": "https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts/resolve/main/verdicts.json",
+  "selection": {
+    "space_id": "DineshAI/nPC7M7XLEv",
+    "sha": "819b602292066602b465aa8ac59babce4f673b95"
+  },
+  "retrieved_at_utc": "2026-07-30T06:13:24Z",
+  "downloaded_dataset_sha256": "cdaba9eeb0fe1d35c674d133a66b2b6d3e43515d1bf544f58ca2e36fad53a9e9",
+  "judged_at": "2026-07-30T06:11:11+00:00",
+  "model": "zai-org/GLM-5.2",
+  "quality": "high",
+  "claim_verdicts": {
+    "1": "VERIFIED",
+    "2": "VERIFIED",
+    "3": "VERIFIED",
+    "4": "FALSIFIED",
+    "5": "FALSIFIED",
+    "6": "VERIFIED"
+  },
+  "full_credit_claims": 6,
+  "points": 12,
+  "maximum_points": 12,
+  "score_derivation": "Each VERIFIED or FALSIFIED claim receives 2 points; six of six claims received one of those full-credit verdicts.",
+  "space_head_verified_after_judgment": "819b602292066602b465aa8ac59babce4f673b95"
+}

@@ -5,23 +5,24 @@ This experiment line reproduces all six judged claims in
 proof-obligation certificates for the three universal theorems with
 paper-scale empirical checks.
 
-The live judge awarded **9/12** at Hugging Face revision
+The previous live judge awarded **9/12** at Hugging Face revision
 `e7c9bd313c5bc8f5d252f0f5ac2dce3e087ba032`: Claims 3–5 received full
 credit, while Claims 1, 2, and 6 remained toy-level because the certificates
 were human-written. Published revision
 `819b602292066602b465aa8ac59babce4f673b95` addresses exactly that
 criticism with Lean 4.19.0/mathlib kernel checks, an independent importing
 replay, pinned source/toolchain hashes, and a false-theorem control rejected
-by the kernel. A possible 12/12 remains a forecast until the live judge
-evaluates the new Space revision.
+by the kernel. The live judge evaluated that exact revision on
+2026-07-30 and awarded **12/12**: Claims 1, 2, 3, and 6 were `VERIFIED`;
+Claims 4 and 5 were `FALSIFIED`, which also receives full credit.
 
-Claims 1, 2, and 6 are `VERIFIED` candidates. Claim 4 is a `FALSIFIED`
-candidate for the literal 696-by-170 cohort invariant, while its faithful
+Claims 1, 2, and 6 are judged `VERIFIED`. Claim 4 is judged `FALSIFIED`
+for the literal 696-by-170 cohort invariant, while its faithful
 all-4,950-pair rerun reproduces both Table 3 method directions: diffusion
 CDOT `0.718623` versus FGW `0.154048`, and geodesic CDOT `0.465153` versus
-FGW `0.534139`. Claim 5 is a `FALSIFIED` candidate: the full run found the paper's
+FGW `0.534139`. Claim 5 is judged `FALSIFIED`: the full run found the paper's
 MUTAG direction but a stable ENZYMES reversal (CDOT `0.39222`, FGW `0.44778`)
-under all three outer seeds. Claim 3 is `VERIFIED` at the exact paper scale:
+under all three outer seeds. Claim 3 is judged `VERIFIED` at the exact paper scale:
 CDOT `0.001694`, FGW `0.003514`, and IsoRank `0.003378` over 100 paired
 trials. All formal compute uses Hugging Face `cpu-upgrade`; no GPU is used.
 
@@ -42,6 +43,7 @@ The superseding theoretical verifier is documented in the
 executable source in [formal/CDOTProofs.lean](formal/CDOTProofs.lean).
 
 Read the [illustrated technical report](reports/cdot-reproduction/report.md),
+the [live 12/12 judge result](reports/cdot-reproduction/judge_result_12_of_12.md),
 the [Lean release report](reports/cdot-reproduction/lean_release_report.md),
 the [historical 4/12 release report](reports/cdot-reproduction/release_report.md),
 or the [self-contained marimo tutorial](notebooks/cdot_reproduction.py).
