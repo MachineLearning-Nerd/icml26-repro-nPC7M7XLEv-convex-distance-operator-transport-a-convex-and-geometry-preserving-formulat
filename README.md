@@ -8,7 +8,8 @@ paper-scale empirical checks.
 The live judge awarded **9/12** at Hugging Face revision
 `e7c9bd313c5bc8f5d252f0f5ac2dce3e087ba032`: Claims 3–5 received full
 credit, while Claims 1, 2, and 6 remained toy-level because the certificates
-were human-written. The current release candidate addresses exactly that
+were human-written. Published revision
+`819b602292066602b465aa8ac59babce4f673b95` addresses exactly that
 criticism with Lean 4.19.0/mathlib kernel checks, an independent importing
 replay, pinned source/toolchain hashes, and a false-theorem control rejected
 by the kernel. A possible 12/12 remains a forecast until the live judge
@@ -41,7 +42,8 @@ The superseding theoretical verifier is documented in the
 executable source in [formal/CDOTProofs.lean](formal/CDOTProofs.lean).
 
 Read the [illustrated technical report](reports/cdot-reproduction/report.md),
-the [release and verification report](reports/cdot-reproduction/release_report.md),
+the [Lean release report](reports/cdot-reproduction/lean_release_report.md),
+the [historical 4/12 release report](reports/cdot-reproduction/release_report.md),
 or the [self-contained marimo tutorial](notebooks/cdot_reproduction.py).
 [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-nPC7M7XLEv-convex-distance-operator-transport-a-convex-and-geometry-preserving-formulat/blob/main/notebooks/cdot_reproduction.py)
 
